@@ -12,6 +12,10 @@
         <servlet-name>GuardaCorreo</servlet-name>
         <servlet-class>servlets.GuardaCorreo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Socioeconomicos</servlet-name>
+        <servlet-class>servlets.Socioeconomicos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Fecha</servlet-name>
         <url-pattern>/Fecha/*</url-pattern>
@@ -33,6 +37,10 @@
     <servlet-mapping>
         <servlet-name>GuardaCorreo</servlet-name>
         <url-pattern>/GuardaCorreo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Socioeconomicos</servlet-name>
+        <url-pattern>/Socioeconomicos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

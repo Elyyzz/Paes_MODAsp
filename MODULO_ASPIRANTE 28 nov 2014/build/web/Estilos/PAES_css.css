@@ -715,7 +715,7 @@ and open the template in the editor.
 }
 
 
-#continuar_datos, #continuar_socioeconomicos
+#continuar_datos, #continuar_socioeconomicos, #regresar_socioeconomicos
 {
     background-color: royalblue;
     color: white;

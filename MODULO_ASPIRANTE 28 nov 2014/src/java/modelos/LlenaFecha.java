@@ -155,8 +155,8 @@ public class LlenaFecha {
 
     public List<fecha> llenaaño() {
         List<fecha> anio = new ArrayList<>();
-        for (int i = 1989; i < 2014; i++) {
-            if (i == 1989) {
+        for (int i = 1924; i < 2014; i++) {
+            if (i == 1924) {
                 fecha f = new fecha();
                 f.setClave("--");
                 f.setDma("--");

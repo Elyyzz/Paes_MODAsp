@@ -119,15 +119,17 @@ c<%--
                                     </select>
                                     <label id="etiqueta_sexo_izq" class="labels" name="etqsexo">Sexo:</label>
                                     <select id="sexo" name="sexo" class="Selects">
-                                        <option value="--">--Seleccione--</option>
-                                        <option value="F">Femenino</option>
-                                        <option value="M">Masculino</option>
+                                        <option value="--" >--Seleccione--</option> 
+                                        <option value="F" >Femenino</option>                                         
+                                        <option value="M" >Masculino</option>                                         
+
+
                                     </select>                           
                                     <label id="etiqueta_edocivil_izq" class="labels">Estado Civil:</label>
                                     <select id="combo_edo_civil" name="combo_edo_civil" class="Selects" >
-                                        <option value="--">--</option>
-                                        <option value="si">Si</option>
-                                        <option value="no">No</option>
+                                        <c:forEach  items="${EdoCivil}" var="EdoCivil" >
+                                            <option value="${EdoCivil.getClave()}" ><c:out value="${EdoCivil.getNombre()}"/></option>                                         
+                                        </c:forEach>
                                     </select>
                                     <label id="etiqueta_capacidad_central" class="labels">Capacidad Diferente:</label>  
                                     <select id="capacidad_dif" name="combo_capacidadiferente"  class="Selects" >
@@ -135,6 +137,8 @@ c<%--
                                         <option value="visual">Discapacidad visual</option>
                                         <option value="motriz">Discapacidad Motriz</option>
                                         <option value="auditiva">Discapacidad auditiva</option>
+                                        <option value="ninguna">Ninguna</option>
+
                                     </select>
                                     <label id="etiqueta_correo_central" class="labels"  >Correo Electrónico:</label>
                                     <input type="text" id="caja_texto_email" name="email" class="tamano_cajas_texto"  value="${aspirante.getEmail()}" maxlength="150" />
@@ -336,16 +340,16 @@ c<%--
                         </section>
                         <section id="derecho_escuela">
                             <p>  <input type="button" id="buscar_clave"  value="Buscar clave" style="cursor: pointer"> 
-                              <div id="cargandoCCT">
-                            <div class="spinner-wave">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
+                            <div id="cargandoCCT">
+                                <div class="spinner-wave">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
 
-                        </div>
+                            </div>
                             </p>                      
                         </section>
                     </div>

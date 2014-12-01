@@ -19,8 +19,8 @@ public class Conexion {
     // private Connection conexion;
     private String user;
     private String pass;
-//     private String BaseDeDatos = "jdbc:oracle:thin:@localhost:1521:XE";
-    private String BaseDeDatos = "jdbc:oracle:thin:@192.168.40.103:1521:SIA";
+     private String BaseDeDatos = "jdbc:oracle:thin:@localhost:1521:XE";
+//    private String BaseDeDatos = "jdbc:oracle:thin:@192.168.40.103:1521:SIA";
     private String error;
     private boolean b = false;
 
@@ -126,7 +126,7 @@ public class Conexion {
     }
     
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Conexion c=new  Conexion("desarrollo", "d3s4rr0ll0");
+        Conexion c=new  Conexion("fichas", "fichas");
 //        c.getConnection();
         System.out.println( c.getConnection());
         System.out.println(c);

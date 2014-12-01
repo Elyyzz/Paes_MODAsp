@@ -5,8 +5,6 @@
  */
 package servlets;
 
-import ConexionBD.Conexion;
-import ConexionBD.IngresoAbd;
 import ConexionBD.Procedimientos;
 import beans.BaseDatos;
 import beans.Bdatos_aspirante;
@@ -17,7 +15,6 @@ import beans.fecha;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,51 +30,30 @@ import modelos.llenarBD;
  *
  * @author ElyyzZ BaRruEtA
  */
-public class Fecha extends HttpServlet {
+public class Socioeconomicos extends HttpServlet {
 
-//    String usuario = "fichas";
-//    String pass= "fichas";
-
-    private static final long serialVersionUID = 1L;
     LlenaFecha fe = new LlenaFecha();
     llenarBD bd = new llenarBD();
-    List<fecha> dia = fe.llenadia();
-    List<fecha> mes = fe.llenames();
-    List<fecha> anio = fe.llenaaño();
+    String pass = "fichas";
+    String usuario = "fichas";
     List<BaseDatos> estado;
-    List<BaseDatos> EdoCivil = bd.llenaEdoCivil();
-    List<BaseDatos> Discapacidad = bd.llenaDiscapacidad();
-
     List<BaseDatos> municipio;
-    List<BaseDatos> ClaveCCT;
     List<BaseDatos> NivelEstudios;
     List<BaseDatos> Dependencia;
     List<BaseDatos> Ocupaciones;
     List<BaseDatos> Escuela;
-
-    List<BaseDatos> sangre = bd.llenaSangre();
     List<BaseDatos> pais;
     List<BaseDatos> numero = bd.llenaNumero();
     List<BaseDatos> Ingresos = bd.llenaIngresos();
-    List<BaseDatos> promedio = bd.llenaPromedio();
-
-    Carreras carr = new Carreras();
-    List<Carrera> opciones = carr.llenaCarrera();
     Catalogos catalogo = new Catalogos();
-    List<Carrera> opciones1 = opciones;
-    List<Carrera> opciones2 = opciones;
-    List<Carrera> opciones3 = opciones;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String correo = request.getParameter("correo");
-        Bdatos_aspirante aspirante = new Bdatos_aspirante();
-//        aspirante.setEmail(correo);
-//        String d = request.getParameter("valo");
-        String usuario = request.getParameter("usuario");
-        String pass = request.getParameter("pass");
-        System.out.println(usuario + "/" + pass);
+//
+//        String usuario = request.getParameter("usuario");
+//        String pass = request.getParameter("pass");
+//        System.out.println(usuario + "/" + pass);
         Procedimientos p = new Procedimientos();
-//        Conexion c=new  Conexion(usuario, pass);
+
         try {
             pais = p.getCatalogos(usuario, pass, 1);
             pais = catalogo.AgregaS(pais);
@@ -95,22 +71,16 @@ public class Fecha extends HttpServlet {
         }
 
         HttpSession session = request.getSession(true);
-        session.setAttribute("mes", mes);
-        session.setAttribute("dia", dia);
-        session.setAttribute("anio", anio);
+
         session.setAttribute("estado", estado);
-        session.setAttribute("sangre", sangre);
         session.setAttribute("pais", pais);
-        session.setAttribute("municipio", municipio);
-        session.setAttribute("EdoCivil", EdoCivil);
-        session.setAttribute("Discapacidad", Discapacidad);
-        session.setAttribute("opciones1", opciones1);
-        session.setAttribute("opciones2", opciones2);
-        session.setAttribute("opciones3", opciones3);
-        session.setAttribute("promedio", promedio);
-
+        session.setAttribute("municipio", municipio);;
+        session.setAttribute("numero", numero);
+        session.setAttribute("Ingresos", Ingresos);
+        session.setAttribute("Dependencia", Dependencia);
+        session.setAttribute("Ocupaciones", Ocupaciones);
+        session.setAttribute("NivelEstudios", NivelEstudios);
         session.setAttribute("Escuela", Escuela);
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

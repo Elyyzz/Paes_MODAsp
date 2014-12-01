@@ -7,13 +7,13 @@
 
 
 function LlamarServlet() {
-    var correo = $('#InCorreoE').val();
-    var usuario = "desarrollo";
-    var pass = "d3s4rr0ll0";
-//    var usuario = "FICHAS";
-//    var pass = "FICHAS";
+//    var correo = $('#InCorreoE').val();
+//    var usuario = "desarrollo";
+//    var pass = "d3s4rr0ll0";
+    var usuario = "FICHAS";
+    var pass = "FICHAS";
     $.get('/MODULO_ASPIRANTE/Fecha',
-            {usuario: usuario, pass: pass, correo: correo},
+            {usuario:usuario,  pass:pass},
     function (retorno) {
         $("#contenido").load("vistas/Aspirante/Datos_Aspirante.jsp");
     }
@@ -61,9 +61,9 @@ $(document).ready(function () {
     ValidaPeriodo();
 //llama servlet  
     $('#heleido').click(function () {
-        var $valor = $("input#heleido").val();
-        var usuario = "FICHAS";
-        var pass = "FICHAS";
+        var $valor = $("input #heleido").val();
+//        var usuario = "FICHAS";
+//        var pass = "FICHAS";
         $('#Contenedor_Bienvenido').css("height", "96%");
         $('#grande').css("height", "800px");
         $("#cargando").show();
@@ -155,7 +155,13 @@ $(document).ready(function () {
     $('#confirmar').on('click', function () {
         $('#divmarco').hide();
         $('#div_fondomarco').hide();
-        $("#contenido").load("vistas/Aspirante/Datos_Socioeconomicos.jsp");
+        $.get('/MODULO_ASPIRANTE/Socioeconomicos',
+            {},
+    function (retorno) {
+         $("#contenido").load("vistas/Aspirante/Datos_Socioeconomicos.jsp");
+    }
+    );
+       
 //        $("#contenido").load("vistas/Aspirante/CargarFoto.jsp");
     });
     //carga correcta
@@ -790,10 +796,10 @@ function direccion() {
     var dcalle = ObtenerValor('#dircalle');
     var dcolonia = ObtenerValor('#dircolonia');
     var codigopostal = ObtenerValor('#cp');
-    var celular = ObtenerValor('#numcelular');
+//    var celular = ObtenerValor('#numcelular');
     var fijo = ObtenerValor('#tel2');
     if (estado !== false && dirciudad !== false && dcalle !== false && dcolonia !== false &&
-            numExt !== false && numInt !== false && municipio !== false && codigopostal !== false && celular !== false
+            numExt !== false && numInt !== false && municipio !== false && codigopostal !== false 
             && fijo !== false) {
         return true;
     } else {
