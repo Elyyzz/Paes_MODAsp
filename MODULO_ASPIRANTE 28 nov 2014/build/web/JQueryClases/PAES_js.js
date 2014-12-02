@@ -575,7 +575,7 @@ function validar_numeros(id) {
 function validar_letras(id) {
     $(id).change(function () {
         var letras = $(id).val();
-        patron_letra = /^[A-Za-z-ñáéíóú ]+$/;
+        patron_letra = /^[A-Za-z-ñáéíóúÑÁÉÍÓÚ ]+$/;
         if (!patron_letra.test(letras)) {
             $(id).css("border", "1px solid red");
             alert("solo texto");

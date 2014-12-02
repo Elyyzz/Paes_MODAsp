@@ -19,14 +19,16 @@
 
             <div id="divmarcoEnvCorreo"  name="marcoiniciocorreo" class="demo ui-tabs ui-widget ui-widget-content ui-corner-all" style="display: none"    >
                 <div id="contenedor_inCorreo">                                  
-                        <fieldset><p>
-                                <br>
-                                <label id="etq_CorreoI">Ingresa tu Correo Electronico: </label>
-                                <input id="InCorreoE" placeholder="ejemplo@smtp.com" type="text">
-                                <input id="CorreoAcep"  value="Enviar" type="button"
-                            </p></fieldset>                    
+                    <fieldset><p>
+                            <br>
+                            <label id="etq_CorreoI">Ingresa tu Correo Electronico: </label>
+                            <input id="InCorreoE" placeholder="ejemplo@smtp.com" type="text">
+                            <input id="CorreoAcep"  value="Enviar" type="button">
+                            <input id="CorreoCancel"  value="Cancelar" type="button">
+
+                        </p></fieldset>                    
                     <br>
-                   
+
                 </div>       
             </div>
         </div>

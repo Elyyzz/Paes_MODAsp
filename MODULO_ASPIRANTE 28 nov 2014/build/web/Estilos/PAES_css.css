@@ -626,7 +626,7 @@ and open the template in the editor.
 }
 #input_nopersonas{
     margin-top: 5%;
-    font-size: 60%;
+    font-size: 100%;
 }
 #datos_padres{
     margin: 1px;
@@ -698,7 +698,7 @@ and open the template in the editor.
 #datos_emergencia{
     width: 99%;
     margin-left: 1px;   
-    height: 310px;   
+    height: 375px;   
 }
 #datos_emergencia fieldset{
     border: 0px; 
@@ -715,7 +715,7 @@ and open the template in the editor.
 }
 
 
-#continuar_datos, #continuar_socioeconomicos, #regresar_socioeconomicos
+#continuar_datos, #continuar_socioeconomicos
 {
     background-color: royalblue;
     color: white;
@@ -723,6 +723,17 @@ and open the template in the editor.
     width: 100px;   
     margin: 3%;
     margin-left: 40%;
+    font-weight: 600;
+    font-size: 120%;
+}
+
+#regresar_socioeconomicos{
+      background-color: royalblue;
+    color: white;
+    height: 30px;
+    width: 100px;   
+    margin: 3%;
+    margin-left: 30%;
     font-weight: 600;
     font-size: 120%;
 }
@@ -1344,7 +1355,7 @@ and open the template in the editor.
     width: 75% 
 }
 #datostutor{
-    height:475px;
+    height:500px;
     margin-left:13.5%;
     margin-right: 0;
     width: 75%;
@@ -3109,7 +3120,7 @@ and open the template in the editor.
     padding: 5%;
     color: #000000;
 }
-#CorreoAcep  {
+#CorreoAcep,#CorreoCancel  {
     width: 15%;
     margin-left: 3%;
     margin-top: 3%;

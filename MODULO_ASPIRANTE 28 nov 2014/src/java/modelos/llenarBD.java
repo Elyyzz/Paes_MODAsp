@@ -54,7 +54,7 @@ public class llenarBD {
         b.setClave("B-");
         b.setNombre("B-");
         Sangre.add(b);
-         Sangre.add(b);
+        Sangre.add(b);
         b = new BaseDatos();
         b.setClave("AB+");
         b.setNombre("AB+");
@@ -87,6 +87,24 @@ public class llenarBD {
             b.setNombre(String.valueOf(i));
             num.add(b);
         }
+        return num;
+    }
+
+    public List<BaseDatos> llenaNumCuartos() {
+        List<BaseDatos> num = new ArrayList<>();
+        BaseDatos b;
+        b = new BaseDatos();
+        b.setClave("--");
+        b.setNombre("--Seleccione--");
+        num.add(b);
+        b = new BaseDatos();
+        b.setClave("1 a 5");
+        b.setNombre("1 a 5");
+        num.add(b);
+        b = new BaseDatos();
+        b.setClave("mas 5");
+        b.setNombre("Mas de 5");
+        num.add(b);
         return num;
     }
 
@@ -123,8 +141,8 @@ public class llenarBD {
         num.add(b);
         return num;
     }
-    
-      public List<BaseDatos> llenaEdoCivil() {
+
+    public List<BaseDatos> llenaEdoCivil() {
         List<BaseDatos> Civil = new ArrayList<>();
         BaseDatos b;
         b = new BaseDatos();
@@ -154,7 +172,7 @@ public class llenarBD {
         return Civil;
     }
 
-       public List<BaseDatos> llenaDiscapacidad() {
+    public List<BaseDatos> llenaDiscapacidad() {
         List<BaseDatos> lista = new ArrayList<>();
         BaseDatos b;
         b = new BaseDatos();
@@ -176,6 +194,58 @@ public class llenarBD {
         b = new BaseDatos();
         b.setClave("Ninguna");
         b.setNombre("Ninguna");
+        lista.add(b);
+        return lista;
+    }
+    
+      public List<BaseDatos> llenaCasaEs() {
+        List<BaseDatos> lista = new ArrayList<>();
+        BaseDatos b;
+        b = new BaseDatos();
+        b.setClave("--");
+        b.setNombre("--Seleccione--");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("propia");
+        b.setNombre("Propia");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Rentada");
+        b.setNombre("Rentada");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Prestada");
+        b.setNombre("Prestada");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Se está pagando");
+        b.setNombre("Se está pagando");
+        lista.add(b);
+        return lista;
+    }
+      
+      public List<BaseDatos> llenaZonaProcedencia() {
+        List<BaseDatos> lista = new ArrayList<>();
+        BaseDatos b;
+        b = new BaseDatos();
+        b.setClave("--");
+        b.setNombre("--Seleccione--");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Indígena");
+        b.setNombre("Indígena");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Rural");
+        b.setNombre("Rural");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Urbano");
+        b.setNombre("Urbano");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Urbano Marginado");
+        b.setNombre("Urbano Marginado");
         lista.add(b);
         return lista;
     }

@@ -118,9 +118,9 @@
                         <p>
                             <label id="etq_zona" class="labels_socioeconomicos">Zona de Procedencia:</label>
                             <select type="text" name="zona" id="zona" class="inputs_socioeconomicos">
-                                <option value="">--Seleccione--</option>
-                                <option value="Sur">Sur</option>
-                                <option value="Norte">Norte</option>
+                               <c:forEach items="${zona}" var="NivelEstudios">                                     
+                                    <option value="${zona.getClave()}"><c:out value="${zona.getNombre()}"/></option>                                                                           
+                                </c:forEach>
                             </select>
                             <label id="etq_estudios_padre" class="labels_socioeconomicos">Máximo Nivel Estudios del Padre:</label>
                             <select type="text" name="estudios_padre" id="estudios_padre" class="inputs_socioeconomicos">
@@ -166,9 +166,10 @@
                         <p>
                             <label id="etq_vivienda" class="labels_socioeconomicos">La Casa donde Vives es:</label>
                             <select class="Selects_economico" id="input_vivienda"> 
-                                <option value="--">--Selecione--</option>
-                                <option value="Prestada">Prestada</option>
-                                <option value="Rentada">Rentada</option></select>
+                                <c:forEach items="${casa}" var="numero">                                     
+                                    <option value="${casa.getClave()}"><c:out value="${casa.getNombre()}"/></option>                                                                           
+                                </c:forEach>
+                            </select>
                             <label id="etq_nopersonas" class="labels_socioeconomicos">No. de Personas que Viven en esa Casa:</label>
                             <select class="Selects_economico" id="input_nopersonas">  
                                 <c:forEach items="${numero}" var="numero">                                     
@@ -177,8 +178,8 @@
                             </select>
                             <label id="etq_cuartos" class="labels_socioeconomicos">No. de Cuartos de la Casa(no Baños):</label>
                             <select class="Selects_economico" id="input_cuartos">  
-                                <c:forEach items="${numero}" var="numero">                                     
-                                    <option value="${numero.getClave()}"><c:out value="${numero.getNombre()}"/></option>                                                                           
+                                <c:forEach items="${cuartos}" var="numero">                                     
+                                    <option value="${cuartos.getClave()}"><c:out value="${cuartos.getNombre()}"/></option>                                                                           
                                 </c:forEach>
                             </select>
                             <label id="etq_oportunidades" class="labels_socioeconomicos">Pertenece al Programa Oportunidades:</label>
@@ -211,7 +212,7 @@
         <div id="continuarsocioeconomicos">
             <fieldset id="botones_continuar">
                 <input type="button" id="regresar_socioeconomicos" title="CONTINUAR" value="Regresar"  >
-                <a href="#InicioPag"><input type="button" id="continuar_socioeconomicos" title="CONTINUAR" value="Continuar"  ></a>
+                <a href="#InicioPag"><input type="button" id="continuar_socioeconomicos" title="CONTINUAR" value="Continuar"></a>
                 <input type="reset" id="borrar_socioeconomicos" title="borrar" value="Borrar Datos" >
             </fieldset>
         </div>
