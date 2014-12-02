@@ -8,10 +8,10 @@
 
 function LlamarServlet() {
 //    var correo = $('#InCorreoE').val();
-//    var usuario = "desarrollo";
-//    var pass = "d3s4rr0ll0";
-    var usuario = "FICHAS";
-    var pass = "FICHAS";
+    var usuario = "desarrollo";
+    var pass = "d3s4rr0ll0";
+//    var usuario = "FICHAS";
+//    var pass = "FICHAS";
     $.get('/MODULO_ASPIRANTE/Fecha',
             {usuario:usuario,  pass:pass},
     function (retorno) {

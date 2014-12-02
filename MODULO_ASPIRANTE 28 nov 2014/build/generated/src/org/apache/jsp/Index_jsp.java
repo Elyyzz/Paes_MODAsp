@@ -63,6 +63,9 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            });\n");
       out.write("        </script>\n");
       out.write("\n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        \n");
       out.write("        <title>--MÓDULO ASPIRANTE--</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
