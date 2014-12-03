@@ -150,4 +150,4 @@
     </body>
 </html>
 
-<%--<%@include file="vistas/Aspirante/InicioEnviaCorreo.jsp" %>--%>
+<%@include file="vistas/Aspirante/InicioEnviaCorreo.jsp" %>

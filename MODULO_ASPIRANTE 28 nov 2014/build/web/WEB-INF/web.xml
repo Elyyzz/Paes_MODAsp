@@ -16,6 +16,10 @@
         <servlet-name>Socioeconomicos</servlet-name>
         <servlet-class>servlets.Socioeconomicos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EnviaEmailInicio</servlet-name>
+        <servlet-class>servlets.EnviaEmailInicio</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Fecha</servlet-name>
         <url-pattern>/Fecha/*</url-pattern>
@@ -41,6 +45,10 @@
     <servlet-mapping>
         <servlet-name>Socioeconomicos</servlet-name>
         <url-pattern>/Socioeconomicos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnviaEmailInicio</servlet-name>
+        <url-pattern>/EnviaEmailInicio</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

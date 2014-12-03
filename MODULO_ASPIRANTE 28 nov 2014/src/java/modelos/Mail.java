@@ -19,17 +19,18 @@ import javax.mail.internet.MimeMessage;
  * @author Desarrollo de sistem
  */
 public class Mail {
+//parametros  destinatario, y quien envia, objeto con  cuerpo 
 
-    public void sendMail() {
-        BMail beanMail = new BMail();
-        
-        String from = "aspirantes@ittoluca.edu.mx";
-        String pass = "11280672";
-        String[] to = {
-            "11280392@ittoluca.edu.mx",
-            "desacad@ittoluca.edu.mx",
-            "chava_dalu5@hotmail.com"
-        };
+    public void sendMail(BMail beanMail, String from, String to, String pass, boolean link) {
+//        BMail beanMail = new BMail();
+
+//        String from = "aspirantes@ittoluca.edu.mx";
+//        String pass = "11280672";
+//        String[] to = {
+//            "11280392@ittoluca.edu.mx",
+//            "desacad@ittoluca.edu.mx",
+//            "chava_dalu5@hotmail.com"
+//        };
         Properties props = System.getProperties();
         props.setProperty("mail.mime.charset", "ISO-8859-1");
         String host = "mail.ittoluca.edu.mx"; //itt
@@ -50,32 +51,37 @@ public class Mail {
 
         try {
             message.setFrom(new InternetAddress(from));
-            InternetAddress[] toAddress = new InternetAddress[to.length];
+            InternetAddress toAddress = new InternetAddress(to);
 
-            for (int i = 0; i < to.length; i++) {
-                System.out.println(to[i]);
-            }
-            for (int i = 0; i < to.length; i++) {
-                toAddress[i] = new InternetAddress(to[i]);
-                System.out.println("Destinatario - " + (i + 1) + " .- " + toAddress[i]);
-            }
-
-            for (int i = 0; i < toAddress.length; i++) {
-                message.addRecipient(Message.RecipientType.TO, toAddress[i]);
-            }
+//            for (int i = 0; i < to.length; i++) {
+//                System.out.println(to[i]);
+//            }
+//            for (int i = 0; i < to.length; i++) {
+//                toAddress[i] = new InternetAddress(to);
+//                System.out.println("Destinatario - " + (i + 1) + " .- " + toAddress[i]);
+//            }
+//            for (int i = 0; i < toAddress.length; i++) {
+            message.addRecipient(Message.RecipientType.TO, toAddress);
+//            }
             message.setSubject("Contacto aspirantes");
             message.setText("Cuerpo");
-            message.setText(beanMail.getCuerpo());
+            if (link == true) {
+                message.setText(beanMail.getCuerpo(), "ISO-8859-1", "html");
+            } else {
+                message.setText(beanMail.getCuerpo());
+            }
             Transport transport = session.getTransport("smtp");
             transport.connect(host, from, pass);
             try {
                 transport.sendMessage(message, message.getAllRecipients());
                 transport.close();
+                System.out.println("Se envió mensaje");
             } catch (MessagingException ex) {
             }
         } catch (MessagingException me) {
             me.printStackTrace();
             System.out.println(me);
+            System.out.println("No se  envió correo");
         }
     }
 }

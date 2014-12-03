@@ -141,7 +141,7 @@ c<%--
 
                                     </select>
                                     <label id="etiqueta_correo_central" class="labels"  >Correo Electrónico:</label>
-                                    <input type="text" id="caja_texto_email" name="email" class="tamano_cajas_texto"  value="${aspirante.getEmail()}" maxlength="150" />
+                                    <input type="text" id="caja_texto_email" name="email" class="tamano_cajas_texto"  value="${correo}" maxlength="150" />
                                 </p>
                             </fieldset> 
                         </section>

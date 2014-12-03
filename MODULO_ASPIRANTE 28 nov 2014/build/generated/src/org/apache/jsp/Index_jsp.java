@@ -11,6 +11,11 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/vistas/Aspirante/InicioEnviaCorreo.jsp");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -193,6 +198,41 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </body>\n");
       out.write("</html>\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../../Estilos/PAES_css.css\" media=\"all\" type=\"text/css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../../Estilos/lookandfeel_tec.css\" media=\"all\" type=\"text/css\">\n");
+      out.write("\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <div>\n");
+      out.write("            <div id=\"FondoEnvCorreo\"  style=\"display: none\"></div>\n");
+      out.write("\n");
+      out.write("            <div id=\"divmarcoEnvCorreo\"  name=\"marcoiniciocorreo\" class=\"demo ui-tabs ui-widget ui-widget-content ui-corner-all\" style=\"display: none\"    >\n");
+      out.write("                <div id=\"contenedor_inCorreo\">                                  \n");
+      out.write("                    <fieldset><p>\n");
+      out.write("                            <br>\n");
+      out.write("                            <label id=\"etq_CorreoI\">Ingresa tu Correo Electronico: </label>\n");
+      out.write("                            <input id=\"InCorreoE\" placeholder=\"ejemplo@smtp.com\" type=\"text\">\n");
+      out.write("                            <input id=\"CorreoAcep\"  value=\"Enviar\" type=\"button\">\n");
+      out.write("                            <input id=\"CorreoCancel\"  value=\"Cancelar\" type=\"button\">\n");
+      out.write("\n");
+      out.write("                        </p></fieldset>                    \n");
+      out.write("                    <br>\n");
+      out.write("\n");
+      out.write("                </div>       \n");
+      out.write("            </div>\n");
+      out.write("        </div>\n");
+      out.write("    </body>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

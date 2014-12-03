@@ -5,7 +5,8 @@
  */
 
 
-
+//llamar cuandoo se  carga  el primer  formulario despues de  haber 
+//validado que no exista el correo  en que tabla??? 
 function LlamarServlet() {
 //    var correo = $('#InCorreoE').val();
     var usuario = "desarrollo";
@@ -13,15 +14,35 @@ function LlamarServlet() {
 //    var usuario = "FICHAS";
 //    var pass = "FICHAS";
     $.get('/MODULO_ASPIRANTE/Fecha',
-            {usuario:usuario,  pass:pass},
-    function (retorno) {
+            {usuario: usuario, pass: pass},
+    function(retorno) {
         $("#contenido").load("vistas/Aspirante/Datos_Aspirante.jsp");
     }
     );
 }
+//en el servlet  validar existe? si  no continua  
+//no envia link +correo encriptado
+function EnviaCorreoInicio() {
+    var correo = $('#InCorreoE').val();
+
+    alert(correo);
+    $.get('EnviaEmailInicio',
+            {correo: correo},
+    function(retorno) {
+        if (retorno === 0) {
+            alert('Fue  enviado a tu correo  un enlace para continuar con el registro');
+        }
+        if (retorno === 1) {
+            alert('No se ha podido  enviar  el correo, por favor  vuelva a intentar.');
+        }
+    }
+    );
+
+}
+
 
 function ValidaPeriodo() {
-    $('#anio_fin').change(function () {
+    $('#anio_fin').change(function() {
         var inicio = "01/" + $('#mes_inicio option:selected').html() + "/" + $('#anio_inicio option:selected').html();
         inicio = new Date(inicio);
         var fin = "01/" + $('#mes_fin option:selected').html() + "/" + $('#anio_fin option:selected').html();
@@ -51,49 +72,52 @@ function ConfirmaDatos() {
     $('#confirmacarrera ').text(carrera);
     $.get('/MODULO_ASPIRANTE/GuardaCorreo',
             {correo: correo},
-    function (retorno) {
+    function(retorno) {
     }
     );
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
     ValidaTipos();
     ValidaPeriodo();
 //llama servlet  
-    $('#heleido').click(function () {
+    $('#heleido').click(function() {
         var $valor = $("input #heleido").val();
 //        var usuario = "FICHAS";
 //        var pass = "FICHAS";
-        $('#Contenedor_Bienvenido').css("height", "96%");
-        $('#grande').css("height", "800px");
-        $("#cargando").show();
-        LlamarServlet();
+//        $('#Contenedor_Bienvenido').css("height", "96%");
+//        $('#grande').css("height", "800px");
+//        $("#cargando").show();
+//        LlamarServlet();
+        $('#FondoEnvCorreo').show();
+        $('#divmarcoEnvCorreo').show();
     });
-    $('#CorreoAcep').click(function () {
-        var usuario = "FICHAS";
-        var pass = "FICHAS";
-//        var usuario = "desarrollo";
-//        var pass = "d3s4rr0ll0";
-//        $.get('/MODULO_ASPIRANTE/Fecha',
-//                {valo: $valor, usuario: usuario, pass: pass},
-//        function (retorno) {
-//            alert("despues de servlet");
-        var correo = validaCorreoElectronico('#InCorreoE');
-        alert(correo);
+    $('#CorreoCancel').click(function() {
+        $('#FondoEnvCorreo').hide();
+        $('#divmarcoEnvCorreo').hide();
+    });
+    $('#CorreoAcep').click(function() {
+//        var usuario = "FICHAS";
+//        var pass = "FICHAS";
+        var usuario = "desarrollo";
+        var pass = "d3s4rr0ll0";
+        validaCorreoElectronico('#InCorreoE');
         var Email = $('#InCorreoE').val();
-        if ((correo === true || correo === undefined) && (Email !== "" || Email !== undefined || Email !== null)) {
-            $('#FondoEnvCorreo').hide();
-            $('#divmarcoEnvCorreo').hide();
-            $("#contenido").load("vistas/Aspirante/Datos_Aspirante.jsp");
-        } else {
-
+        if ((Email === "" || Email === undefined || Email === null)) {
             alert("no  se  pudo completar");
+            $('#InCorreoE').css("border", "1px solid red");
+        } else {
+            $('#InCorreoE').css("border", "");
+            EnviaCorreoInicio();
         }
-
-//        });
     });
+
+
+
+
+
 // MostrarManual();
-    $('#subirfoto').change(function (e) {
+    $('#subirfoto').change(function(e) {
         addImage(e);
         ValidaImagen();
     });
@@ -111,19 +135,19 @@ $(document).ready(function () {
         var result = e.target.result;
         $('#fotografia').attr("src", result);
     }
-    $('input.cargafoto').click(function () {
+    $('input.cargafoto').click(function() {
 //validar  al subir el archivo
         $('#divmarco').hide();
         $('#div_fondomarco').hide();
         $("#contenido").load("vistas/Aspirante/CargarFoto.jsp");
 //        validaImagen();
     });
-    $('#subirdespues , #confirmarcarga').click(function () {
+    $('#subirdespues , #confirmarcarga').click(function() {
         $('#div_marco').hide();
         $('#div_fondomarco').hide();
         $("#contenido").load("vistas/Aspirante/Datos_Socioeconomicos.jsp");
     });
-    $('#continuar_socioeconomicos').click(function () {
+    $('#continuar_socioeconomicos').click(function() {
 
         if (nonulos_socioeconomicos() === false || nonulos_socioeconomicos() === '') {
 //            alert('Complete sus  datos');
@@ -137,7 +161,7 @@ $(document).ready(function () {
 //       MostrarManual ();
 //    });
 //     cargar confirmar Datos
-    $('#continuar_datos').click(function () {
+    $('#continuar_datos').click(function() {
 
 //Validaciones  de  no  nulos  listas  no  borrar estas  lineas comentadas :D
         if (nonulos() === false || nonulos() === '' || nonulos === 0) {
@@ -148,44 +172,44 @@ $(document).ready(function () {
             $('#divmarco').show();
         }
     });
-    $('#cancelar').on('click', function () {
+    $('#cancelar').on('click', function() {
         $('#divmarco').hide();
         $('#div_fondomarco').hide();
     });
-    $('#confirmar').on('click', function () {
+    $('#confirmar').on('click', function() {
         $('#divmarco').hide();
         $('#div_fondomarco').hide();
         $.get('/MODULO_ASPIRANTE/Socioeconomicos',
-            {},
-    function (retorno) {
-         $("#contenido").load("vistas/Aspirante/Datos_Socioeconomicos.jsp");
-    }
-    );
-       
+                {},
+                function(retorno) {
+                    $("#contenido").load("vistas/Aspirante/Datos_Socioeconomicos.jsp");
+                }
+        );
+
 //        $("#contenido").load("vistas/Aspirante/CargarFoto.jsp");
     });
     //carga correcta
-    $('#cerrar').on('click', function () {
+    $('#cerrar').on('click', function() {
         $('#content').hide();
     });
     //clic en inicio 
-    $('#iniciobtn').on('click', function () {
+    $('#iniciobtn').on('click', function() {
 //        var r = confirm("Seguro?. Los  datos no han sido guardados ");
         var r = true;
         if (r === true) {
             window.location.reload();
         }
     });
-    $('#ayudabtn').on('click', function () {
+    $('#ayudabtn').on('click', function() {
         $('#contenedor').show();
     });
-    $('#buscar_clave').on('click', function () {
+    $('#buscar_clave').on('click', function() {
         $("#cargandoCCT").show();
         $.get('/MODULO_ASPIRANTE/Servlet_ClaveCCT',
                 {},
-                function (retorno) {
+                function(retorno) {
                     var $ul = $('<ul id="ListaClave">').appendTo($('#listaCCT'));
-                    $.each(retorno, function (index, item) {
+                    $.each(retorno, function(index, item) {
                         var txt = item.Clave;
                         var t = item.Nombre;
                         var c = txt + "-" + t;
@@ -198,26 +222,26 @@ $(document).ready(function () {
                 });
     });
 
-    $('#FondoSeleccionaClave').on('click', function () {
+    $('#FondoSeleccionaClave').on('click', function() {
         $('#FondoSeleccionaClave').hide();
         $('#SelecionaClave').hide();
     });
-    $('#aceptarCCT').on('click', function () {
+    $('#aceptarCCT').on('click', function() {
         $('#SelecionaClave').hide();
         $('#FondoSeleccionaClave').hide();
         ObtineneCCT();
         $("#cargandoCCT").hide();
     });
-    $('#cancelarCCT').on('click', function () {
+    $('#cancelarCCT').on('click', function() {
         $('#SelecionaClave').hide();
         $('#FondoSeleccionaClave').hide();
         $("#cargandoCCT").hide();
     });
     //validar  fecha
-    $('#sexo').change(function () {
+    $('#sexo').change(function() {
         evaluar();
     });
-    $('#cancelarfinalizado').click(function () {
+    $('#cancelarfinalizado').click(function() {
         $('#fondofinalizado').hide();
         $('#finalizado').hide();
     });
@@ -244,7 +268,7 @@ $(document).ready(function () {
 //        }
 //    });
 //otra escuela
-    $('#combo_tipoescuela').change(function () {
+    $('#combo_tipoescuela').change(function() {
         var tipo_otra = ObtenerValor('#combo_tipoescuela');
         if (tipo_otra === "20") {
             $('#opcion_otraescuela_aparece').show();
@@ -254,7 +278,7 @@ $(document).ready(function () {
 
     });
     //tipo beca
-    $('#beca').change(function () {
+    $('#beca').change(function() {
         var beca = $('#beca').val();
         if (beca === 'Si') {
             $('#beca_cual').show();
@@ -264,7 +288,7 @@ $(document).ready(function () {
         }
     });
     //otro depende economicamente 
-    $('#quiendepende').change(function () {
+    $('#quiendepende').change(function() {
         var depende = $('#quiendepende').val();
         if (depende === '7') {
             $('#datosbeca').css("height", "430px");
@@ -278,7 +302,7 @@ $(document).ready(function () {
         }
     });
     //otro vive
-    $('#input_habitantes').change(function () {
+    $('#input_habitantes').change(function() {
         var depende = $('#input_habitantes').val();
         if (depende === 'Otro') {
             $('#datosbeca').css("height", "430px");
@@ -293,20 +317,20 @@ $(document).ready(function () {
             $('#otroviveinput').hide();
         }
     });
-    $('#carreraopcion1').change(function () {
+    $('#carreraopcion1').change(function() {
         $('#carreraopcion2').prop("disabled", false);
         Carreras('#carreraopcio1', 1);
     });
-    $('#carreraopcion2').change(function () {
+    $('#carreraopcion2').change(function() {
         $('#carreraopcion3').prop("disabled", false);
         Carreras('#carreraopcion2', 2);
     });
-    $('#carreraopcion3').change(function () {
+    $('#carreraopcion3').change(function() {
         Carreras('#carreraopcion3', 3);
     });
     //funcion menu desplegable 
 
-    $("#Menu_desplegable h3").click(function () {
+    $("#Menu_desplegable h3").click(function() {
         $("#Menu_desplegable ul ul").slideUp();
         if (!$(this).next().is(":visible"))
         {
@@ -318,33 +342,33 @@ $(document).ready(function () {
 //    });
     //load  de sub-modulo  INICIO
 
-    $('#inicio').click(function () {
-        $("#Contenedor_Bienvenido").load("vistas/Inicio/inicio.jsp", function (responseTxt, statusTxt, xhr) {
+    $('#inicio').click(function() {
+        $("#Contenedor_Bienvenido").load("vistas/Inicio/inicio.jsp", function(responseTxt, statusTxt, xhr) {
             $('#grande').css("height", "780px");
         });
     });
-    $('#recuperar').click(function () {
-        $("#Contenedor_Bienvenido").load("vistas/Inicio/recuperarPreficha.jsp", function (responseTxt, statusTxt, xhr) {
+    $('#recuperar').click(function() {
+        $("#Contenedor_Bienvenido").load("vistas/Inicio/recuperarPreficha.jsp", function(responseTxt, statusTxt, xhr) {
             $('#grande').css("height", "780px");
         });
     });
-    $('#seguimiento').click(function () {
-        $("#Contenedor_Bienvenido").load("vistas/Inicio/Seguimiento.jsp", function (responseTxt, statusTxt, xhr) {
+    $('#seguimiento').click(function() {
+        $("#Contenedor_Bienvenido").load("vistas/Inicio/Seguimiento.jsp", function(responseTxt, statusTxt, xhr) {
             $('#grande').css("height", "780px");
         });
     });
-    $('#preguntas').click(function () {
-        $("#Contenedor_Bienvenido").load("vistas/Inicio/preguntas.jsp", function (responseTxt, statusTxt, xhr) {
+    $('#preguntas').click(function() {
+        $("#Contenedor_Bienvenido").load("vistas/Inicio/preguntas.jsp", function(responseTxt, statusTxt, xhr) {
             $('#grande').css("height", "1150px");
         });
     });
-    $('#ayuda').click(function () {
-        $("#Contenedor_Bienvenido").load("vistas/Inicio/ayuda_1.jsp", function (responseTxt, statusTxt, xhr) {
+    $('#ayuda').click(function() {
+        $("#Contenedor_Bienvenido").load("vistas/Inicio/ayuda_1.jsp", function(responseTxt, statusTxt, xhr) {
             $('#grande').css("height", "785px");
         });
     });
-    $('#contacto').click(function () {
-        $("#Contenedor_Bienvenido").load("vistas/Inicio/contacto.jsp", function (responseTxt, statusTxt, xhr) {
+    $('#contacto').click(function() {
+        $("#Contenedor_Bienvenido").load("vistas/Inicio/contacto.jsp", function(responseTxt, statusTxt, xhr) {
             $('#grande').css("height", "780px");
         });
     });
@@ -379,7 +403,7 @@ $(document).ready(function () {
 //            });
 //        }
 //    });
-    $("#comprobar").click(function ()
+    $("#comprobar").click(function()
     {
         if ($("#comprobar").is(':checked')) {
             $('#heleido').css("display", "block");
@@ -477,7 +501,7 @@ function curpvalida() {
 
 //EJEMPLO DE  SELECT
 function Limpiar(id, c1, c2, c3) {
-    $("#carreraopcion option").each(function () {
+    $("#carreraopcion option").each(function() {
         $(id).children('option[value=' + $(this).attr('value') + ']').css("display", "block");
     });
     if (c1 !== '--') {
@@ -523,7 +547,7 @@ function Carreras(id, opcion) {
 
 
 function curpvalida(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var curp = $(id).val();
         if (curp.match(/^([a-z]{4})([0-9]{6})([a-z]{6})([0-9]{2})$/i)) {//AAAA######AAAAAA##
             $(id).css("border", "");
@@ -542,7 +566,7 @@ function ObtineneCCT() {
 }
 
 function ValidaOtraOpcion(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var valor = $(id).val();
         if (valor === '--Seleccione--' || valor === '--' || valor === 0 || valor === '0' || valor === '') {
             $(id).css("border", "1px solid red");
@@ -554,13 +578,13 @@ function ValidaOtraOpcion(id) {
 }
 
 //alerta al cerrar  actualizar  la pagina 
-window.onbeforeunload = function () {
+window.onbeforeunload = function() {
     return "Los datos no ha sido guardados.";
 };
 //VALIDACIONES TIEMPO REAL
 //valida  numeros
 function validar_numeros(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var valor = $(id).val();
         patron_numeros = /^[0-9]+$/;
         if (!patron_numeros.test(valor)) {
@@ -573,7 +597,7 @@ function validar_numeros(id) {
 }
 //validar solo letras 
 function validar_letras(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var letras = $(id).val();
         patron_letra = /^[A-Za-z-ñáéíóúÑÁÉÍÓÚ ]+$/;
         if (!patron_letra.test(letras)) {
@@ -586,7 +610,7 @@ function validar_letras(id) {
 }
 
 function validaCorreoElectronico(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var patron = /^([A-z]+[A-z1-9._-]*)@{1}([a-z1-9\.]{2,})\.([a-z]{2,3})$/;
         var email = $(id).val();
         if (!patron.test(email)) {
@@ -602,7 +626,7 @@ function validaCorreoElectronico(id) {
     });
 }
 function validaAlfaNum(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var patron = /^[0-9A-Za-z\s]+$/;
         var txtcurp = $(id).val();
         if (!patron.test(txtcurp)) {
@@ -615,7 +639,7 @@ function validaAlfaNum(id) {
 }
 //AL Continuar
 function validaLada(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var lada = ObtenerValor(id);
         if (lada.length < 3) {
             alert("Lada no valida");
@@ -627,7 +651,7 @@ function validaLada(id) {
     });
 }
 function ValidaTel(id) {
-    $().change(function () {
+    $().change(function() {
         var tel = ObtenerValor(id);
         if (tel.length < 7) {
             alert("Telefono no valido");
@@ -639,7 +663,7 @@ function ValidaTel(id) {
     });
 }
 function validaTelfijo(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var lada = ObtenerValor(id);
         if (lada.length < 12) {
             alert("Telefono  fijo no válido");
@@ -651,7 +675,7 @@ function validaTelfijo(id) {
     });
 }
 function validaCelLada(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var lada = ObtenerValor(id);
         if (lada.length < 13) {
             alert("Telefono no válido");
@@ -663,7 +687,7 @@ function validaCelLada(id) {
     });
 }
 function Pais(id) {
-    $(id).change(function () {
+    $(id).change(function() {
         var pais = $(id).val();
         if (pais === 'MEX') {
             $('#selectedonacimiento').prop("disabled", false);
@@ -799,7 +823,7 @@ function direccion() {
 //    var celular = ObtenerValor('#numcelular');
     var fijo = ObtenerValor('#tel2');
     if (estado !== false && dirciudad !== false && dcalle !== false && dcolonia !== false &&
-            numExt !== false && numInt !== false && municipio !== false && codigopostal !== false 
+            numExt !== false && numInt !== false && municipio !== false && codigopostal !== false
             && fijo !== false) {
         return true;
     } else {
@@ -875,7 +899,7 @@ function nonulos() {
 function checaSelect(id) {
 // obtener  cuando se detecte  cambio del valor  
     var valor;
-    $(id).change(function () {
+    $(id).change(function() {
         valor = ObtenerValor(id);
     });
     return valor;
@@ -1046,10 +1070,10 @@ function nonulos_socioeconomicos() {
 }
 
 function MostrarManual() {
-    $(function () {
+    $(function() {
         var picture = $('#manual_aspirante');
         alert("obtuvo  imagen");
-        picture.on('load', function () {
+        picture.on('load', function() {
             alert("Funcion  guillotin");
             picture.guillotine({eventOnChange: 'guillotinechange'});
             var data = picture.guillotine('getData');
@@ -1057,17 +1081,17 @@ function MostrarManual() {
                 $('#' + key).html(data[key]);
             }
             picture.guillotine('fit');
-            $('#fit').click(function () {
+            $('#fit').click(function() {
                 picture.guillotine('fit');
             });
-            $('#zoom_in').click(function () {
+            $('#zoom_in').click(function() {
                 alert("btn zoom in ");
                 picture.guillotine('zoomIn');
             });
-            $('#zoom_out').click(function () {
+            $('#zoom_out').click(function() {
                 picture.guillotine('zoomOut');
             });
-            picture.on('guillotinechange', function (ev, data, action) {
+            picture.on('guillotinechange', function(ev, data, action) {
                 data.scale = parseFloat(data.scale.toFixed(4));
                 for (var k in data) {
                     $('#' + k).html(data[k]);
@@ -1132,7 +1156,7 @@ function lightbox_close() {
 }
 
 
-window.document.onkeydown = function (e)
+window.document.onkeydown = function(e)
 {
     if (!e) {
         e = event;
@@ -1152,7 +1176,7 @@ function lightbox_close_correo() {
 }
 
 
-window.document.onkeydown = function (e)
+window.document.onkeydown = function(e)
 {
     if (!e) {
         e = event;

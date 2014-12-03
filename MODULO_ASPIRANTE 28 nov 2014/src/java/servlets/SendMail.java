@@ -32,7 +32,7 @@ public class SendMail extends HttpServlet {
         body = body + "\nhola!";
         System.out.println(body);
       Mail m = new Mail();
-      m.sendMail();
+//      m.sendMail();
      
     }
 
@@ -49,7 +49,7 @@ public class SendMail extends HttpServlet {
         beanMail.setCuerpo(cuerpo);
 //        
         Mail m = new Mail();
-        m.sendMail();
+//        m.sendMail();  MODIFICAR !!!! 
         
 ////        beanMail.setCorreo(new String(request.getParameter("txtNombre").getBytes("ISO-8859-1"), "UTF-8"));
 //        beanMail.setCorreo(correo);
