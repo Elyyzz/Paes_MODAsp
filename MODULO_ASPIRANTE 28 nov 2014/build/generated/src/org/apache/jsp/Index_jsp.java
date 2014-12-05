@@ -122,7 +122,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <h5><input id=\"comprobar\" type=\"checkbox\">He le&iacute;do &eacute;sta informaci&oacute;n. <br></h5>\n");
       out.write("                            </label>\n");
       out.write("                            <br>\n");
-      out.write("                            <a> <label><input id=\"heleido\" type=\"button\" class=\"btn btn-info\" value=\"Aceptar\" style=\"display: none\"></label></a>\n");
+      out.write("                            <a href=\"#\"> <label><input id=\"heleido\" type=\"button\" class=\"btn btn-info\" value=\"Aceptar\" style=\"display: none\"></label></a>\n");
       out.write("\n");
       out.write("                        </div>\n");
       out.write("                        <div id=\"cargando\">\n");
@@ -221,6 +221,17 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <input id=\"InCorreoE\" placeholder=\"ejemplo@smtp.com\" type=\"text\">\n");
       out.write("                            <input id=\"CorreoAcep\"  value=\"Enviar\" type=\"button\">\n");
       out.write("                            <input id=\"CorreoCancel\"  value=\"Cancelar\" type=\"button\">\n");
+      out.write("                            <label id=\"RetornoServlet\"> </label>\n");
+      out.write("                            <div id=\"cargando\">\n");
+      out.write("                            <div class=\"spinner-wave\">\n");
+      out.write("                                <div></div>\n");
+      out.write("                                <div></div>\n");
+      out.write("                                <div></div>\n");
+      out.write("                                <div></div>\n");
+      out.write("                                <div></div>\n");
+      out.write("                            </div>\n");
+      out.write("\n");
+      out.write("                        </div>\n");
       out.write("\n");
       out.write("                        </p></fieldset>                    \n");
       out.write("                    <br>\n");

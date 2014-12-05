@@ -25,6 +25,17 @@
                             <input id="InCorreoE" placeholder="ejemplo@smtp.com" type="text">
                             <input id="CorreoAcep"  value="Enviar" type="button">
                             <input id="CorreoCancel"  value="Cancelar" type="button">
+                            <label id="RetornoServlet"> </label>
+                            <div id="cargando">
+                            <div class="spinner-wave">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                        </div>
 
                         </p></fieldset>                    
                     <br>

@@ -37,7 +37,7 @@ h1 {font-size: 100% }
 }
 
 @media all and (max-width:880px) {
-    body {font-size: 2 00%}
+    body {font-size: 200%}
     #informacionpersonal{
         height: 45%;
     }
@@ -3094,7 +3094,7 @@ and open the template in the editor.
     top: 46%;
     left: 40%;
     width: 40%;
-    height: 30%;
+    height: 50%;
     margin-left: -150px;
     margin-top: -100px;                 
     padding: 10px;
@@ -3106,7 +3106,7 @@ and open the template in the editor.
 #contenedor_inCorreo{
     background: url("../Imagenes/look_and_feel_azul.png") repeat-x scroll 50% 50% #5c9ccc;
     width: 98%;
-    height: 200px; 
+    height: 96%; 
     border-radius: 10px;
     margin-top: -1%;
     margin: 1%;
@@ -3219,4 +3219,12 @@ and open the template in the editor.
 }
 #input_cuartos{
     margin-top: 2%;
+}
+
+
+#RetornoServlet{
+    font-size: 90%;
+    margin-top: 2%;
+    color: red;
+    text-align: justify;
 }

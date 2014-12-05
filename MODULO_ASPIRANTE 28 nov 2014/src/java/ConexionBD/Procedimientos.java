@@ -22,7 +22,7 @@ public class Procedimientos {
 
     BaseDatos bd;
 
-    //retornar  lista  tipo  BaseDatos para enviar  al servlet  
+ 
     public List<BaseDatos> getCatalogos(String user, String pass, int  opc) throws SQLException, ClassNotFoundException {
         String result = "";
         int msgCodeError = -1;
@@ -39,10 +39,10 @@ public class Procedimientos {
             cs.registerOutParameter(2, OracleTypes.CURSOR);//tomas  parametro de salida de  la  base de datos           
             cs.registerOutParameter(3, OracleTypes.NUMBER);
             cs.registerOutParameter(4, OracleTypes.VARCHAR);
-            boolean t = cs.execute();
+            cs.execute();
             result = cs.getString(4);
             ResultSet rs = (ResultSet) cs.getObject(2);
-
+//CONVERTIR EL  CURSOR  A  UN ARRAY LIST
             while (rs.next()) {
                 bd = new BaseDatos();
                 bd.setClave(rs.getObject(1).toString());
@@ -50,7 +50,7 @@ public class Procedimientos {
                 Estados.add(bd);
             }  
             cs.close();
-//            con.getConnection().close();
+
         } catch (SQLException e) {
             System.out.println("Error" + e);
             con.getConnection().close();

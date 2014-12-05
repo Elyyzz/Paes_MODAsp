@@ -75,9 +75,9 @@ public class Socioeconomicos extends HttpServlet {
             Dependencia = catalogo.AgregaS(Dependencia);
 //            c.getConnection().close();
         } catch (SQLException ex) {
-            Logger.getLogger(Fecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Catalogos.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Fecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Catalogos.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         HttpSession session = request.getSession(true);

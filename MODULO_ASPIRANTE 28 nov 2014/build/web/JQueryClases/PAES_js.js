@@ -13,28 +13,26 @@ function LlamarServlet() {
     var pass = "d3s4rr0ll0";
 //    var usuario = "FICHAS";
 //    var pass = "FICHAS";
-    $.get('/MODULO_ASPIRANTE/Fecha',
+    $.get('/MODULO_ASPIRANTE/ServletCatalogos',
             {usuario: usuario, pass: pass},
     function(retorno) {
-        $("#contenido").load("vistas/Aspirante/Datos_Aspirante.jsp");
+
+//        $("#contenido").load("vistas/Aspirante/Datos_Aspirante.jsp");
     }
     );
 }
-//en el servlet  validar existe? si  no continua  
-//no envia link +correo encriptado
+
 function EnviaCorreoInicio() {
     var correo = $('#InCorreoE').val();
 
-    alert(correo);
+
     $.get('EnviaEmailInicio',
             {correo: correo},
     function(retorno) {
-        if (retorno === 0) {
-            alert('Fue  enviado a tu correo  un enlace para continuar con el registro');
-        }
-        if (retorno === 1) {
-            alert('No se ha podido  enviar  el correo, por favor  vuelva a intentar.');
-        }
+        //agregar  al div  la leyenda que retorna el servlet
+        $('#cargando').hide();
+        $('#RetornoServlet').text(retorno);
+
     }
     );
 
@@ -49,7 +47,7 @@ function ValidaPeriodo() {
         fin = new Date(fin);
         $('#mes_inicio').css("border", "");
         $('#anio_inicio').css("border", "");
-        if (inicio > fin) {
+        if (inicio >= fin) {
             alert('La fecha de inicio puede ser mayor que la fecha fin');
             $('#mes_inicio').css("border", "1px solid red");
             $('#anio_inicio').css("border", "1px solid red");
@@ -80,6 +78,7 @@ function ConfirmaDatos() {
 $(document).ready(function() {
     ValidaTipos();
     ValidaPeriodo();
+
 //llama servlet  
     $('#heleido').click(function() {
         var $valor = $("input #heleido").val();
@@ -93,8 +92,11 @@ $(document).ready(function() {
         $('#divmarcoEnvCorreo').show();
     });
     $('#CorreoCancel').click(function() {
+        $('#RetornoServlet').text(" ");
+        $('#InCorreoE').text(" ");
         $('#FondoEnvCorreo').hide();
         $('#divmarcoEnvCorreo').hide();
+
     });
     $('#CorreoAcep').click(function() {
 //        var usuario = "FICHAS";
@@ -108,7 +110,9 @@ $(document).ready(function() {
             $('#InCorreoE').css("border", "1px solid red");
         } else {
             $('#InCorreoE').css("border", "");
+            $('#cargando').show();
             EnviaCorreoInicio();
+
         }
     });
 

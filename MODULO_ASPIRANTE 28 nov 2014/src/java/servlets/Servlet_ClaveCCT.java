@@ -50,9 +50,9 @@ public class Servlet_ClaveCCT extends HttpServlet {
 
             System.out.println(ClaveCCT);
         } catch (SQLException ex) {
-            Logger.getLogger(Fecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Catalogos.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Fecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Catalogos.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         String json = null;

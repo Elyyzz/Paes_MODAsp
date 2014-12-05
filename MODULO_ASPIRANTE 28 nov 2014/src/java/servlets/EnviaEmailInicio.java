@@ -32,18 +32,18 @@ public class EnviaEmailInicio extends HttpServlet {
         // Si no  existe envia  link con  correo encriptado  
         int existe = 0;
         if (existe != 0) {
-            out.print(1);
+            out.print("Ya existe un registro con este correo.");
         } else {
             String  CorreoEnc = e.encryptURL(correo);
             String url = "http://localhost:8080/MODULO_ASPIRANTE/vistas/Aspirante/Datos_Aspirante.jsp?correo=" + CorreoEnc;
             BMail beanMail = new BMail();
             beanMail.setCuerpo("Éste es un correo de verificación. Por favor haga click en el siguiente enlace\n"
-                    + "para que pueda continuar con su registro.Si no logras visualizar el correo en tu \"Bandeja de entrada\" debes verificar en la bandeja de \"Correo no deseado\".   \n"
+                    + "para que pueda continuar con su registro."
                     + "<a href=" + url
                     + ">Enlace</a>");
             Mail m = new Mail();
             m.sendMail(beanMail,"aspirantes@ittoluca.edu.mx" ,correo,"11280672", true);
-            out.print(0);
+            out.print("Se ha enviado a tu correo  una  liga  para continuar con el registro. Si no logras visualizar el correo en tu Bandeja de entrada debes verificar en la bandeja de Correo no deseado");
         }
 
     }
