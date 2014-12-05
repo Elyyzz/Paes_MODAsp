@@ -24,14 +24,12 @@ function LlamarServlet() {
 
 function EnviaCorreoInicio() {
     var correo = $('#InCorreoE').val();
-
-
     $.get('EnviaEmailInicio',
             {correo: correo},
     function(retorno) {
         //agregar  al div  la leyenda que retorna el servlet
-//        $('#cargando').hide();
-//        $('#RetornoServlet').text(retorno);
+        $('#cargando').hide();
+        $('#RetornoServlet').text(retorno);
     }
     );
 
@@ -93,6 +91,7 @@ $(document).ready(function() {
         $('#InCorreoE').text(" ");
         $('#FondoEnvCorreo').hide();
         $('#divmarcoEnvCorreo').hide();
+        
 
     });
     $('#CorreoAcep').click(function() {
