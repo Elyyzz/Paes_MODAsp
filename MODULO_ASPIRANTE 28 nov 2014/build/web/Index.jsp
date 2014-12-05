@@ -47,7 +47,7 @@
                             </ul>
                             <label id="centrar_inf"><h4>Para realizar su solicitud de registro como aspirante, asegurate de contar con lo siguientes datos y documentos.</h4></label>
                             <ul id="sangria">
-                                8<li>Clave CURP<a href="http://consultas.curp.gob.mx/CurpSP/"target="_blank"><div id="aqui">consultar aquí</div></a></li>
+                                <li>Clave CURP<a href="http://consultas.curp.gob.mx/CurpSP/"target="_blank"><div id="aqui">consultar aquí</div></a></li>
                                 <li>Clave de la escuela de procedencia<a href="http://www.snie.sep.gob.mx/SNIESC/" target="_blank"><div id="aqui_escuela">consultar aquí</div></a></li>
                                 <li><div id="link_toolt"><a data-toggle="tooltip" data-original-title="Federal, Estatal, Privada"  >Tipo de la escuela de procedencia</a></div></li>
                                 <li>Tipo de sangre</li>
@@ -77,16 +77,7 @@
                             <a href="#"> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
 
                         </div>
-                        <div id="cargando">
-                            <div class="spinner-wave">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-
-                        </div>
+                      
                     </div>
                 </div>
 
