@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../../Estilos/PAES_css.css" media="all" type="text/css">
         <link rel="stylesheet" href="../../Estilos/lookandfeel_tec.css" media="all" type="text/css">
-
+        <script src="../../JQueryClases/PAES_js.js" type="text/javascript"></script>
     </head>
     <body>
         <div>
@@ -26,7 +26,7 @@
                             <input id="CorreoAcep"  value="Enviar" type="button">
                             <input id="CorreoCancel"  value="Cancelar" type="button">
                             <label id="RetornoServlet"> </label>
-                            <div id="cargando">
+                        <div id="cargando">
                             <div class="spinner-wave">
                                 <div></div>
                                 <div></div>

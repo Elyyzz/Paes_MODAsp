@@ -95,7 +95,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </ul>\n");
       out.write("                            <label id=\"centrar_inf\"><h4>Para realizar su solicitud de registro como aspirante, asegurate de contar con lo siguientes datos y documentos.</h4></label>\n");
       out.write("                            <ul id=\"sangria\">\n");
-      out.write("                                <li>Clave CURP<a href=\"http://consultas.curp.gob.mx/CurpSP/\"target=\"_blank\"><div id=\"aqui\">consultar aquí</div></a></li>\n");
+      out.write("                                8<li>Clave CURP<a href=\"http://consultas.curp.gob.mx/CurpSP/\"target=\"_blank\"><div id=\"aqui\">consultar aquí</div></a></li>\n");
       out.write("                                <li>Clave de la escuela de procedencia<a href=\"http://www.snie.sep.gob.mx/SNIESC/\" target=\"_blank\"><div id=\"aqui_escuela\">consultar aquí</div></a></li>\n");
       out.write("                                <li><div id=\"link_toolt\"><a data-toggle=\"tooltip\" data-original-title=\"Federal, Estatal, Privada\"  >Tipo de la escuela de procedencia</a></div></li>\n");
       out.write("                                <li>Tipo de sangre</li>\n");

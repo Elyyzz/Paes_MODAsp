@@ -30,8 +30,8 @@ function EnviaCorreoInicio() {
             {correo: correo},
     function(retorno) {
         //agregar  al div  la leyenda que retorna el servlet
-        $('#cargando').hide();
-        $('#RetornoServlet').text(retorno);
+//        $('#cargando').hide();
+//        $('#RetornoServlet').text(retorno);
 
     }
     );
@@ -84,8 +84,8 @@ $(document).ready(function() {
         var $valor = $("input #heleido").val();
 //        var usuario = "FICHAS";
 //        var pass = "FICHAS";
-//        $('#Contenedor_Bienvenido').css("height", "96%");
-//        $('#grande').css("height", "800px");
+        $('#Contenedor_Bienvenido').css("heigh7t", "96%");
+        $('#grande').css("height", "800px");
 //        $("#cargando").show();
 //        LlamarServlet();
         $('#FondoEnvCorreo').show();
@@ -103,6 +103,7 @@ $(document).ready(function() {
 //        var pass = "FICHAS";
         var usuario = "desarrollo";
         var pass = "d3s4rr0ll0";
+        
         validaCorreoElectronico('#InCorreoE');
         var Email = $('#InCorreoE').val();
         if ((Email === "" || Email === undefined || Email === null)) {
@@ -110,7 +111,9 @@ $(document).ready(function() {
             $('#InCorreoE').css("border", "1px solid red");
         } else {
             $('#InCorreoE').css("border", "");
-            $('#cargando').show();
+            $("#cargando").show();
+            alert(
+                    );
             EnviaCorreoInicio();
 
         }

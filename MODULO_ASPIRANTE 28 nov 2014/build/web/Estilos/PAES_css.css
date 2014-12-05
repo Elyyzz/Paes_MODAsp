@@ -3124,11 +3124,12 @@ and open the template in the editor.
     width: 15%;
     margin-left: 3%;
     margin-top: 3%;
-}
+    background-color: #FFF;
+    color:orange;}
 #InCorreoE{
-    margin-left: 25%;
+    margin-left: 13%;
     margin-top: 3%;
-    width: 35%;
+    width: 40%;
 }
 
 
@@ -3138,7 +3139,7 @@ and open the template in the editor.
     display: none;
     top: 0%;
     left: 0%;
-    background-color: #c5dbec;
+    background-color: #000000;
     z-index:1001;
     -moz-opacity: 0.7;
     opacity:.70;
@@ -3207,7 +3208,7 @@ and open the template in the editor.
 
 @keyframes wave {
     0%, 40%, 100% { transform: scaleY(0.4); }
-    20% { transform: scaleY(1.0); }
+    20%; { transform: scaleY(1.0); }
 }
 
 #combompnacimiento, #combocdnacimiento{
@@ -3224,7 +3225,9 @@ and open the template in the editor.
 
 #RetornoServlet{
     font-size: 90%;
-    margin-top: 2%;
+    margin-top: 4%;
     color: red;
     text-align: justify;
+    width: 90%;
+    margin-left: 3%;
 }
