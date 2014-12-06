@@ -40,7 +40,7 @@
                 </div> 
                 <!--Respuesta del servlet al  enviar correo-->
                 <div id="RespuestaServlet" style="display: none">                   
-                        <label id="RetornoServlet"> </label>                       
+                        <label id="RetornoServlet"></label>                       
                         <input id="AceptarRspuesta" type="button" value="Aceptar">
                 </div>
             </div>

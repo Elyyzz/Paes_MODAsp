@@ -193,7 +193,7 @@ $(document).ready(function() {
         $.get('/MODULO_ASPIRANTE/Socioeconomicos',
                 {},
                 function(retorno) {
-                    $("#contenido").load("vistas/Aspirante/Datos_Socioeconomicos.jsp");
+                    $("#contenido").load("Datos_Socioeconomicos.jsp");
                 }
         );
 

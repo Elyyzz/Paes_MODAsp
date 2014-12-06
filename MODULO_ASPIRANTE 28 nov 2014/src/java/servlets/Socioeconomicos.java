@@ -51,8 +51,10 @@ public class Socioeconomicos extends HttpServlet {
     Catalogos catalogo = new Catalogos();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String usuario = "desarrollo";
-        String pass = "d3s4rr0ll0";
+//        String usuario = "desarrollo";
+//        String pass = "d3s4rr0ll0";
+         String usuario = "fichas";
+        String pass = "fichas";
 //        String usuario = request.getParameter("usuario");
 //        String pass = request.getParameter("pass");
         System.out.println(usuario + "/" + pass);
