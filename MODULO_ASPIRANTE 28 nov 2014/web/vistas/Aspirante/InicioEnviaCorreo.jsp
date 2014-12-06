@@ -18,14 +18,14 @@
             <div id="FondoEnvCorreo"  style="display: none"></div>
 
             <div id="divmarcoEnvCorreo"  name="marcoiniciocorreo" class="demo ui-tabs ui-widget ui-widget-content ui-corner-all" style="display: none"    >
-                <div id="contenedor_inCorreo">                                  
+                <div id="contenedor_inCorreo" style="display: none">                                  
                     <fieldset><p>
                             <br>
                             <label id="etq_CorreoI">Ingresa tu Correo Electronico: </label>
                             <input id="InCorreoE" placeholder="ejemplo@smtp.com" type="text">
                             <input id="CorreoAcep"  value="Enviar" type="button">
                             <input id="CorreoCancel"  value="Cancelar" type="button">
-                            <label id="RetornoServlet"> </label>
+                       
                         <div id="cargando">
                             <div class="spinner-wave">
                                 <div></div>
@@ -34,13 +34,15 @@
                                 <div></div>
                                 <div></div>
                             </div>
-
                         </div>
-
                         </p></fieldset>                    
                     <br>
-
-                </div>       
+                </div> 
+                <!--Respuesta del servlet al  enviar correo-->
+                <div id="RespuestaServlet" style="display: none">                   
+                        <label id="RetornoServlet"> </label>                       
+                        <input id="AceptarRspuesta" type="button" value="Aceptar">
+                </div>
             </div>
         </div>
     </body>

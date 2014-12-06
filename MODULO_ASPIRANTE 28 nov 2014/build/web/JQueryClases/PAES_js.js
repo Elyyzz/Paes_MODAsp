@@ -29,6 +29,8 @@ function EnviaCorreoInicio() {
     function(retorno) {
         //agregar  al div  la leyenda que retorna el servlet
         $('#cargando').hide();
+        $('#contenedor_inCorreo').hide();
+        $("#RespuestaServlet").show();
         $('#RetornoServlet').text(retorno);
     }
     );
@@ -85,17 +87,21 @@ $(document).ready(function() {
 //        LlamarServlet();
         $('#FondoEnvCorreo').show();
         $('#divmarcoEnvCorreo').show();
+        $('#contenedor_inCorreo').show();
     });
+
     $('#CorreoCancel').click(function() {
-        $('#RetornoServlet').text(" ");
-        $('#InCorreoE').text(" ");
+        $('#RetornoServlet').text("  ");
+        $('#InCorreoE').text("  ");
         $('#FondoEnvCorreo').hide();
         $('#divmarcoEnvCorreo').hide();
-        
-
+        $('#heleido').hide();
+        $('#RespuestaServlet').hide();
+        $("#comprobar").removeAttr("checked");
     });
+
     $('#CorreoAcep').click(function() {
-        
+         $('#RespuestaServlet').hide();
         validaCorreoElectronico('#InCorreoE');
         var Email = $('#InCorreoE').val();
         if ((Email === "" || Email === undefined || Email === null)) {
@@ -104,13 +110,20 @@ $(document).ready(function() {
         } else {
             $('#InCorreoE').css("border", "");
             $("#cargando").show();
-
+           
             EnviaCorreoInicio();
-
         }
     });
 
-
+    $('#AceptarRspuesta').click(function() {
+        $('#RetornoServlet').text("  ");
+        $('#InCorreoE').text("  ");
+        $('#FondoEnvCorreo').hide();
+        $('#divmarcoEnvCorreo').hide();
+        $('#RespuestaServlet').hide();
+        $('#heleido').hide();
+        $("#comprobar").removeAttr("checked");
+    });
 
 
 
@@ -162,13 +175,13 @@ $(document).ready(function() {
     $('#continuar_datos').click(function() {
 
 //Validaciones  de  no  nulos  listas  no  borrar estas  lineas comentadas :D
-        if (nonulos() === false || nonulos() === '' || nonulos === 0) {
-//            alert("Aun no han sido completados  todos  sus datos");
-        } else {
+//        if (nonulos() === false || nonulos() === '' || nonulos === 0) {
+////            alert("Aun no han sido completados  todos  sus datos");
+//        } else {
             ConfirmaDatos();
             $('#div_fondomarco').show();
             $('#divmarco').show();
-        }
+//        }
     });
     $('#cancelar').on('click', function() {
         $('#divmarco').hide();

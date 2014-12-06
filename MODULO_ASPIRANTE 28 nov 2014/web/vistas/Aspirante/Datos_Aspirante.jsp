@@ -4,12 +4,6 @@ c<%--
     Author     : ElyyzZ BaRruEtA
 --%>
 
-
-
-
-
-
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -22,7 +16,6 @@ c<%--
         <link rel="stylesheet" href="../../Estilos/css/shadowbox.css" type="text/css">
         <script src="../../JQueryClases/Zoom.js" type="text/javascript"></script>
         <script src="../../JQueryClases/Aspirante.js" type="text/javascript"></script>
-
         <link rel="stylesheet" href="../../Estilos/PAES_css.css" media="all" type="text/css">
         <script src="../../JQueryClases/PAES_js.js" type="text/javascript"></script>
         <link rel="stylesheet" href="../../Estilos/css/shadowbox.css" type="text/css">
@@ -32,9 +25,7 @@ c<%--
         <script src="../../JQueryClases/shadowbox.js" type="text/javascript"></script>
         <script src="../../JQueryClases/bootstrap.min.js" type="text/javascript"></script>
         <script src="../../Estilos/css/bootstrap.min.css.css" type="text/javascript"></script>
-
-
-        <script>
+        <script type="text/javascript">
             Shadowbox.init({
                 language: "es",
                 players: ['html']
@@ -52,13 +43,16 @@ c<%--
 
     </head>
     <form>
-        <body>
+        
+        
+    </form>
+    <body></body>
             <header>
                 <div class="encabezado">
-                    <img alt="la imagen" src="Imagenes/header_ittoluca.png" title="footer">                
+                    <img alt="la imagen" src="../../Imagenes/header_ittoluca.png" title="footer">                
                 </div>
                 <h1>M&oacute;dulo del registro de aspirantes</h1><br><br>
-            </header> 
+            </header>
             <div id="contenido">
                 <div id="Cont_DatosAspirante">
                     <div id="modulo">
@@ -342,7 +336,8 @@ c<%--
                                 </fieldset>                                     
                             </section>
                             <section id="derecho_escuela">
-                                <p>  <input type="button" id="buscar_clave"  value="Buscar clave" style="cursor: pointer"> 
+                                <p><input type="button" id="buscar_clave"  value="Buscar clave" style="cursor: pointer"> 
+                                </p> 
                                 <div id="cargandoCCT">
                                     <div class="spinner-wave">
                                         <div></div>
@@ -351,9 +346,8 @@ c<%--
                                         <div></div>
                                         <div></div>
                                     </div>
-
                                 </div>
-                                </p>                      
+
                             </section>
                         </div>
                     </div>
@@ -422,10 +416,10 @@ c<%--
                             <input type="reset" id="borrar_datos" title="borrar" value="Borrar Datos" style="cursor: pointer"  >
                         </fieldset>
                     </div>  
-
-                </div> 
+                </div>
             </div>
         </body>
+   
         <footer>
             <div class="pieDePagina"><br><br>
                 <label class="texto_inferior">
@@ -435,7 +429,7 @@ c<%--
                     <br>
                 </label>
                 <br>
-                <img width="940" height="88" alt="" src="Imagenes/footer_ittoluca.png" title="footer">
+                <img width="940" height="88" alt="" src="../../Imagenes/footer_ittoluca.png" title="footer">
                 <br>
                 <label class="texto_inferior">
                     Av. Tecnol&oacute;gico s/n. Fraccionamiento La Virgen
@@ -446,7 +440,9 @@ c<%--
                 </label>
             </div>
         </footer>
+
     </form>
+
 
 </html>
 <%@include file="ClaveCCT.jsp"%>
