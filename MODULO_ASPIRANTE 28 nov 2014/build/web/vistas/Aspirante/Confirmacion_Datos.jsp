@@ -13,7 +13,7 @@
 
         <div id="divmarco"  name="divmarco" class="demo ui-tabs ui-widget ui-widget-content ui-corner-all"  style="display: none"   >
             <div id="contenedor_texto">
-                <label id="aviso_label"> <img src="Imagenes/aler.png" width="40px">Aviso Importante</label><!-- icono -->                     
+                <label id="aviso_label"> <img src="../../Imagenes/aler.png" width="40px">Aviso Importante</label><!-- icono -->                     
                 <p><label id="label_confirmacion">Confirma que tus Datos sean Correctos</label></p>
                 <section id="area_de_texto">
                     <fieldset><p>

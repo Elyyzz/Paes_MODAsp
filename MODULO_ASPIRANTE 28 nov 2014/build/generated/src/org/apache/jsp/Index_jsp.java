@@ -223,7 +223,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div> \n");
       out.write("                <!--Respuesta del servlet al  enviar correo-->\n");
       out.write("                <div id=\"RespuestaServlet\" style=\"display: none\">                   \n");
-      out.write("                        <label id=\"RetornoServlet\"> </label>                       \n");
+      out.write("                        <label id=\"RetornoServlet\"></label>                       \n");
       out.write("                        <input id=\"AceptarRspuesta\" type=\"button\" value=\"Aceptar\">\n");
       out.write("                </div>\n");
       out.write("            </div>\n");

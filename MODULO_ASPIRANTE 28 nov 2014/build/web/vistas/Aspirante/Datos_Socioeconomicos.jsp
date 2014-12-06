@@ -11,10 +11,10 @@
 <!--<link rel="stylesheet" href="../Estilos/lookandfeel_tec.css" type="text/css">-->
 <!--<link rel="stylesheet" href="../Estilos/diseño_datos_aspirante.css" type="text/css">-->
 <!--<link rel="stylesheet" href="../Estilos/Marcos.css" type="text/css">-->
-<script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>
+<!--<script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>-->
 <!--<script src="JQueryClases/CargarFoto.js"  type="text/javascript"></script>-->
-<script src="JQueryClases/PAES_js.js" type="text/javascript"></script>
-<link rel="stylesheet" href="Estilos/PAES_css.css" media="all" type="text/css">
+<script src="../../JQueryClases/PAES_js.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../../Estilos/PAES_css.css" media="all" type="text/css">
 <!--<script src="../JQueryClases/validaciones_datoaspirante.js " type="text/javascript" ></script>-->
 <title>DATOS|SOCIOECONOMICO</title>
 <form>
@@ -33,18 +33,17 @@
                             <input type="text" name="nom_padre" id="nom_padre" class="inputs_socioeconomicos" maxlength="70">
                             <label  id="etq_nomma" class="labels_socioeconomicos">Nombre Completo de la Madre:</label>                           
                             <input type="text" name="nom_madre" id="nom_madre" class="inputs_socioeconomicos" maxlength="70" ></p>                      
-                        <p id="derecho_padres"><label id="etq_vivema" class="labels_socioeconomicos">Actualmente:</label>
-                            <select id="padre_vive" class="Selects_socioeconomicos">
-                                <option value="">--Seleccione--</option>
-                                <option value="vive">Vive</option>
-                                <option value="finado">Finada</option>
-                            </select>
-                            <label id="etq_vivepa" class="labels_socioeconomicos">Actualmente:</label>
-                            <select id="madre_vive" class="Selects_socioeconomicos">
-                                <option value="">--Seleccione--</option>
-                                <option value="vive">Vive</option>
-                                <option value="finado">Finado</option>
-                            </select></p>  
+                        <label id="etq_vivema" class="vive">Vive:</label>
+                        <input id="padre_viveSi"  type="checkbox" value="Si">                       
+                        <label id="etq_vivema" >Si</label>
+                        <input id="padre_viveNo" type="checkbox" value="No">                       
+                        <label id="etq_vivema" >No</label>
+                        <label id="etq_vivepa" class="vive">Vive:</label>
+                        <input id="madre_viveSi" type="checkbox" value="Si">                        
+                        <label id="etq_vivema" >Si</label>
+                        <input id="madre_viveNo" type="checkbox" value="No">                       
+                        <label id="etq_vivema" >No</label>
+                        </p>  
                     </fieldset>
                 </section>                
 
@@ -58,23 +57,19 @@
 
                                 <label id="etq_estado" class="labels_socioeconomicos">Estado:</label>
                                 <select  id="estado" class="Selects_socioeconomicos">
-                                    <c:forEach items="${estado}" var="estado">                                     
-                                        <option value="${estado.getClave()}"><c:out value="${estado.getNombre()}"/></option>                                                                           
-                                    </c:forEach>                            
+
                                 </select>
                                 <label id="etq_ciudad"  class="labels_socioeconomicos">Localidad:</label> 
                                 <select  id="ciudad" type="text"name=" input_ciudad" class="Selects_socioeconomicos" >
-                                    <c:forEach items="${estado}" var="estado">                                     
-                                        <option value="${estado.getClave()}"><c:out value="${estado.getNombre()}"/></option>                                                                           
-                                    </c:forEach>
+
                                 </select>
                                 <label id="eq_colonia" class="labels_socioeconomicos">Colonia:</label>
                                 <input type="text" name="colonia" id="colonia" class="inputs_socioeconomicos" maxlength="45">
                                 <label id="etq_calle" class="labels_socioeconomicos">Calle:</label>
                                 <input type="text" name="calle" id="calle" class="inputs_socioeconomicos" maxlength="45">
-                                <label name="socio_numext" class="labels_derecha">Núm. Exterior:</label>
+                                <label name="socio_numext" class="labels_socioeconomicos">Núm. Exterior:</label>
                                 <input type="text" id="socionumext" name="input_numExt" class="inputs_socioeconomicos" maxlength="5">
-                                <label name="socionumInt" class="labels_derecha">Núm. Interior:</label>
+                                <label name="socionumInt" class="labels_socioeconomicos">Núm. Interior:</label>
                                 <input type="text" id="socionumInt" name="input_numInt" class="inputs_socioeconomicos" maxlength="5">
                                 <label id="etq_telfijo" class="labels_socioeconomicos">Teléfono Fijo (LADA incluida):</label>
                                 <input type="text" name="tel_fijo" id="tel_fijo" class="inputs_socioeconomicos" maxlength="12" placeholder="(01-714)-1438193">
@@ -118,44 +113,30 @@
                         <p>
                             <label id="etq_zona" class="labels_socioeconomicos">Zona de Procedencia:</label>
                             <select type="text" name="zona" id="zona" class="inputs_socioeconomicos">
-                               <c:forEach items="${zona}" var="NivelEstudios">                                     
-                                    <option value="${zona.getClave()}"><c:out value="${zona.getNombre()}"/></option>                                                                           
-                                </c:forEach>
+
                             </select>
                             <label id="etq_estudios_padre" class="labels_socioeconomicos">Máximo Nivel Estudios del Padre:</label>
                             <select type="text" name="estudios_padre" id="estudios_padre" class="inputs_socioeconomicos">
-                                <c:forEach items="${NivelEstudios}" var="NivelEstudios">                                     
-                                    <option value="${NivelEstudios.getClave()}"><c:out value="${NivelEstudios.getNombre()}"/></option>                                                                           
-                                </c:forEach>
+
                             </select>
                             <label id="etq_estudios_madre" class="labels_socioeconomicos">Máximo Nivel de Estudios de la Madre:</label>
                             <select type="text" name="estudios_madre" id="estudios_madre" class="inputs_socioeconomicos">
-                                <c:forEach items="${NivelEstudios}" var="NivelEstudios">                                     
-                                    <option value="${NivelEstudios.getClave()}"><c:out value="${NivelEstudios.getNombre()}"/></option>                                                                           
-                                </c:forEach>
+
                             </select>
                             <label id="Ingresos" class="labels_socioeconomicos">Ingresos Familiares Mensuales:</label>
                             <select id="input_ingresos" type="text"  class="inputs_socioeconomicos" >
-                                <c:forEach items="${Ingresos}" var="Ingresos">                                     
-                                    <option value="${Ingresos.getClave()}"><c:out value="${Ingresos.getNombre()}"/></option>                                                                           
-                                </c:forEach>
+
                             </select>
                             <label id="etq_ocpadre" class="labels_socioeconomicos">Ocupación del Padre:</label>
 
                             <select class="Selects_economico" id="input_ocpadre"> 
-                                <c:forEach items="${Ocupaciones}" var="Ocupaciones">                                     
-                                    <option value="${Ocupaciones.getClave()}"><c:out value="${Ocupaciones.getNombre()}"/></option>                                                                           
-                                </c:forEach></select>
+                            </select>
                             <label id="etq_ocmadre" class="labels_socioeconomicos">Ocupación de la Madre:</label>
                             <select class="Selects_economico" id="input_ocmadre">  
-                                <c:forEach items="${Ocupaciones}" var="Ocupaciones">                                     
-                                    <option value="${Ocupaciones.getClave()}"><c:out value="${Ocupaciones.getNombre()}"/></option>                                                                           
-                                </c:forEach></select>
+                            </select>
                             <label id="etq_economicamente" class="labels_socioeconomicos">¿De Quién Dependes Económicamente?:</label>
                             <select class="Selects_economico" id="quiendepende" >
-                                <c:forEach items="${Dependencia}" var="Dependencia">                                     
-                                    <option value="${Dependencia.getClave()}"><c:out value="${Dependencia.getNombre()}"/></option>                                                                           
-                                </c:forEach>
+
                             </select>
                             <label id="otroeconomicamente" class="labels_socioeconomicos" style='display: none'>Especifique Quién:</label>
                             <input class="inputs_socioeconomicos" id="otroquiendepende" style="display: none" maxlength="30">
@@ -166,21 +147,15 @@
                         <p>
                             <label id="etq_vivienda" class="labels_socioeconomicos">La Casa donde Vives es:</label>
                             <select class="Selects_economico" id="input_vivienda"> 
-                                <c:forEach items="${casa}" var="numero">                                     
-                                    <option value="${casa.getClave()}"><c:out value="${casa.getNombre()}"/></option>                                                                           
-                                </c:forEach>
+
                             </select>
                             <label id="etq_nopersonas" class="labels_socioeconomicos">No. de Personas que Viven en esa Casa:</label>
                             <select class="Selects_economico" id="input_nopersonas">  
-                                <c:forEach items="${numero}" var="numero">                                     
-                                    <option value="${numero.getClave()}"><c:out value="${numero.getNombre()}"/></option>                                                                           
-                                </c:forEach>
+
                             </select>
                             <label id="etq_cuartos" class="labels_socioeconomicos">No. de Cuartos de la Casa(no Baños):</label>
                             <select class="Selects_economico" id="input_cuartos">  
-                                <c:forEach items="${cuartos}" var="numero">                                     
-                                    <option value="${cuartos.getClave()}"><c:out value="${cuartos.getNombre()}"/></option>                                                                           
-                                </c:forEach>
+
                             </select>
                             <label id="etq_oportunidades" class="labels_socioeconomicos">Pertenece al Programa Oportunidades:</label>
                             <select class="Selects_economico" id="input_oportunidades"> 

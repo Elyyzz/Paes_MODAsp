@@ -46,7 +46,7 @@
         <form>
             <header>
                 <div class="encabezado">
-                    <img alt="la imagen" src="Imagenes/header_ittoluca.png" title="footer">                
+                    <img alt="la imagen" src="../../Imagenes/header_ittoluca.png" title="footer">                
                 </div>
                 <h1>M&oacute;dulo del registro de aspirantes</h1><br><br>
             </header> 
@@ -325,7 +325,7 @@
                         <br>
                     </label>
                     <br>
-                    <img width="940" height="88" alt="" src="Imagenes/footer_ittoluca.png" title="footer">
+                    <img width="940" height="88" alt="" src="../../Imagenes/footer_ittoluca.png" title="footer">
                     <br>
                     <label class="texto_inferior">
                         Av. Tecnol&oacute;gico s/n. Fraccionamiento La Virgen
