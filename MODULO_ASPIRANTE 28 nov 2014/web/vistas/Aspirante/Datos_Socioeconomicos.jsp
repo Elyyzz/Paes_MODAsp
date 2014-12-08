@@ -35,14 +35,14 @@
                             <input type="text" name="nom_madre" id="nom_madre" class="inputs_socioeconomicos" maxlength="70" ></p>                      
                         <label id="etq_vivema" class="vive">Vive:</label>
                         <input id="padre_viveSi"  type="checkbox" value="Si">                       
-                        <label id="etq_vivema" >Si</label>
+                        <label id="etq_vivema" class="SiNo">Si</label>
                         <input id="padre_viveNo" type="checkbox" value="No">                       
-                        <label id="etq_vivema" >No</label>
+                        <label id="etq_vivema" class="SiNo">No</label>
                         <label id="etq_vivepa" class="vive">Vive:</label>
                         <input id="madre_viveSi" type="checkbox" value="Si">                        
-                        <label id="etq_vivema" >Si</label>
+                        <label id="etq_vivema" class="SiNo" >Si</label>
                         <input id="madre_viveNo" type="checkbox" value="No">                       
-                        <label id="etq_vivema" >No</label>
+                        <label id="etq_vivema" class="SiNo">No</label>
                         </p>  
                     </fieldset>
                 </section>                
@@ -135,7 +135,7 @@
                             <select class="Selects_economico" id="input_ocmadre">  
                             </select>
                             <label id="etq_economicamente" class="labels_socioeconomicos">¿De Quién Dependes Económicamente?:</label>
-                            <select class="Selects_economico" id="quiendepende" >
+                            <select  id="quiendepende" >
 
                             </select>
                             <label id="otroeconomicamente" class="labels_socioeconomicos" style='display: none'>Especifique Quién:</label>
@@ -150,7 +150,7 @@
 
                             </select>
                             <label id="etq_nopersonas" class="labels_socioeconomicos">No. de Personas que Viven en esa Casa:</label>
-                            <select class="Selects_economico" id="input_nopersonas">  
+                            <select  id="input_nopersonas">  
 
                             </select>
                             <label id="etq_cuartos" class="labels_socioeconomicos">No. de Cuartos de la Casa(no Baños):</label>

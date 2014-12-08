@@ -624,9 +624,11 @@ and open the template in the editor.
     float: left;
     width: 35%;
 }
+#input_nopersonas{}
 #input_nopersonas{
-    margin-top: 5%;
-    font-size: 74.6%;
+    margin-top: 3%;
+    font-size: 100%;
+    width: 40%;
 }
 #datos_padres{
     margin: 1px;
@@ -645,7 +647,7 @@ and open the template in the editor.
     font-size: 100%;
     /*font-size-adjust: inherit;*/
     float: left;
-    width: 57%;
+    width: 60%;
     text-align:right;
     padding: 5px;
     color: #000000;
@@ -655,6 +657,14 @@ and open the template in the editor.
     text-align: left;
     width: 40%;
     font-size:100%;
+    margin-top: 1%;
+}
+#quiendepende{
+    float: right;
+    text-align: left;
+    width: 39%;
+    font-size: 120%;
+    margin-top: 5%;
 }
 .inputs_socioeconomicos{
     float: right;
@@ -843,12 +853,13 @@ and open the template in the editor.
     /*color: orange;*/
     font-weight: 800;
 }
+#atencion{}
 #atencion{
-    font-size: 140%;
+    font-size: 100%;
     float: left;
     width: 55%;
-
 }
+
 #ayudaAsp{
     height: 9%;
     width: 25%;
@@ -1342,8 +1353,10 @@ and open the template in the editor.
     height: 45%;
     margin-left: 13%;
     margin-right: 0;
-    margin-top: 5.5%;
-    width: 75%
+    margin-top: 3%;
+    width: 75%;
+    overflow: hidden;
+
 }
 
 #direccionaspirante{
@@ -1372,10 +1385,14 @@ and open the template in the editor.
     margin-top: 5%;
 
 }
-
+.SiNo{
+    margin-left: 3%;
+}
 .vive{
-    width: 30%;
-    
+    width: 25%;
+    text-align: right;
+    margin-right: 3%;
+
 }
 #datosbeca{
     height: 415px;

@@ -76,6 +76,7 @@ and open the template in the editor.
     border: 1px solid #79b7e7;
     color: #e17009;
     font-weight: bold;
+    font-size: 100%;
 }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
     color: #e17009;

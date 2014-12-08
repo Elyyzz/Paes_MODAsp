@@ -41,7 +41,7 @@
         </script>
         <title>JSP Page</title>
     </head>
-
+    <a name="InicioPag"></a>
     <body>
         <form>
             <header>

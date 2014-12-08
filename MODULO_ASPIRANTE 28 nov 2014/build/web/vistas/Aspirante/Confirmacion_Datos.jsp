@@ -30,7 +30,7 @@
                 </section>
                 <br>
 
-                <input type="button" value="Confirmar" id="confirmar" name="confirmar"   style="cursor: pointer">
+                <a href="#InicioPag"> <input type="button" value="Confirmar" id="confirmar" name="confirmar"   style="cursor: pointer"></a>
                 <input  type="button" value="Cancelar" id="cancelar" name="cancelar" style="cursor: pointer" >
             </div>       
         </div>
