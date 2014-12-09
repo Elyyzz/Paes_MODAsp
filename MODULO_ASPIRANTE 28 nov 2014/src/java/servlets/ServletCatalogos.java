@@ -86,8 +86,8 @@ public class ServletCatalogos extends HttpServlet {
             pais = catalogo.AgregaS(pais);
             estado = p.getCatalogos(usuario, pass, 2);
             estado = catalogo.AgregaS(estado);
-//            municipio = p.getCatalogos(usuario, pass, 3);
-//            municipio = catalogo.AgregaS(municipio);
+            municipio = p.getCatalogos(usuario, pass, 3);
+            municipio = catalogo.AgregaS(municipio);
             Escuela = p.getCatalogos(usuario, pass, 8);
             Escuela = catalogo.AgregaS(Escuela);
 //            c.getConnection().close();

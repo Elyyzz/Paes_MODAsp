@@ -92,7 +92,7 @@ $(document).ready(function() {
 
     $('#CorreoCancel').click(function() {
         $('#RetornoServlet').text("  ");
-        $('#InCorreoE').text("  ");
+        $('#InCorreoE').val("  ");
         $('#FondoEnvCorreo').hide();
         $('#divmarcoEnvCorreo').hide();
         $('#heleido').hide();
@@ -115,9 +115,9 @@ $(document).ready(function() {
         }
     });
 
-    $('#AceptarRspuesta').click(function() {
+    $('#AceptarRespuesta').click(function() {
         $('#RetornoServlet').text("  ");
-        $('#InCorreoE').text("  ");
+        $('#InCorreoE').val("  ");
         $('#FondoEnvCorreo').hide();
         $('#divmarcoEnvCorreo').hide();
         $('#RespuestaServlet').hide();
