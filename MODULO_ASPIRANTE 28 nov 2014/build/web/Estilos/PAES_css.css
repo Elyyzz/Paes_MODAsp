@@ -1779,7 +1779,7 @@ h1{
     border-radius: 8.5px;
     border-style: solid;
     border-width: 1px;
-    height: 780px;
+    height: 820px;
     left: 0;
     margin-left: 13%;
     margin-top: 5%;
@@ -1816,7 +1816,7 @@ h1{
     border-radius: 8.5px;
     border-style: solid;
     border-width: 1px;
-    height: 250%;
+    height: 325%;
     width: 88%;
     margin: 4% auto;
 }
@@ -1856,14 +1856,14 @@ h1{
     margin: 3% auto;
     width: 88%;
 }
+#centrar{}
 #centrar{
     text-align: justify;
-    margin-top: 20px;
+    margin: 10px 15px 9px 0px;
 }
 #centrar_inf{
     text-align: justify;
-    margin-top: 20px;
-    margin-left: -4%;
+    margin:10px 15px 9px 0px;
 }
 
 #pieDePagina{

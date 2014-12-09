@@ -32,7 +32,7 @@
       
             <div class="Contenido_menu" id="grande">
                 <div id="Contenedor_Bienvenido">
-                    <br>
+                     <br>
                     <!--llenar aqui-->
                     <div id="carrera" class="demo ui-tabs ui-widget ui-corner-all tooltip-examples">
                         <div id="pestana_carrera">
@@ -41,7 +41,7 @@
                                     <a class="ui-tabs-anchor" role="presentation" tabindex="-1">Registro del aspirante</a>
                                 </li>
                             </ul>
-                            <label id="centrar_inf"><h4>Para realizar su solicitud de registro como aspirante, asegurate de contar con lo siguientes datos y documentos.</h4></label>
+                            <label id="centrar_inf"><h4>Para realizar su solicitud de registro como aspirante, asegurate de contar con los siguientes datos y documentos.</h4></label>
                             <ul id="sangria">
                                 <li>Clave CURP<a href="http://consultas.curp.gob.mx/CurpSP/"target="_blank"><div id="aqui">consultar aquí</div></a></li>
                                 <li>Clave de la escuela de procedencia<a href="http://www.snie.sep.gob.mx/SNIESC/" target="_blank"><div id="aqui_escuela">consultar aquí</div></a></li>
@@ -50,9 +50,9 @@
                                 <li>Acta de nacimiento</li>
                             </ul>
                             <label id="centrar">
-                                <h5>
+                                <h4>
                                     Es responsabilidad del aspirante, una vez que haya sido aceptado, entregar todos los requisitos solicitados por servicios escolares en su inscripci&oacute;n, entre ellos el certificado de bachillerato o constancia de haber concluido el bachillerato, especificando que el certificado se encuentra en tr&aacute;mite, de lo contrario <u>NO PROCEDER&Aacute; SU INSCRIPCI&Oacute;N.</u>
-                                </h5>
+                                </h4>
                             </label>
 
                             <br>
@@ -67,13 +67,22 @@
                         <br>
                         <div id="Contenedor_radioButton">
                             <label>
-                                <h5><input id="comprobar" type="checkbox">He le&iacute;do &eacute;sta informaci&oacute;n. <br></h5>
+                                <h5><input id="comprobar" type="checkbox">He le&iacute;do esta informaci&oacute;n. <br></h5>
                             </label>
                             <br>
-                            <a href="#"> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
+                            <a> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
 
                         </div>
-                      
+                        <div id="cargando">
+                            <div class="spinner-wave">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 

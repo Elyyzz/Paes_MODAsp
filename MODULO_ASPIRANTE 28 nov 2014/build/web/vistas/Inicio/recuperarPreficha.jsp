@@ -2,8 +2,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-        <script src="JQueryClases/pop/pop_js.js" type="text/javascript"></script> 
-        <script src="JQueryClases/valida/ValidaCURP.js" type="text/javascript"></script>
+        <!--<script src="JQueryClases/pop/pop_js.js" type="text/javascript"></script>--> 
+        <!--<script src="JQueryClases/valida/ValidaCURP.js" type="text/javascript"></script>-->
+        <script src="JQueryClases/PAES_js.js" type="text/javascript"></script>
     </head>
     <body>
         <br>
@@ -25,7 +26,7 @@
                         <br>
                         <br>
                         <div id="elem_recupera" >
-                            <form name="crp" id="crp" action="servlet/ConsultaCurp" onsubmit="curpvalida()">
+                            <form name="crp" id="crp"onsubmit="curpvalida()" action="servlet/PrefichaPDF" >
                                 <input type="text" size="24" name="curp" id="curp" maxlength="18" onkeyup="this.value = this.value.toUpperCase()" placeholder="Introduce tu CURP"/>
                                 <button type=submit onclick="curpvalida()"value=enviar class="btn btn-default">Preficha</button>
                             </form>

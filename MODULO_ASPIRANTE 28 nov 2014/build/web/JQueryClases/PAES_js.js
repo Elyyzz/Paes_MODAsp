@@ -101,7 +101,7 @@ $(document).ready(function() {
     });
 
     $('#CorreoAcep').click(function() {
-         $('#RespuestaServlet').hide();
+        $('#RespuestaServlet').hide();
         validaCorreoElectronico('#InCorreoE');
         var Email = $('#InCorreoE').val();
         if ((Email === "" || Email === undefined || Email === null)) {
@@ -110,7 +110,7 @@ $(document).ready(function() {
         } else {
             $('#InCorreoE').css("border", "");
             $("#cargando").show();
-           
+
             EnviaCorreoInicio();
         }
     });
@@ -355,7 +355,7 @@ $(document).ready(function() {
 
     $('#inicio').click(function() {
         $("#Contenedor_Bienvenido").load("vistas/Inicio/inicio.jsp", function(responseTxt, statusTxt, xhr) {
-            $('#grande').css("height", "780px");
+            $('#grande').css("height", "820px");
         });
     });
     $('#recuperar').click(function() {

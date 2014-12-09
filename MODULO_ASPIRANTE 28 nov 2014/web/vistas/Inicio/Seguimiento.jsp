@@ -7,8 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-        <script src="JQueryClases/pop/pop_js.js" type="text/javascript"></script>  
-        <script src="JQueryClases/valida/ValidaCURP.js" type="text/javascript"></script>
+        <!--<script src="JQueryClases/pop/pop_js.js" type="text/javascript"></script>-->  
+        <!--<script src="JQueryClases/valida/ValidaCURP.js" type="text/javascript"></script>-->
+        <script src="JQueryClases/PAES_js.js" type="text/javascript"></script>
     </head>
     <body>
         <br>

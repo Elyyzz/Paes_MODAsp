@@ -51,6 +51,22 @@
         <servlet-name>ServletCatalogos</servlet-name>
         <url-pattern>/ServletCatalogos</url-pattern>
     </servlet-mapping>
+    
+    
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>PrefichaPDF</servlet-name>
+        <servlet-class>PrefichaPDF</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PrefichaPDF</servlet-name>
+        <url-pattern>/servlet/PrefichaPDF</url-pattern>
+    </servlet-mapping>
+    
+    
+    
     <session-config>
         <session-timeout>
             30
