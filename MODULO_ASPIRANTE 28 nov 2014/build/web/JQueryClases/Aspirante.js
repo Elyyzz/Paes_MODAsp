@@ -16,7 +16,11 @@ function LlamarServlet() {
     $.get('/MODULO_ASPIRANTE/ServletCatalogos',
             {usuario: usuario, pass: pass},
     function(retorno) {
-        $("#contenido").load("#DatosAspirante");
+        setTimeout(function (){
+            alert("recargar");
+              $("#contenido").load("#DatosAspirante");
+        },300);
+      
     }
     );
 }

@@ -29,7 +29,7 @@
             </div>
             <h1>M&oacute;dulo del registro de aspirantes</h1><br><br>
         </header>        
-        <div id="contenido">
+      
             <div class="Contenido_menu" id="grande">
                 <div id="Contenedor_Bienvenido">
                     <br>
@@ -113,7 +113,7 @@
                 </div>
             </div>
             <br>
-        </div>
+        
         <footer>
             <div class="pieDePagina"><br><br>
                 <label class="texto_inferior">
