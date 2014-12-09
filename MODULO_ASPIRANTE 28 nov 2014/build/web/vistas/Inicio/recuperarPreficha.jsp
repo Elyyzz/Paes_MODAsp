@@ -26,9 +26,9 @@
                         <br>
                         <br>
                         <div id="elem_recupera" >
-                            <form name="crp" id="crp"onsubmit="curpvalida()" action="servlet/PrefichaPDF" >
+                            <form name="crp" id="crp" action="servlet/PrefichaPDF" >
                                 <input type="text" size="24" name="curp" id="curp" maxlength="18" onkeyup="this.value = this.value.toUpperCase()" placeholder="Introduce tu CURP"/>
-                                <button type=submit onclick="curpvalida()"value=enviar class="btn btn-default">Preficha</button>
+                                <button id="btn_crp" type=submit value=enviar class="btn btn-default">Preficha</button>
                             </form>
                         </div>
                     </div>

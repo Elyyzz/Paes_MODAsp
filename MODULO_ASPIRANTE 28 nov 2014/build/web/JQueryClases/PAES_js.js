@@ -22,6 +22,16 @@ function LlamarServlet() {
     );
 }
 
+//****************
+$('#crp').submit(function(event) {
+    var cur = document.getElementById("curp").value;
+    if (!cur.match(/^([a-z]{4})([0-9]{6})([a-z]{6})([0-9]{2})$/i)) {//AAAA######AAAAAA##
+        alert('Por favor revise su curp!');
+        event.preventDefault();
+    }
+});
+//****************
+
 function EnviaCorreoInicio() {
     var correo = $('#InCorreoE').val();
     $.get('EnviaEmailInicio',
