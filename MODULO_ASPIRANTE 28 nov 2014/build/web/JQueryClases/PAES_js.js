@@ -115,7 +115,7 @@ $(document).ready(function() {
         }
     });
 
-    $('#AceptarRespuesta').click(function() {
+    $('#AceptarRspuesta').click(function() {
         $('#RetornoServlet').text("  ");
         $('#InCorreoE').val("  ");
         $('#FondoEnvCorreo').hide();

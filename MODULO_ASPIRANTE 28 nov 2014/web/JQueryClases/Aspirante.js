@@ -16,7 +16,7 @@ function LlamarServlet() {
     $.get('/MODULO_ASPIRANTE/ServletCatalogos',
             {usuario: usuario, pass: pass},
     function(retorno) {
-        location.reload();
+        $("#contenido").load("#DatosAspirante");
     }
     );
 }
