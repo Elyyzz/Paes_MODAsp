@@ -10,7 +10,7 @@ $(document).ready(function() {
     var pass = "d3s4rr0ll0";
     $.ajax({
         type: 'POST',
-        async: false,
+        async: true,
         url: '/MODULO_ASPIRANTE/ServletCatalogos',
         data: {usuario: usuario, pass: pass},
         success: function(data) {

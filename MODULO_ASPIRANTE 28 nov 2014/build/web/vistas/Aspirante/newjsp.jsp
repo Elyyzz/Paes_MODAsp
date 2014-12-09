@@ -20,5 +20,5 @@
                 <option value="${pais.getClave()}"><c:out value="${pais.getNombre()}"/></option>                                                                           
             </c:forEach>
         </select>
-    </body>
+    </body> 
 </html>

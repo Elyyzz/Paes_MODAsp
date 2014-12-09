@@ -73,7 +73,7 @@ public final class newjsp_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\n");
       out.write("        </select>\n");
-      out.write("    </body>\n");
+      out.write("    </body> \n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
