@@ -16,9 +16,7 @@ function LlamarServlet() {
     $.get('/MODULO_ASPIRANTE/ServletCatalogos',
             {usuario: usuario, pass: pass},
     function(retorno) {
-//        doDelay(1000);
-        setTimeout(1000);
-//        $("#contenido").load("vistas/Aspirante/Datos_Aspirante.jsp");
+        location.reload();
     }
     );
 }
