@@ -45,6 +45,8 @@ $(document).ready(function() {
 
     LlamarServlet();
 });
+
+
 window.onbeforeunload = function() {
     return "Los datos no ha sido guardados.";
 };
