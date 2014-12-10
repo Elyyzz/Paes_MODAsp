@@ -16,7 +16,7 @@
 
         <!--        <link rel="stylesheet" href="../Estilos/diseño_datos_aspirante.css" type="text/css">
                 <link rel="stylesheet" href="../Estilos/Marcos.css" type="text/css">-->
-        <link rel="stylesheet" href="Estilos/PAES_css.css" media="all" type="text/css">
+        <link rel="stylesheet" href="../../Estilos/PAES_css.css" media="all" type="text/css">
         <script src="JQueryClases/bootstrap.min.js" type="text/javascript"></script>
         <link rel="stylesheet" href="Estilos/css/bootstrap.min.css.css" type="text/css">
         <title>JSP Page</title>

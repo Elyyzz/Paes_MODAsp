@@ -91,6 +91,7 @@ $(document).ready(function() {
         $('#divmarcoEnvCorreo').hide();
         $('#heleido').hide();
         $('#RespuestaServlet').hide();
+        $("#cargandoDivAnimacion").hide();
         $("#comprobar").removeAttr("checked");
     });
 
@@ -99,7 +100,7 @@ $(document).ready(function() {
         validaCorreoElectronico('#InCorreoE');
         var Email = $('#InCorreoE').val();
         if ((Email === "" || Email === undefined || Email === null)) {
-            alert("no  se  pudo completar");
+            alert("Por  favor  introdusca  una  dirección de  correo");
             $('#InCorreoE').css("border", "1px solid red");
         } else {
             $('#InCorreoE').css("border", "");
@@ -109,11 +110,12 @@ $(document).ready(function() {
     });
 
     $('#AceptarRspuesta').click(function() {
-        $('#RetornoServlet').text("  ");
+        $('#RetornoServlet').text("");
         $('#InCorreoE').val("");
         $('#FondoEnvCorreo').hide();
         $('#divmarcoEnvCorreo').hide();
         $('#RespuestaServlet').hide();
+        $("#cargandoDivAnimacion").hide();
         $('#heleido').hide();
         $("#comprobar").removeAttr("checked");
     });
@@ -168,13 +170,13 @@ $(document).ready(function() {
     $('#continuar_datos').click(function() {
 
 //Validaciones  de  no  nulos  listas  no  borrar estas  lineas comentadas :D
-//        if (nonulos() === false || nonulos() === '' || nonulos === 0) {
-////            alert("Aun no han sido completados  todos  sus datos");
-//        } else {
+        if (nonulos() === false || nonulos() === '' || nonulos === 0) {
+//            alert("Aun no han sido completados  todos  sus datos");
+        } else {
             ConfirmaDatos();
             $('#div_fondomarco').show();
             $('#divmarco').show();
-//        }
+        }
     });
     $('#cancelar').on('click', function() {
         $('#divmarco').hide();
@@ -210,7 +212,7 @@ $(document).ready(function() {
     $('#buscar_clave').on('click', function() {
         $("#cargandoCCT").show();
         $("buscar_clave").prop("disabled", true);
-         
+
         $.get('/MODULO_ASPIRANTE/Servlet_ClaveCCT',
                 {},
                 function(retorno) {
@@ -223,6 +225,7 @@ $(document).ready(function() {
                     });
                     $('#FondoSeleccionaClave').show();
                     $('#SelecionaClave').show();
+                    $("#cargandoCCT").hide();
                 });
     });
 
@@ -603,7 +606,7 @@ function validar_numeros(id) {
 function validar_letras(id) {
     $(id).change(function() {
         var letras = $(id).val();
-        patron_letra = /^[A-Za-z-ñáéíóúÑÁÉÍÓÚ ]+$/;
+        patron_letra = /^[A-Za-z-ñáéíóúÑÁÉÍÓÚ]+$/;
         if (!patron_letra.test(letras)) {
             $(id).css("border", "1px solid red");
             alert("solo texto");
@@ -621,6 +624,7 @@ function validaCorreoElectronico(id) {
             $(id).css("border", "1px solid red");
             alert("El correo " + email + " no  tiene el formato especificado"
                     + " ejemplo@smtp.com");
+            $(id).val("");
             return false;
         }
         else {

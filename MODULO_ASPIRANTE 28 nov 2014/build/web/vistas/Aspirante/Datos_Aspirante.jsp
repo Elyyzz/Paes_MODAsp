@@ -12,10 +12,11 @@
         <script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>
         <script src="JQueryClases/shadowbox.js" type="text/javascript"></script>
         <link rel="stylesheet" href="Estilos/css/shadowbox.css" type="text/css">
-        <script src="../../JQueryClases/Zoom.js" type="text/javascript"></script>
-        <script src="JQueryClases/Aspirante.js" type="text/javascript"></script>
+        <script src="JQueryClases/Zoom.js" type="text/javascript"></script>
+        <!--<script src="JQueryClases/Aspirante.js" type="text/javascript"></script>-->
 
         <link rel="stylesheet" href="Estilos/PAES_css.css" media="all" type="text/css">
+        <link rel="stylesheet" href="Estilos/DivCargando.css" media="all" type="text/css">
         <script src="JQueryClases/PAES_js.js" type="text/javascript"></script>
         <link rel="stylesheet" href="Estilos/css/shadowbox.css" type="text/css">
         <link rel="stylesheet" href="Estilos/lookandfeel_tec.css" type="text/css">
@@ -136,7 +137,7 @@
 
                                         </select>
                                         <label id="etiqueta_correo_central" class="labels"  >Correo Electrónico:</label>
-                                        <input type="text" id="caja_texto_email" name="email" class="tamano_cajas_texto"  value="${Email}" maxlength="150" />
+                                        <input type="text" id="caja_texto_email" name="email" class="tamano_cajas_texto"  value="${Email}" maxlength="150" disabled />
                                     </p>
                                 </fieldset> 
                             </section>
