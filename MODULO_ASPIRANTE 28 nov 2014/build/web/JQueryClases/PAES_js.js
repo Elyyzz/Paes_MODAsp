@@ -5,22 +5,6 @@
  */
 
 
-//llamar cuandoo se  carga  el primer  formulario despues de  haber 
-//validado que no exista el correo  en que tabla??? 
-function LlamarServlet() {
-//    var correo = $('#InCorreoE').val();
-    var usuario = "desarrollo";
-    var pass = "d3s4rr0ll0";
-//    var usuario = "FICHAS";
-//    var pass = "FICHAS";
-    $.get('/MODULO_ASPIRANTE/ServletCatalogos',
-            {usuario: usuario, pass: pass},
-    function(retorno) {
-
-//        $("#contenido").load("vistas/Aspirante/Datos_Aspirante.jsp");
-    }
-    );
-}
 
 //****************
 $('#crp').submit(function(event) {
