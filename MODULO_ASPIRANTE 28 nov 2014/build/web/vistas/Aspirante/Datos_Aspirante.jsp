@@ -12,7 +12,7 @@
         <script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>
         <script src="JQueryClases/shadowbox.js" type="text/javascript"></script>
         <link rel="stylesheet" href="Estilos/css/shadowbox.css" type="text/css">
-        <script src="JQueryClases/Zoom.js" type="text/javascript"></script>
+        <script src="../../JQueryClases/Zoom.js" type="text/javascript"></script>
         <script src="JQueryClases/Aspirante.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="Estilos/PAES_css.css" media="all" type="text/css">
@@ -53,7 +53,7 @@
             <div id="modulo">
                 <div  id="avance">
                     <section id="letrero_pasos"><label>Pasos del proceso para el registro del aspirante</label>
-                        <a  rel="shadowbox;" href="/vistas/Aspirante/Ver.jsp" class="shadows"> <label id="ver_proceso" style="cursor: pointer" >Ver</label></a></section>
+                        <a  rel="shadowbox;" href="/MODULO_ASPIRANTE/vistas/Aspirante/Ver.jsp" class="shadows"> <label id="ver_proceso" style="cursor: pointer" >Ver</label></a></section>
                     <label id="labelenproceso">En proceso</label>
                     <section id="botones_pasos">
                         <label  id="paso1" class="avances_botones" >1</label>
@@ -72,7 +72,7 @@
                     </section>
                     <section  id="ayudaAsp" >
                         <img  id="ayudabtn" src="Imagenes/ayuda.jpg" style="cursor: pointer"> 
-                        <a href="#"><img  id="iniciobtn" src="Imagenes/home.png" style="cursor: pointer"> </a>                       
+                        <a href="/MODULO_ASPIRANTE/Index.jsp"><img  id="iniciobtn" src="Imagenes/home.png" style="cursor: pointer"> </a>                       
                     </section>
                 </div>
             </div>

@@ -169,13 +169,13 @@ $(document).ready(function() {
     $('#continuar_datos').click(function() {
 
 //Validaciones  de  no  nulos  listas  no  borrar estas  lineas comentadas :D
-        if (nonulos() === false || nonulos() === '' || nonulos === 0) {
-//            alert("Aun no han sido completados  todos  sus datos");
-        } else {
+//        if (nonulos() === false || nonulos() === '' || nonulos === 0) {
+////            alert("Aun no han sido completados  todos  sus datos");
+//        } else {
             ConfirmaDatos();
             $('#div_fondomarco').show();
             $('#divmarco').show();
-        }
+//        }
     });
     $('#cancelar').on('click', function() {
         $('#divmarco').hide();
