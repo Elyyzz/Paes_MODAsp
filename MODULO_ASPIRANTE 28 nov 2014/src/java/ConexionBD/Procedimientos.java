@@ -24,7 +24,7 @@ public class Procedimientos {
 
     BaseDatos bd;
 
-    public List<BaseDatos> getCatalogos(String user, String pass, int opc, int  pk) throws SQLException, ClassNotFoundException {
+    public List<BaseDatos> getCatalogos(String user, String pass, int opc, int pk) throws SQLException, ClassNotFoundException {
         String result = "";
         int msgCodeError = -1;
         String msgDescError = "";
@@ -44,7 +44,7 @@ public class Procedimientos {
             cs.execute();
             result = cs.getString(4);
             ResultSet rs = (ResultSet) cs.getObject(3);
-            
+
 //CONVERTIR EL  CURSOR  A  UN ARRAY LIST
             while (rs.next()) {
                 bd = new BaseDatos();
@@ -67,7 +67,7 @@ public class Procedimientos {
         String pass = "d3s4rr0ll0";
         String usuario = "desarrollo";
         List<BaseDatos> pais;
-        int  pk = 0;
+      int pk = 0;
         Procedimientos p = new Procedimientos();
         try {
             pais = p.getCatalogos(usuario, pass, 1, pk);

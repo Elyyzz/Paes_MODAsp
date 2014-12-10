@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 
+function Pais() {
+    
+    
 
+}
 
 //****************
 $('#crp').submit(function(event) {
@@ -71,6 +75,18 @@ function ConfirmaDatos() {
 $(document).ready(function() {
     ValidaTipos();
     ValidaPeriodo();
+    
+
+$('#selectedonacimiento').change(function() {
+        alert("entra al chage");
+        var pk = $('#combopaisnacimiento option:selected').html();
+        $.get('/MODULO_ASPIRANTE/CargaEstado',
+                {pk: pk},
+        function(data) {
+            alert("ret");
+        }
+        );
+    });
 
 //llama servlet  
     $('#heleido').click(function() {

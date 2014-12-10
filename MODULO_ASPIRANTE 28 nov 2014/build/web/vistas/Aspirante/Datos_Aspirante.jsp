@@ -160,21 +160,17 @@
                                         </select>
                                         <label id="etiqueta_edonac_central" class="labels">Estado de Nacimiento:</label> 
                                         <select id="selectedonacimiento" class="Selects" disabled>
-                                            <c:forEach items="${estado}" var="estado">                                     
+                                          <c:forEach items="${estado}" var="estado">                                     
                                                 <option value="${estado.getClave()}"><c:out value="${estado.getNombre()}"/></option>                                                                           
                                             </c:forEach>
                                         </select>
                                         <label id="etiquetaedonacimiento" class="labels">Municipio de Nacimiento:</label>
                                         <select id="combompnacimiento" name="combo_edo_nac" class="Selects" disabled>
-                                            <c:forEach items="${municipio}" var="municipio">                                     
-                                                <option value="${municipio.getClave()}"><c:out value="${municipio.getNombre()}"/></option>                                                                           
-                                            </c:forEach>
+                                            
                                         </select>
                                         <label id="etiquetacdnacimiento" class="labels">Localidad de Nacimiento:</label>
                                         <select id="combocdnacimiento" name="combo_cdnac" class="Selects" disabled >
-                                            <option value="--">--</option>
-                                            <option value="si">Si</option>
-                                            <option value="no">No</option>
+                                            
                                         </select>
                                         <label id="etiqueta_tiposangre_central" class="labels" >Tipo de Sangre:</label>
                                         <select id="combo_tipo_sangre" name="combo_tiposangre" class="Selects" >

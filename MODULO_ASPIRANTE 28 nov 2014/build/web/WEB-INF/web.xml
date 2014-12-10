@@ -20,6 +20,10 @@
         <servlet-name>DesencriptaCorreo</servlet-name>
         <servlet-class>DesencriptaCorreo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CargaEstado</servlet-name>
+        <servlet-class>servlets.CargaEstado</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletActualizarListas</servlet-name>
         <url-pattern>/ServletActualizarListas</url-pattern>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>DesencriptaCorreo</servlet-name>
         <url-pattern>/DesencriptaCorreo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CargaEstado</servlet-name>
+        <url-pattern>/CargaEstado</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

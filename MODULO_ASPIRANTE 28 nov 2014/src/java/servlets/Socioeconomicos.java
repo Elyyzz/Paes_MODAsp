@@ -59,13 +59,13 @@ public class Socioeconomicos extends HttpServlet {
         Procedimientos p = new Procedimientos();
 
         try {
-            estado = p.getCatalogos(usuario, pass, 2,pk);
+            estado = p.getCatalogos(usuario, pass, 2,0);
             estado = catalogo.AgregaS(estado);
-            NivelEstudios = p.getCatalogos(usuario, pass, 4,pk);
+            NivelEstudios = p.getCatalogos(usuario, pass, 4,0);
             NivelEstudios = catalogo.AgregaS(NivelEstudios);
-            Ocupaciones = p.getCatalogos(usuario, pass, 6,pk);
+            Ocupaciones = p.getCatalogos(usuario, pass, 6,0);
             Ocupaciones = catalogo.AgregaS(Ocupaciones);
-            Dependencia = p.getCatalogos(usuario, pass, 5,pk);
+            Dependencia = p.getCatalogos(usuario, pass, 5,0);
             Dependencia = catalogo.AgregaS(Dependencia);
 //            c.getConnection().close();
         } catch (SQLException ex) {

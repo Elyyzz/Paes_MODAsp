@@ -3,25 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package servlets;
 
+import ConexionBD.Procedimientos;
+import beans.BaseDatos;
 import beans.Carrera;
 import beans.Carreras;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author ElyyzZ BaRruEtA
  */
-public class ServletActualizarListas extends HttpServlet {
+public class CargaEstado extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,48 +36,30 @@ public class ServletActualizarListas extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+        List<BaseDatos> municipio;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-        String op1 = request.getParameter("opcion1");
-        String op2 = request.getParameter("opcion2");
-        String op3 = request.getParameter("opcion3");
-        String num = request.getParameter("num");
-        System.out.println(num);
-        Carreras carr = new Carreras();
-        List<Carrera> opciones = carr.llenaCarrera();
-        List<Carrera> opciones1 = new ArrayList<>();
-        List<Carrera> opciones2 = new ArrayList<>();
-        List<Carrera> opciones3 = new ArrayList<>();
-
-        carr.Comparar(opciones, opciones1, op1);
-        carr.Comparar(opciones, opciones2, op2);
-        carr.Comparar(opciones, opciones3, op3);
-
-        carr.SinRepetir(opciones, opciones1, op2, op3);
-        carr.SinRepetir(opciones, opciones2, op1, op3);
-        carr.SinRepetir(opciones, opciones3, op2, op1);
-
-        HttpSession session = request.getSession(true);
-
-        //formatear a  json
-//        String carrera1 = carr.ConvertirJson(opciones1, 1);
-//        String carrera2 = carr.ConvertirJson(opciones2, 2);
-//        String carrera3 = carr.ConvertirJson(opciones3, 3);
-
-//        PrintWriter out = response.getWriter();
-//        if ("1".equals(num)) {
-//            out.println("{" + carrera2 + "]}");
-//        }
-//        if ("2".equals(num)) {
-//            out.println("{" + carrera3 + "]}");
-//        }
-//        if ("3".equals(num)) {
-//            out.println("{" + carrera1 + "]}");
-//            System.out.println(carrera1);
-//        }
-    }
+            try {
+                response.setContentType("text/html;charset=UTF-8");
+                PrintWriter out = response.getWriter();
+                String pk = request.getParameter("pk");
+                Carreras c= new  Carreras();
+               int  foranea=Integer.parseInt(pk);
+                String  usuario="desarrollo";
+                String  pass="d3s4rr0ll0";
+                Procedimientos p= new  Procedimientos();
+                municipio=p.getCatalogos(usuario, pass, 3, foranea);
+                String estados=c.ConvertirJson(municipio);
+                System.out.println(estados);
+            } catch (SQLException ex) {
+                Logger.getLogger(CargaEstado.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(CargaEstado.class.getName()).log(Level.SEVERE, null, ex);
+            }
+         
+        }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -41,11 +41,10 @@ public class ServletCatalogos extends HttpServlet {
     List<fecha> dia = fe.llenadia();
     List<fecha> mes = fe.llenames();
     List<fecha> anio = fe.llenaaño();
-    List<BaseDatos> estado;
+
     List<BaseDatos> EdoCivil = bd.llenaEdoCivil();
     List<BaseDatos> Discapacidad = bd.llenaDiscapacidad();
 
-    List<BaseDatos> municipio;
     List<BaseDatos> ClaveCCT;
     List<BaseDatos> NivelEstudios;
     List<BaseDatos> Dependencia;
@@ -54,6 +53,8 @@ public class ServletCatalogos extends HttpServlet {
 
     List<BaseDatos> sangre = bd.llenaSangre();
     List<BaseDatos> pais;
+    List<BaseDatos> estado;
+
     List<BaseDatos> numero = bd.llenaNumero();
     List<BaseDatos> Ingresos = bd.llenaIngresos();
     List<BaseDatos> promedio = bd.llenaPromedio();
@@ -89,8 +90,6 @@ public class ServletCatalogos extends HttpServlet {
             pais = catalogo.AgregaS(pais);
             estado = p.getCatalogos(usuario, pass, 2, 0);
             estado = catalogo.AgregaS(estado);
-            municipio = p.getCatalogos(usuario, pass, 3, 0);
-            municipio = catalogo.AgregaS(municipio);
             Escuela = p.getCatalogos(usuario, pass, 8, 0);
             Escuela = catalogo.AgregaS(Escuela);
 //            c.getConnection().close();
@@ -104,10 +103,8 @@ public class ServletCatalogos extends HttpServlet {
         session.setAttribute("mes", mes);
         session.setAttribute("dia", dia);
         session.setAttribute("anio", anio);
-        session.setAttribute("estado", estado);
         session.setAttribute("sangre", sangre);
         session.setAttribute("pais", pais);
-        session.setAttribute("municipio", municipio);
         session.setAttribute("EdoCivil", EdoCivil);
         session.setAttribute("Discapacidad", Discapacidad);
         session.setAttribute("opciones1", opciones1);
@@ -115,9 +112,10 @@ public class ServletCatalogos extends HttpServlet {
         session.setAttribute("opciones3", opciones3);
         session.setAttribute("promedio", promedio);
         session.setAttribute("Escuela", Escuela);
+        session.setAttribute("estado", estado);
+
         session.setAttribute("Email", Email);
 
-        System.out.println("Entro al  servlet");
         request.getRequestDispatcher("/vistas/Aspirante/Datos_Aspirante.jsp").forward(request, response);
     }
 
