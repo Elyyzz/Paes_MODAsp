@@ -68,7 +68,7 @@ public class ServletCatalogos extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-               String Email = request.getParameter("correo");
+//               String Email = request.getParameter("correo");
 //        System.out.println(Email);
 //        Email=en.decrypt(Email);
 //        System.out.println(Email);

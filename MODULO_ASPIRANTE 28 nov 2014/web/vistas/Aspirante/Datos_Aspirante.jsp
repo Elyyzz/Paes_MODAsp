@@ -72,7 +72,7 @@
                     </section>
                     <section  id="ayudaAsp" >
                         <img  id="ayudabtn" src="Imagenes/ayuda.jpg" style="cursor: pointer"> 
-                        <a href="/MODULO_ASPIRANTE/Index.jsp"><img  id="iniciobtn" src="Imagenes/home.png" style="cursor: pointer"> </a>                       
+                        <a href="/MODULO_ASPIRANTE/vistas/Index.jsp"><img  id="iniciobtn" src="Imagenes/home.png" style="cursor: pointer"> </a>                       
                     </section>
                 </div>
             </div>

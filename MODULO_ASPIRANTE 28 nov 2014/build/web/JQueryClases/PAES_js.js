@@ -150,7 +150,7 @@ $(document).ready(function() {
     $('#subirdespues , #confirmarcarga').click(function() {
         $('#div_marco').hide();
         $('#div_fondomarco').hide();
-        $("#contenido").load("vistas/Aspirante/Datos_Socioeconomicos.jsp");
+        $("#contenido").load("/MODULO_ASPIRANTES/vistas/Aspirante/Datos_Socioeconomicos.jsp");
     });
     $('#continuar_socioeconomicos').click(function() {
 
@@ -187,7 +187,7 @@ $(document).ready(function() {
         $.get('/MODULO_ASPIRANTE/Socioeconomicos',
                 {},
                 function(retorno) {
-                    $("#contenido").load("Datos_Socioeconomicos.jsp");
+                    $("#contenido").load("/MODULO_ASPIRANTE/vistas/Aspirante/Datos_Socioeconomicos.jsp");
                 }
         );
 
