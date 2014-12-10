@@ -86,7 +86,7 @@ $(document).ready(function() {
 
     $('#CorreoCancel').click(function() {
         $('#RetornoServlet').text("  ");
-        $('#InCorreoE').val("  ");
+        $('#InCorreoE').val("");
         $('#FondoEnvCorreo').hide();
         $('#divmarcoEnvCorreo').hide();
         $('#heleido').hide();
@@ -103,14 +103,14 @@ $(document).ready(function() {
             $('#InCorreoE').css("border", "1px solid red");
         } else {
             $('#InCorreoE').css("border", "");
-            $("#cargando").show();
+            $("#cargandoDivAnimacion").show();
             EnviaCorreoInicio();
         }
     });
 
     $('#AceptarRspuesta').click(function() {
         $('#RetornoServlet').text("  ");
-        $('#InCorreoE').val("  ");
+        $('#InCorreoE').val("");
         $('#FondoEnvCorreo').hide();
         $('#divmarcoEnvCorreo').hide();
         $('#RespuestaServlet').hide();

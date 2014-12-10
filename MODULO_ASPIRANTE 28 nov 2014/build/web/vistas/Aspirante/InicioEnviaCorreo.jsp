@@ -28,7 +28,7 @@
                             <input id="CorreoAcep"  value="Enviar" type="button">
                             <input id="CorreoCancel"  value="Cancelar" type="button">
                        
-                        <div id="cargando">
+                        <div id="cargandoDivAnimacion">
                             <div class="spinner-wave">
                                 <div></div>
                                 <div></div>
