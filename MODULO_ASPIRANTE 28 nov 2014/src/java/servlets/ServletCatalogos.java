@@ -66,8 +66,9 @@ public class ServletCatalogos extends HttpServlet {
     List<Carrera> opciones3 = opciones;
     Encripta en = new Encripta();
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String Email = request.getParameter("correo");
+               String Email = request.getParameter("correo");
 //        System.out.println(Email);
 //        Email=en.decrypt(Email);
 //        System.out.println(Email);
@@ -76,8 +77,10 @@ public class ServletCatalogos extends HttpServlet {
         Bdatos_aspirante aspirante = new Bdatos_aspirante();
 //        aspirante.setEmail(correo);
 //        String d = request.getParameter("valo");
-        String usuario = request.getParameter("usuario");
-        String pass = request.getParameter("pass");
+//        String usuario = "desarrollo";
+//        String pass ="d3s4rr0ll0";
+        String usuario = "fichas";
+        String pass ="fichas";
         System.out.println(usuario + "/" + pass);
         Procedimientos p = new Procedimientos();
 //        Conexion c=new  Conexion(usuario, pass);
@@ -112,59 +115,13 @@ public class ServletCatalogos extends HttpServlet {
         session.setAttribute("opciones3", opciones3);
         session.setAttribute("promedio", promedio);
         session.setAttribute("Escuela", Escuela);
-
-//                session.setAttribute("Email", Email);
+        System.out.println("Entro al  servlet");
+        request.getRequestDispatcher("/vistas/Aspirante/Datos_Aspirante.jsp").forward(request, response);
     }
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        String Email = request.getParameter("correo");
-//        System.out.println(Email);
-//        Email=en.decrypt(Email);
-//        System.out.println(Email);
-        PrintWriter out = response.getWriter();
-        
-        Bdatos_aspirante aspirante = new Bdatos_aspirante();
-//        aspirante.setEmail(correo);
-//        String d = request.getParameter("valo");
-        String usuario = request.getParameter("usuario");
-        String pass = request.getParameter("pass");
-        System.out.println(usuario + "/" + pass);
-        Procedimientos p = new Procedimientos();
-//        Conexion c=new  Conexion(usuario, pass);
-        try {
-            pais = p.getCatalogos(usuario, pass, 1);
-            pais = catalogo.AgregaS(pais);
-            estado = p.getCatalogos(usuario, pass, 2);
-            estado = catalogo.AgregaS(estado);
-            municipio = p.getCatalogos(usuario, pass, 3);
-            municipio = catalogo.AgregaS(municipio);
-            Escuela = p.getCatalogos(usuario, pass, 8);
-            Escuela = catalogo.AgregaS(Escuela);
-//            c.getConnection().close();
-        } catch (SQLException ex) {
-            Logger.getLogger(ServletCatalogos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServletCatalogos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        HttpSession session = request.getSession(true);
-        session.setAttribute("mes", mes);
-        session.setAttribute("dia", dia);
-        session.setAttribute("anio", anio);
-        session.setAttribute("estado", estado);
-        session.setAttribute("sangre", sangre);
-        session.setAttribute("pais", pais);
-        session.setAttribute("municipio", municipio);
-        session.setAttribute("EdoCivil", EdoCivil);
-        session.setAttribute("Discapacidad", Discapacidad);
-        session.setAttribute("opciones1", opciones1);
-        session.setAttribute("opciones2", opciones2);
-        session.setAttribute("opciones3", opciones3);
-        session.setAttribute("promedio", promedio);
-        session.setAttribute("Escuela", Escuela);
-        out.write("ajax");
-//                session.setAttribute("Email", Email);
+     
     }
     
 }

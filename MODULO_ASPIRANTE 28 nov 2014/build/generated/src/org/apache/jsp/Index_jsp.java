@@ -69,6 +69,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </script>\r\n");
       out.write("        <title>--MÓDULO ASPIRANTE--</title>\r\n");
       out.write("    </head>\r\n");
+      out.write("   \r\n");
       out.write("    <body>\r\n");
       out.write("        <a name=\"InicioPag\"></a>\r\n");
       out.write("        <header>\r\n");
@@ -118,7 +119,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <h5><input id=\"comprobar\" type=\"checkbox\">He le&iacute;do esta informaci&oacute;n. <br></h5>\r\n");
       out.write("                            </label>\r\n");
       out.write("                            <br>\r\n");
-      out.write("                            <a> <label><input id=\"heleido\" type=\"button\" class=\"btn btn-info\" value=\"Aceptar\" style=\"display: none\"></label></a>\r\n");
+      out.write("                            <a href=\"#\"> <label><input id=\"heleido\" type=\"button\" class=\"btn btn-info\" value=\"Aceptar\" style=\"display: none\"></label></a>\r\n");
       out.write("\r\n");
       out.write("                        </div>\r\n");
       out.write("                        <div id=\"cargando\">\r\n");

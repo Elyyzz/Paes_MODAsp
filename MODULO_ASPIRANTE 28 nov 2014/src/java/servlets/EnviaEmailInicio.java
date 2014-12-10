@@ -35,7 +35,7 @@ public class EnviaEmailInicio extends HttpServlet {
             out.print("Ya existe un registro con este correo.");
         } else {
             String  CorreoEnc = e.encryptURL(correo);
-            String url = "http://localhost:8080/MODULO_ASPIRANTE/vistas/Aspirante/Datos_Aspirante.jsp?correo=" + CorreoEnc;
+            String url = "http://localhost:8080/MODULO_ASPIRANTE/Datos_Aspirante.jsp?correo=" + CorreoEnc;
             BMail beanMail = new BMail();
             beanMail.setCuerpo("Éste es un correo de verificación. Por favor haga click en el siguiente enlace\n"
                     + "para que pueda continuar con su registro."

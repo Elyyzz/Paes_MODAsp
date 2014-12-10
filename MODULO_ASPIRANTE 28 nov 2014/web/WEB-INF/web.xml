@@ -49,7 +49,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletCatalogos</servlet-name>
-        <url-pattern>/ServletCatalogos</url-pattern>
+        <url-pattern>/Datos_Aspirante.jsp</url-pattern>
     </servlet-mapping>
     
     

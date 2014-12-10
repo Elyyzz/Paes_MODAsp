@@ -45,8 +45,8 @@ public class Servlet_ClaveCCT extends HttpServlet {
         Procedimientos p = new Procedimientos();
         try {
 
-            ClaveCCT = p.getCatalogos("desarrollo", "d3s4rr0ll0", 7);
-//            ClaveCCT = p.getCatalogos("fichas", "fichas", 7);
+//            ClaveCCT = p.getCatalogos("desarrollo", "d3s4rr0ll0", 7);
+            ClaveCCT = p.getCatalogos("fichas", "fichas", 7);
 
             System.out.println(ClaveCCT);
         } catch (SQLException ex) {

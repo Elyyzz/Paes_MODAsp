@@ -21,6 +21,7 @@
         </script>
         <title>--MÓDULO ASPIRANTE--</title>
     </head>
+   
     <body>
         <a name="InicioPag"></a>
         <header>
@@ -70,7 +71,7 @@
                                 <h5><input id="comprobar" type="checkbox">He le&iacute;do esta informaci&oacute;n. <br></h5>
                             </label>
                             <br>
-                            <a> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
+                            <a href="#"> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
 
                         </div>
                         <div id="cargando">

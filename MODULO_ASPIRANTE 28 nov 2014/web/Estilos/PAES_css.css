@@ -384,7 +384,7 @@ and open the template in the editor.
 
 .labels{
     font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
-    font-size: 74.6%;
+    font-size: 100%;
     float: left;
     width: 54%;
     text-align:right;
@@ -394,7 +394,7 @@ and open the template in the editor.
 
 #seccion_derecha p label{
     font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
-    font-size:74.6%;
+    font-size:100%;
     float: left;
     width: 32%;
     text-align:end;
@@ -403,7 +403,7 @@ and open the template in the editor.
 }
 #seccion_derecha p #sangre_aviso{
     font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
-    font-size: 74.6%;
+    font-size:100%;
     float: left;
     width: 100%;
     text-align:left;
@@ -430,20 +430,20 @@ and open the template in the editor.
     text-align: left;
     width: 46%;
     margin-top: 3px;
-    font-size: 74.6%;
+    font-size: 100%;
     height:20px;
 }
 .tamano_cajas_texto{
     float: right;
     text-align: left;
     width: 46%;
-    font-size: 74.6%;
+    font-size: 100%;
 }
 .tamano_caja_nombre{
     float: left;
     text-align: left;
     width: 46%;
-    font-size: 74.6%;
+    font-size:100%;
     margin-left: 2%;
     margin-top: 2%;
 }
@@ -459,14 +459,14 @@ and open the template in the editor.
     text-align: left;
     width: 16.4%;
     margin: 1px;
-    font-size: 74.6%;
+    font-size: 100%;
 }
 #combo_mes{
     float: right;
     text-align: left;
     width: 14.9%;
     margin: 1px;
-    font-size: 74.6%;
+    font-size: 100%;
 }
 
 #combo_dia{
@@ -474,7 +474,7 @@ and open the template in the editor.
     text-align: left;
     width: 12.1%;
     margin: 1px;
-    font-size: 74.6%;
+    font-size: 100%;
 }
 
 #personales_izquierdo p br,  
@@ -496,11 +496,11 @@ and open the template in the editor.
     float: right;
     text-align: left;
     width: 36%;
-    font-size: 74.6%;
+    font-size: 100%;
 }
 .labels_derecha{
     font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
-    font-size: 74.6%;
+    font-size: 100%;
     float: left;
     width: 59%;
     text-align:right;
@@ -574,7 +574,7 @@ and open the template in the editor.
 }
 .labels_carrera{
     font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
-    font-size: 74.6%;
+    font-size: 100%;
     float: left;
     width: 30%;
     text-align:right;
@@ -585,7 +585,7 @@ and open the template in the editor.
     float: right;
     text-align: left;
     width: 65%;
-    font-size: 74.6%;
+    font-size: 100%;
     height: 15%;
 }
 #propedeuticoSelect{
@@ -596,7 +596,7 @@ and open the template in the editor.
 }
 #cursopropedeutico_label{
     font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
-    font-size:74.6%;
+    font-size:100%;
     float: left;
     width: 70%;
     text-align:right;
@@ -855,7 +855,7 @@ and open the template in the editor.
 }
 #atencion{}
 #atencion{
-    font-size: 100%;
+    font-size: 130%;
     float: left;
     width: 55%;
 }

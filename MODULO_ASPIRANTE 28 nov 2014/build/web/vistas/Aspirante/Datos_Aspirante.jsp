@@ -9,21 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="../../JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>
-        <script src="../../JQueryClases/shadowbox.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="../../Estilos/css/shadowbox.css" type="text/css">
-        <script src="../../JQueryClases/Zoom.js" type="text/javascript"></script>
-        <script src="../../JQueryClases/Aspirante.js" type="text/javascript"></script>
+        <script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="JQueryClases/shadowbox.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="Estilos/css/shadowbox.css" type="text/css">
+        <script src="JQueryClases/Zoom.js" type="text/javascript"></script>
+        <script src="JQueryClases/Aspirante.js" type="text/javascript"></script>
 
-        <link rel="stylesheet" href="../../Estilos/PAES_css.css" media="all" type="text/css">
-        <script src="../../JQueryClases/PAES_js.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="../../Estilos/css/shadowbox.css" type="text/css">
-        <link rel="stylesheet" href="../../Estilos/lookandfeel_tec.css" type="text/css">
-        <link rel="stylesheet" href="../../Estilos/css/bootstrap-theme.min.css.css" type="text/css">
-        <link rel="stylesheet" href="../../Estilos/css/bootstrap.min.css.css" type="text/css">   
-        <script src="../../JQueryClases/shadowbox.js" type="text/javascript"></script>
-        <script src="../../JQueryClases/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../../Estilos/css/bootstrap.min.css.css" type="text/javascript"></script>
+        <link rel="stylesheet" href="Estilos/PAES_css.css" media="all" type="text/css">
+        <script src="JQueryClases/PAES_js.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="Estilos/css/shadowbox.css" type="text/css">
+        <link rel="stylesheet" href="Estilos/lookandfeel_tec.css" type="text/css">
+        <link rel="stylesheet" href="Estilos/css/bootstrap-theme.min.css.css" type="text/css">
+        <link rel="stylesheet" href="Estilos/css/bootstrap.min.css.css" type="text/css">   
+        <script src="JQueryClases/shadowbox.js" type="text/javascript"></script>
+        <script src="JQueryClases/bootstrap.min.js" type="text/javascript"></script>
+        <script src="Estilos/css/bootstrap.min.css.css" type="text/javascript"></script>
         <script type="text/javascript">
             Shadowbox.init({
                 language: "es",
@@ -42,18 +42,18 @@
         <title>JSP Page</title>
     </head>
     <a name="InicioPag"></a>
-    <body>
-        <form>
+    <form>
+        <body>
             <header>
                 <div class="encabezado">
-                    <img alt="la imagen" src="../../Imagenes/header_ittoluca.png" title="footer">                
+                    <img alt="la imagen" src="Imagenes/header_ittoluca.png" title="footer">                
                 </div>
                 <h1>M&oacute;dulo del registro de aspirantes</h1><br><br>
             </header> 
             <div id="modulo">
                 <div  id="avance">
                     <section id="letrero_pasos"><label>Pasos del proceso para el registro del aspirante</label>
-                        <a  rel="shadowbox;" href="Ver.jsp" class="shadows"> <label id="ver_proceso" style="cursor: pointer" >Ver</label></a></section>
+                        <a  rel="shadowbox;" href="/vistas/Aspirante/Ver.jsp" class="shadows"> <label id="ver_proceso" style="cursor: pointer" >Ver</label></a></section>
                     <label id="labelenproceso">En proceso</label>
                     <section id="botones_pasos">
                         <label  id="paso1" class="avances_botones" >1</label>
@@ -71,8 +71,8 @@
                         <label>ATENCIÓN: Es responsabilidad del aspirante que los datos de su registro sean verídicos</label>
                     </section>
                     <section  id="ayudaAsp" >
-                        <img  id="ayudabtn" src="../../Imagenes/ayuda.jpg" style="cursor: pointer"> 
-                        <a href="#"><img  id="iniciobtn" src="../../Imagenes/home.png" style="cursor: pointer"> </a>                       
+                        <img  id="ayudabtn" src="Imagenes/ayuda.jpg" style="cursor: pointer"> 
+                        <a href="#"><img  id="iniciobtn" src="Imagenes/home.png" style="cursor: pointer"> </a>                       
                     </section>
                 </div>
             </div>
@@ -250,7 +250,106 @@
                         </div>
                     </div>
                     <br>
+                    <!--Datos de  escuela de procedencia --> 
+                    <div id="escuelapro" class="demo ui-tabs ui-widget ui-widget-content ui-corner-all">
+                        <div id="pestana_escuela">
+                            <ul id="ul_escuela" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                                <li id="li_escuela" class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
+                                    <a id="ui_escuela" class="ui-tabs-anchor" role="presentation" tabindex="-1">Escuela de procedencia</a>
+                                </li>
+                            </ul>
+                            <section id="izquierdo_escuela">
+                                <fieldset>
+                                    <br>
+                                    <label name="etiqueta_estado" class="labels">Estado:</label>
+                                    <select  id="inputestado" name="input_estado" class="Selects" >
+                                        <c:forEach items="${estado}" var="estado">                                     
+                                            <option value="${estado.getClave()}"><c:out value="${estado.getNombre()}"/></option>                                                                           
+                                        </c:forEach>
+                                    </select>
+                                    <label name="etiqueta_minicipio" class="labels">Municipio:</label>
+                                    <select name="input_municipio" class="Selects" id="municipio">
+                                        <c:forEach items="${municipio}" var="municipio">                                     
+                                            <option value="${municipio.getClave()}"><c:out value="${municipio.getNombre()}"/></option>                                                                           
+                                        </c:forEach>
+                                    </select>
+                                    <label name="etiqueta_tipoescuela" class="labels">Tipo Escuela:</label>
+                                    <select name="input_tipoescuela" id="combo_tipoescuela" class="Selects" >
+                                        <option value="--">--Seleccione--</option>
+                                        <option value="Federal">Federal</option>
+                                        <option value="Estatal">Estatal</option>
+                                        <option value="Privada">Privada</option>
+                                        <option value="Otra">Otra</option>                                      
+                                    </select>
+                                    <div  id="opcion_otraescuela_aparece" style="display: none"> 
+                                        <label name="otra_escuela" class="labels">Especifique que Tipo:</label>
+                                        <select id="otraescuela" name="input_otraescuela" class="Selects" ><!-- -->
+                                            <option value="0">--Seleccione--</option>
+                                            <option value="Re">Revalidación</option>
+                                            <option value="Ac">Acuerdo 286</option>
+                                        </select>
+                                    </div>
+                                    <label name="etiqueta_escuela" class="labels">Escuela:</label>
+                                    <select  name="input_escuela"  id="escuelaprocedencia" class="Selects">
+                                        <c:forEach items="${Escuela}" var="Escuela">                                     
+                                            <option value="${Escuela.getClave()}"><c:out value="${Escuela.getNombre()}"/></option>                                                                           
+                                        </c:forEach>
+                                    </select>
+                                </fieldset>                
+                            </section>
+                            <section id="centro_escuela">                    
+                                <fieldset>
+                                    <p><label name="etiqueta_clave" class="labels_derecha">Clave de la Escuela:</label>
 
+                                        <input type="text" class="inputs_derecha" id="clavesc"  onkeyup="this.value = this.value.toUpperCase()" maxlength="12">
+                                        <label name="etiqueta_periodoInicio" class="labels_derecha">Periodo inicio:</label>
+
+                                        <select name="combo_anioinicio" id="anio_inicio">
+                                            <c:forEach items="${anio}" var="anio">                                     
+                                                <option value="${anio.getClave()}"><c:out value="${anio.getDma()}"/></option>                                                                           
+                                            </c:forEach>
+                                        </select>
+                                        <select id="mes_inicio" name="combo_mesinicio"  >
+                                            <c:forEach items="${mes}" var="mes">                                     
+                                                <option value="${mes.getClave()}"><c:out value="${mes.getDma()}"/></option>                                                                           
+                                            </c:forEach>
+                                        </select> 
+                                        <label name="etiqueta_periodoFin" class="labels_derecha">Periodo Fin:</label>
+                                        <select name="combo_aniofin" id="anio_fin" >
+                                            <c:forEach items="${anio}" var="anio">                                     
+                                                <option value="${anio.getClave()}"><c:out value="${anio.getDma()}"/></option>                                                                           
+                                            </c:forEach>
+                                        </select>
+                                        <select name="combo_mesfin" id="mes_fin">
+                                            <c:forEach items="${mes}" var="mes">                                     
+                                                <option value="${mes.getClave()}"><c:out value="${mes.getDma()}"/></option>                                                                           
+                                            </c:forEach>
+                                        </select> 
+                                        <label name="etiqueta_promedio " class="labels_derecha">Promedio del Bachillerato:</label>
+                                        <select name="input_promedio" id="inputpromedio" class="inputs_derecha" >
+                                            <c:forEach items="${promedio}" var="promedio">                                     
+                                                <option value="${promedio.getClave()}"><c:out value="${promedio.getNombre()}"/></option>                                                                           
+                                            </c:forEach>
+                                        </select></p>                             
+                                </fieldset>                                     
+                            </section>
+                            <section id="derecho_escuela">
+                                <p>  <input type="button" id="buscar_clave"  value="Buscar clave" style="cursor: pointer"> 
+                                <div id="cargandoCCT">
+                                    <div class="spinner-wave">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+
+                                </div>
+                                </p>                      
+                            </section>
+                        </div>
+                    </div>
+                    <br>
                     <!--Datos Carrera -->    
                     <div id="carreradeseada" class="demo ui-tabs ui-widget ui-widget-content ui-corner-all">
                         <div id="pestana_carrera">
@@ -326,7 +425,7 @@
                         <br>
                     </label>
                     <br>
-                    <img width="940" height="88" alt="" src="../../Imagenes/footer_ittoluca.png" title="footer">
+                    <img width="940" height="88" alt="" src="Imagenes/footer_ittoluca.png" title="footer">
                     <br>
                     <label class="texto_inferior">
                         Av. Tecnol&oacute;gico s/n. Fraccionamiento La Virgen
@@ -337,8 +436,9 @@
                     </label>
                 </div>
             </footer>
-        </form>
-    </body>
+        </body>
+    </form>
+
 
 </html>
 <%@include file="ClaveCCT.jsp"%>
