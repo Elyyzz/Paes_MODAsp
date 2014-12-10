@@ -77,21 +77,21 @@ public class ServletCatalogos extends HttpServlet {
         Bdatos_aspirante aspirante = new Bdatos_aspirante();
 //        aspirante.setEmail(correo);
 //        String d = request.getParameter("valo");
-//        String usuario = "desarrollo";
-//        String pass ="d3s4rr0ll0";
-        String usuario = "fichas";
-        String pass ="fichas";
+        String usuario = "desarrollo";
+        String pass ="d3s4rr0ll0";
+//        String usuario = "fichas";
+//        String pass ="fichas";
         System.out.println(usuario + "/" + pass);
         Procedimientos p = new Procedimientos();
 //        Conexion c=new  Conexion(usuario, pass);
         try {
-            pais = p.getCatalogos(usuario, pass, 1);
+            pais = p.getCatalogos(usuario, pass, 1,0);
             pais = catalogo.AgregaS(pais);
-            estado = p.getCatalogos(usuario, pass, 2);
+            estado = p.getCatalogos(usuario, pass, 2,0);
             estado = catalogo.AgregaS(estado);
-            municipio = p.getCatalogos(usuario, pass, 3);
+            municipio = p.getCatalogos(usuario, pass, 3,0);
             municipio = catalogo.AgregaS(municipio);
-            Escuela = p.getCatalogos(usuario, pass, 8);
+            Escuela = p.getCatalogos(usuario, pass, 8,0);
             Escuela = catalogo.AgregaS(Escuela);
 //            c.getConnection().close();
         } catch (SQLException ex) {

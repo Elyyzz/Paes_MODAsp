@@ -19,8 +19,8 @@ public class Conexion {
     // private Connection conexion;
     private String user;
     private String pass;
-     private String BaseDeDatos = "jdbc:oracle:thin:@localhost:1521:XE";
-//    private String BaseDeDatos = "jdbc:oracle:thin:@192.168.40.103:1521:SIA";
+//     private String BaseDeDatos = "jdbc:oracle:thin:@localhost:1521:XE";
+    private String BaseDeDatos = "jdbc:oracle:thin:@192.168.40.103:1521:SIA";
     private String error;
     private boolean b = false;
 

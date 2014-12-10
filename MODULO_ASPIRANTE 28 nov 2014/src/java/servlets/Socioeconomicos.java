@@ -48,23 +48,24 @@ public class Socioeconomicos extends HttpServlet {
     Catalogos catalogo = new Catalogos();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String usuario = "desarrollo";
-//        String pass = "d3s4rr0ll0";
-        String usuario = "fichas";
-        String pass = "fichas";
+        String usuario = "desarrollo";
+        String pass = "d3s4rr0ll0";
+//        String usuario = "fichas";
+//        String pass = "fichas";
 //        String usuario = request.getParameter("usuario");
 //        String pass = request.getParameter("pass");
+        int pk=0;
         System.out.println(usuario + "/" + pass);
         Procedimientos p = new Procedimientos();
 
         try {
-            estado = p.getCatalogos(usuario, pass, 2);
+            estado = p.getCatalogos(usuario, pass, 2,pk);
             estado = catalogo.AgregaS(estado);
-            NivelEstudios = p.getCatalogos(usuario, pass, 4);
+            NivelEstudios = p.getCatalogos(usuario, pass, 4,pk);
             NivelEstudios = catalogo.AgregaS(NivelEstudios);
-            Ocupaciones = p.getCatalogos(usuario, pass, 6);
+            Ocupaciones = p.getCatalogos(usuario, pass, 6,pk);
             Ocupaciones = catalogo.AgregaS(Ocupaciones);
-            Dependencia = p.getCatalogos(usuario, pass, 5);
+            Dependencia = p.getCatalogos(usuario, pass, 5,pk);
             Dependencia = catalogo.AgregaS(Dependencia);
 //            c.getConnection().close();
         } catch (SQLException ex) {

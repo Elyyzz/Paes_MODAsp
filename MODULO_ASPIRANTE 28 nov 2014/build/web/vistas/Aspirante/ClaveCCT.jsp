@@ -17,11 +17,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div  id="FondoSeleccionaClave"style="display: none"></div>
+        <div  id="FondoSeleccionaClave" style="display: none"></div>
         <div id="SelecionaClave" class="demo ui-tabs ui-widget ui-widget-content ui-corner-all" style="display: none">
             <div id="contenidoCCT">
                 <h3><label>Elige clave de la escuela</label></h3>
                 <div id="listaCCT">
+                    <table>
+                        
+                    </table>
                 </div>
                 <div>
                     <input id="aceptarCCT" type="button" value="Aceptar">

@@ -43,10 +43,11 @@ public class Servlet_ClaveCCT extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         Procedimientos p = new Procedimientos();
+        int  pk=0;
         try {
 
-//            ClaveCCT = p.getCatalogos("desarrollo", "d3s4rr0ll0", 7);
-            ClaveCCT = p.getCatalogos("fichas", "fichas", 7);
+            ClaveCCT = p.getCatalogos("desarrollo", "d3s4rr0ll0", 7,pk);
+//            ClaveCCT = p.getCatalogos("fichas", "fichas", 7);
 
             System.out.println(ClaveCCT);
         } catch (SQLException ex) {

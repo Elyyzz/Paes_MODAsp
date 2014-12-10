@@ -13,8 +13,8 @@
 <!--<link rel="stylesheet" href="../Estilos/Marcos.css" type="text/css">-->
 <!--<script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>-->
 <!--<script src="JQueryClases/CargarFoto.js"  type="text/javascript"></script>-->
-<script src="../../JQueryClases/PAES_js.js" type="text/javascript"></script>
-<link rel="stylesheet" href="../../Estilos/PAES_css.css" media="all" type="text/css">
+<script src="JQueryClases/PAES_js.js" type="text/javascript"></script>
+<link rel="stylesheet" href="Estilos/PAES_css.css" media="all" type="text/css">
 <!--<script src="../JQueryClases/validaciones_datoaspirante.js " type="text/javascript" ></script>-->
 <title>DATOS|SOCIOECONOMICO</title>
 <form>
@@ -186,7 +186,7 @@
         </div>      
         <div id="continuarsocioeconomicos">
             <fieldset id="botones_continuar">
-                <input type="button" id="regresar_socioeconomicos" title="CONTINUAR" value="Regresar"  >
+                <a href="/Datos_Aspirante.jsp"><input type="button" id="regresar_socioeconomicos" title="CONTINUAR" value="Regresar"  ></a>
                 <a href="#InicioPag"><input type="button" id="continuar_socioeconomicos" title="CONTINUAR" value="Continuar"></a>
                 <input type="reset" id="borrar_socioeconomicos" title="borrar" value="Borrar Datos" >
             </fieldset>

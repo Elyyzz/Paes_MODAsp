@@ -24,7 +24,7 @@ public class Procedimientos {
 
     BaseDatos bd;
 
-    public List<BaseDatos> getCatalogos(String user, String pass, int opc) throws SQLException, ClassNotFoundException {
+    public List<BaseDatos> getCatalogos(String user, String pass, int opc, int  pk) throws SQLException, ClassNotFoundException {
         String result = "";
         int msgCodeError = -1;
         String msgDescError = "";
@@ -37,7 +37,7 @@ public class Procedimientos {
 
             cs = con.getConnection().prepareCall("{call CATALOGOS_ASPIRANTES_PQ.GET_CATALOGO_SP(?,?,?,?,?)}");
             cs.setInt(1, opc);
-            cs.setInt(2, opc);
+            cs.setInt(2, pk);
             cs.registerOutParameter(3, OracleTypes.CURSOR);//tomas  parametro de salida de  la  base de datos           
             cs.registerOutParameter(4, OracleTypes.NUMBER);
             cs.registerOutParameter(5, OracleTypes.VARCHAR);
@@ -67,9 +67,10 @@ public class Procedimientos {
         String pass = "d3s4rr0ll0";
         String usuario = "desarrollo";
         List<BaseDatos> pais;
+        int  pk = 0;
         Procedimientos p = new Procedimientos();
         try {
-            pais = p.getCatalogos(usuario, pass, 1);
+            pais = p.getCatalogos(usuario, pass, 1, pk);
             System.out.println("");
         } catch (SQLException ex) {
             Logger.getLogger(Procedimientos.class.getName()).log(Level.SEVERE, null, ex);

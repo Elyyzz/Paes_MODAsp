@@ -202,7 +202,7 @@ $(document).ready(function() {
 //        var r = confirm("Seguro?. Los  datos no han sido guardados ");
         var r = true;
         if (r === true) {
-            window.location.reload();
+
         }
     });
     $('#ayudabtn').on('click', function() {
