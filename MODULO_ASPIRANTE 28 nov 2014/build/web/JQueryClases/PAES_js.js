@@ -213,14 +213,12 @@ $(document).ready(function() {
         $.get('/MODULO_ASPIRANTE/Servlet_ClaveCCT',
                 {},
                 function(retorno) {
-                    var $ul = $('<ul id="ListaClave">').appendTo($('#listaCCT'));
+                    var $ul = $('<tbody id="ListaClave"></tbody>').appendTo($('#tablaCCT'));
                     $.each(retorno, function(index, item) {
                         var txt = item.Clave;
                         var t = item.Nombre;
                         var c = txt + "-" + t;
-
-
-                        $('#ListaClave').append("<input  type='checkbox' class='CCTs' value='" + item.Clave + "'/>" + c + "<br>");
+                        $('#ListaClave').append("<tr><td><input  type='checkbox' class='CCTs' value='" + item.Clave + "'/></td><td>" + c + "</td></tr><br>");
                     });
                     $('#FondoSeleccionaClave').show();
                     $('#SelecionaClave').show();

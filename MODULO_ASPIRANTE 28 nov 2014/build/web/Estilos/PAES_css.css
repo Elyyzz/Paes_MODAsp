@@ -1177,7 +1177,7 @@ and open the template in the editor.
     background:#FFF;
     color: #ff9900;
     margin-left: 20%;
-    font-size: 100%;
+    font-size: 120%;
 }
 #cancelarCCT{
     margin-top: -2%;
@@ -1185,6 +1185,10 @@ and open the template in the editor.
     background:#FFF;
     color: #ff9900;
     margin-left: 40%;
+    font-size: 120%;
+}
+#tablaCCT{
+    width: 100%;
     font-size: 100%;
 }
 #contenidoCCT label{

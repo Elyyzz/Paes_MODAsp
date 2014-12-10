@@ -186,7 +186,7 @@
         </div>      
         <div id="continuarsocioeconomicos">
             <fieldset id="botones_continuar">
-                <a href="/Datos_Aspirante.jsp"><input type="button" id="regresar_socioeconomicos" title="CONTINUAR" value="Regresar"  ></a>
+                <a href="/MODULO_ASPIRANTE/Datos_Aspirante.jsp"><input type="button" id="regresar_socioeconomicos" title="CONTINUAR" value="Regresar"  ></a>
                 <a href="#InicioPag"><input type="button" id="continuar_socioeconomicos" title="CONTINUAR" value="Continuar"></a>
                 <input type="reset" id="borrar_socioeconomicos" title="borrar" value="Borrar Datos" >
             </fieldset>
