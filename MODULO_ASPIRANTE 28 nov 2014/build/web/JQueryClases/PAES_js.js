@@ -104,7 +104,6 @@ $(document).ready(function() {
         } else {
             $('#InCorreoE').css("border", "");
             $("#cargando").show();
-
             EnviaCorreoInicio();
         }
     });
@@ -210,6 +209,8 @@ $(document).ready(function() {
     });
     $('#buscar_clave').on('click', function() {
         $("#cargandoCCT").show();
+        $("buscar_clave").prop("disabled", true);
+         
         $.get('/MODULO_ASPIRANTE/Servlet_ClaveCCT',
                 {},
                 function(retorno) {

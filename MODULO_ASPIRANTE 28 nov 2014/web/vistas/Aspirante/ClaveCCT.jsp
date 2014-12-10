@@ -11,7 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <!--<script src="JQueryClases/CargarFoto.js" type="text/javascript"></script>-->
-        <!--<script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>-->
+<!--        <script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="JQueryClases/PAES_js.js" type="text/javascript"></script>-->
+
         <!--        <link rel="stylesheet" href="../Estilos/diseño_datos_aspirante.css" type="text/css">
                 <link rel="stylesheet" href="../Estilos/Marcos.css" type="text/css">-->
         <link rel="stylesheet" href="Estilos/PAES_css.css" media="all" type="text/css">

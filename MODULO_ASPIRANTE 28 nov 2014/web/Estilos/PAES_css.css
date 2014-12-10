@@ -1160,11 +1160,13 @@ and open the template in the editor.
 #contenidoCCT{}
 #contenidoCCT{
     background: url("../Imagenes/look_and_feel_azul.png") repeat-x scroll 50% 50% #5c9ccc;
-    /*background: #FDD9DB;*/
     width:98%;
     margin-left: 1%;
     height: 95%;
     margin-top: -1%;
+}
+#CCTs{
+    margin-top: 2%;
 }
 #clavecct{
     width: 60%;
@@ -1177,7 +1179,7 @@ and open the template in the editor.
     background:#FFF;
     color: #ff9900;
     margin-left: 20%;
-    font-size: 120%;
+    font-size: 140%;
 }
 #cancelarCCT{
     margin-top: -2%;
@@ -1185,7 +1187,7 @@ and open the template in the editor.
     background:#FFF;
     color: #ff9900;
     margin-left: 40%;
-    font-size: 120%;
+    font-size: 140%;
 }
 #tablaCCT{
     width: 100%;

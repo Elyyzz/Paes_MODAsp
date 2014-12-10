@@ -9,15 +9,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="JQueryClases/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <!--<script src="JQueryClases/PAES_js.js" type="text/javascript"></script>-->
         <link rel="stylesheet" href="../../Estilos/PAES_css.css" media="all" type="text/css">
-        <link rel="stylesheet" href="../../Estilos/lookandfeel_tec.css" media="all" type="text/css">
+        <!--<link rel="stylesheet" href="Estilos/lookandfeel_tec.css" media="all" type="text/css">-->
         <script src="../../JQueryClases/PAES_js.js" type="text/javascript"></script>
     </head>
     <body>
         <div>
             <div id="FondoEnvCorreo"  style="display: none"></div>
 
-            <div id="divmarcoEnvCorreo"  name="marcoiniciocorreo" class="demo ui-tabs ui-widget ui-widget-content ui-corner-all" style="display: none"    >
+            <div id="divmarcoEnvCorreo"  name="marcoiniciocorreo" class="demo ui-tabs ui-widget ui-widget-content ui-corner-all" style="display: none">
                 <div id="contenedor_inCorreo" style="display: none">                                  
                     <fieldset><p>
                             <br>
