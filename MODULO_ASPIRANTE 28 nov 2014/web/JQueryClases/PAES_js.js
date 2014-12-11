@@ -677,7 +677,7 @@ function validar_numeros(id) {
 //validar solo letras 
 function validar_letras(id) {
     $(id).change(function() {
-        var letras = $(id).val();
+        var letras = $("#"+id).val();
         patron_letra = /^[A-Za-z-ñäöüßÄÖÜáéíóúÁÉÍÓÚ ]+$/;
         if (!patron_letra.test(letras)) {
             $(id).css("border", "1px solid red");
@@ -785,10 +785,10 @@ function ValidaTipos() {
 //datos personales
     validaAlfaNum('#inputcurp');
     curpvalida('#inputcurp');
-    validar_letras('#inputpaterno');
-    validar_letras('#inputmaterno');
+    validar_letras('inputpaterno');
+    validar_letras('inputmaterno');
     validaCorreoElectronico('#caja_texto_email');
-    validar_letras('#inputnombre');
+    validar_letras('inputnombre');
     Pais('#combopaisnacimiento');
     //direccion
 //    validar_letras('#dirciudad');
@@ -803,9 +803,9 @@ function ValidaTipos() {
     //escuela de  procedencia
     validaAlfaNum('#clavesc');
     //datos socieconomicos
-    validar_letras('#nom_padre');
-    validar_letras('#nom_madre');
-    validar_letras('#contacto_emergencia');
+    validar_letras('nom_padre');
+    validar_letras('nom_madre');
+    validar_letras('contacto_emergencia');
     validaAlfaNum('#colonia');
     validaAlfaNum('#calle');
     validaAlfaNum('#ciudad');
@@ -815,9 +815,9 @@ function ValidaTipos() {
     validaCelLada('#tel_cel');
     validaAlfaNum('#cent_trabajo');
     validaAlfaNum('#tel_trabajo');
-    validar_letras('#beca_tipo');
-    validar_letras('#otroquiendepende');
-    validar_letras('#otroviveinput');
+    validar_letras('beca_tipo');
+    validar_letras('otroquiendepende');
+    validar_letras('otroviveinput');
 }
 
 
