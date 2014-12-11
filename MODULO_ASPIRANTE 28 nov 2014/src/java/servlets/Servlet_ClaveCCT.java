@@ -43,10 +43,12 @@ public class Servlet_ClaveCCT extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         Procedimientos p = new Procedimientos();
-        int  pk=0;
+        String opc = request.getParameter("municipio");
+
+        int pk =Integer.parseInt(opc);
         try {
 
-            ClaveCCT = p.getCatalogos("desarrollo", "d3s4rr0ll0", 7, 0);
+            ClaveCCT = p.getCatalogos("desarrollo", "d3s4rr0ll0", 7, pk);
 //            ClaveCCT = p.getCatalogos("fichas", "fichas", 7);
 
             System.out.println(ClaveCCT);
@@ -59,7 +61,7 @@ public class Servlet_ClaveCCT extends HttpServlet {
         String json = null;
 
         json = new Gson().toJson(ClaveCCT);
-        
+
         System.out.println("json" + json);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");

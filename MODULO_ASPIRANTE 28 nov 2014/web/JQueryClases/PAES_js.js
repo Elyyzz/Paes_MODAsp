@@ -114,7 +114,17 @@ $(document).ready(function() {
                 {pk: pk, opcion: opcion},
         function(data) {
             //limpiar el option value
-            Filtros("#input_municipioEsc",data);
+            Filtros("#municipio",data);
+        });
+    });
+     $('#estado').change(function() {
+        var pk = $('#estado option:selected').val();
+        var opcion = "Mun";
+        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
+                {pk: pk, opcion: opcion},
+        function(data) {
+            //limpiar el option value
+            Filtros("#ciudad",data);
         });
     });
     $('#combompnacimiento').change(function() {
@@ -271,9 +281,10 @@ $(document).ready(function() {
     });
     $('#buscar_clave').on('click', function() {
         $("#cargandoCCT").show();
+        var  municipio=$('#municipio option:selected').val();
         $("buscar_clave").prop("disabled", true);
         $.get('/MODULO_ASPIRANTE/Servlet_ClaveCCT',
-                {},
+                {municipio:municipio},
                 function(retorno) {
                     var $ul = $('<tbody id="ListaClave"></tbody>').appendTo($('#tablaCCT'));
                     $.each(retorno, function(index, item) {
@@ -664,7 +675,7 @@ function validar_numeros(id) {
 function validar_letras(id) {
     $(id).change(function() {
         var letras = $(id).val();
-        patron_letra = /^[A-Za-z-ñáéíóúÑÁÉÍÓÚ]+$/;
+        patron_letra =/^([A-z ñáéíóú]{2,60})$/i;
         if (!patron_letra.test(letras)) {
             $(id).css("border", "1px solid red");
             alert("solo texto");
@@ -881,7 +892,7 @@ function direccion() {
     var estado = ObtenerValor('#input_estado');
     var municipio = ObtenerValor('#dirmunicipio');
     var numExt = ObtenerValor('#dirnumext');
-    var numInt = ObtenerValor('#dirnumInt');
+//    var numInt = ObtenerValor('#dirnumInt');
     var dirciudad = ObtenerValor('#dirciudad');
     var dcalle = ObtenerValor('#dircalle');
     var dcolonia = ObtenerValor('#dircolonia');
@@ -889,7 +900,7 @@ function direccion() {
 //    var celular = ObtenerValor('#numcelular');
     var fijo = ObtenerValor('#tel2');
     if (estado !== false && dirciudad !== false && dcalle !== false && dcolonia !== false &&
-            numExt !== false && numInt !== false && municipio !== false && codigopostal !== false
+            numExt !== false  && municipio !== false && codigopostal !== false
             && fijo !== false) {
         return true;
     } else {

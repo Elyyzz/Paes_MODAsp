@@ -947,7 +947,7 @@ and open the template in the editor.
 }
 #ayudabtn,  #iniciobtn{
     width: 20%; 
-    height: 75%;
+    height: 40px;
     margin-top: 4%;
     margin:5%;
     alignment-adjust: auto;

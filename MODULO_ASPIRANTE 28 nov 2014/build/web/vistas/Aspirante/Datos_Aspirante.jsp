@@ -266,9 +266,7 @@
                                     </select>
                                     <label name="etiqueta_minicipio" class="labels">Municipio:</label>
                                     <select name="input_municipioEsc" class="Selects" id="municipio">
-                                        <c:forEach items="${municipio}" var="municipio">                                     
-                                            <option value="${municipio.getClave()}"><c:out value="${municipio.getNombre()}"/></option>                                                                           
-                                        </c:forEach>
+                                      
                                     </select>
                                     <label name="etiqueta_tipoescuela" class="labels">Tipo Escuela:</label>
                                     <select name="input_tipoescuela" id="combo_tipoescuela" class="Selects" >
