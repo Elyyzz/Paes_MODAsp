@@ -249,4 +249,29 @@ public class llenarBD {
         lista.add(b);
         return lista;
     }
+        public List<BaseDatos> llenaViveCon() {
+        List<BaseDatos> lista = new ArrayList<>();
+        BaseDatos b;
+        b = new BaseDatos();
+        b.setClave("--");
+        b.setNombre("--Seleccione--");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Padre");
+        b.setNombre("Padre");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Madre");
+        b.setNombre("Madre");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Otro");
+        b.setNombre("Otro");
+        lista.add(b);
+        b = new BaseDatos();
+        b.setClave("Urbano Marginado");
+        b.setNombre("Urbano Marginado");
+        lista.add(b);
+        return lista;
+    }
 }

@@ -37,7 +37,7 @@
                     </section>
                 </section>
                 <section id="botonesfinalizado">
-                    <input  id="aceptarfinalizado" type="button" value="Aceptar">
+                    <a href="/MODULO_ASPIRANTE/Index.jsp"><input  id="aceptarfinalizado" type="button" value="Aceptar"></a>
                     <input  id="cancelarfinalizado" type="button" value="Cancelar">
 
                 </section>

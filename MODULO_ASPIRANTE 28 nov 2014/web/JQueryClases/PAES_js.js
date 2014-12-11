@@ -72,7 +72,7 @@ function ConfirmaDatos() {
     );
 }
 
-function Filtros(id,data) {
+function Filtros(id, data) {
     $(id).html("");
     $.each(data, function(index, item) {
         var txt = item.Clave;
@@ -94,7 +94,7 @@ $(document).ready(function() {
                 {pk: pk, opcion: opcion},
         function(data) {
             //limpiar el option value
-            Filtros("#combompnacimiento",data);
+            Filtros("#combompnacimiento", data);
         });
     });
     $('#input_estado').change(function() {
@@ -104,7 +104,7 @@ $(document).ready(function() {
                 {pk: pk, opcion: opcion},
         function(data) {
             //limpiar el option value
-            Filtros("#dirmunicipio",data);
+            Filtros("#dirmunicipio", data);
         });
     });
     $('#inputestado').change(function() {
@@ -114,17 +114,17 @@ $(document).ready(function() {
                 {pk: pk, opcion: opcion},
         function(data) {
             //limpiar el option value
-            Filtros("#municipio",data);
+            Filtros("#municipio", data);
         });
     });
-     $('#estado').change(function() {
+    $('#estado').change(function() {
         var pk = $('#estado option:selected').val();
         var opcion = "Mun";
         $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
                 {pk: pk, opcion: opcion},
         function(data) {
             //limpiar el option value
-            Filtros("#ciudad",data);
+            Filtros("#ciudad", data);
         });
     });
     $('#combompnacimiento').change(function() {
@@ -135,7 +135,7 @@ $(document).ready(function() {
                 {pk: pk, opcion: opcion},
         function(data) {
             //limpiar el option value
-            Filtros("#combocdnacimiento",data);
+            Filtros("#combocdnacimiento", data);
 
         });
     });
@@ -147,7 +147,7 @@ $(document).ready(function() {
                 {pk: pk, opcion: opcion},
         function(data) {
             //limpiar el option value
-            Filtros("#dirciudad",data);
+            Filtros("#dirciudad", data);
 
         });
     });
@@ -241,13 +241,13 @@ $(document).ready(function() {
     $('#continuar_datos').click(function() {
 
 //Validaciones  de  no  nulos  listas  no  borrar estas  lineas comentadas :D
-        if (nonulos() === false || nonulos() === '' || nonulos === 0) {
-//            alert("Aun no han sido completados  todos  sus datos");
-        } else {
-            ConfirmaDatos();
-            $('#div_fondomarco').show();
-            $('#divmarco').show();
-        }
+//        if (nonulos() === false || nonulos() === '' || nonulos === 0) {
+////            alert("Aun no han sido completados  todos  sus datos");
+//        } else {
+        ConfirmaDatos();
+        $('#div_fondomarco').show();
+        $('#divmarco').show();
+//        }
     });
     $('#cancelar').on('click', function() {
         $('#divmarco').hide();
@@ -281,22 +281,22 @@ $(document).ready(function() {
     });
     $('#buscar_clave').on('click', function() {
         $("#cargandoCCT").show();
-        var  municipio=$('#municipio option:selected').val();
+        var municipio = $('#municipio option:selected').val();
         $("buscar_clave").prop("disabled", true);
         $.get('/MODULO_ASPIRANTE/Servlet_ClaveCCT',
-                {municipio:municipio},
-                function(retorno) {
-                    var $ul = $('<tbody id="ListaClave"></tbody>').appendTo($('#tablaCCT'));
-                    $.each(retorno, function(index, item) {
-                        var txt = item.Clave;
-                        var t = item.Nombre;
-                        var c = txt + "-" + t;
-                        $('#ListaClave').append("<tr><td><input  type='checkbox' class='CCTs' value='" + item.Clave + "'/></td><td>" + c + "</td></tr><br>");
-                    });
-                    $('#FondoSeleccionaClave').show();
-                    $('#SelecionaClave').show();
-                    $("#cargandoCCT").hide();
-                });
+                {municipio: municipio},
+        function(retorno) {
+            var $ul = $('<tbody id="ListaClave"></tbody>').appendTo($('#tablaCCT'));
+            $.each(retorno, function(index, item) {
+                var txt = item.Clave;
+                var t = item.Nombre;
+                var c = txt + "-" + t;
+                $('#ListaClave').append("<tr><td><input  type='checkbox' class='CCTs' value='" + item.Clave + "'/></td><td>" + c + "</td></tr><br>");
+            });
+            $('#FondoSeleccionaClave').show();
+            $('#SelecionaClave').show();
+            $("#cargandoCCT").hide();
+        });
     });
     $('#FondoSeleccionaClave').on('click', function() {
         $('#FondoSeleccionaClave').hide();
@@ -675,7 +675,7 @@ function validar_numeros(id) {
 function validar_letras(id) {
     $(id).change(function() {
         var letras = $(id).val();
-        patron_letra =/^([A-z ñáéíóú]{2,60})$/i;
+        patron_letra = /^([A-z ñáéíóú]{2,60})$/i;
         if (!patron_letra.test(letras)) {
             $(id).css("border", "1px solid red");
             alert("solo texto");
@@ -900,7 +900,7 @@ function direccion() {
 //    var celular = ObtenerValor('#numcelular');
     var fijo = ObtenerValor('#tel2');
     if (estado !== false && dirciudad !== false && dcalle !== false && dcolonia !== false &&
-            numExt !== false  && municipio !== false && codigopostal !== false
+            numExt !== false && municipio !== false && codigopostal !== false
             && fijo !== false) {
         return true;
     } else {
@@ -1046,12 +1046,49 @@ function evaluar() {
 
 }
 
+function Datos_vive() {
+    if ($("#padre_viveSi").is(':checked')) {
+        if ($("#madre_viveSi").is(':checked')) {
+            if (datos_tutor()) {
+                return true;
+            } else {
+                alert("Complete los datos del tutor, ya que son necesarios para  su registro");
+                return false;
 
+            }
+        }
+        if ($("#madre_viveNo").is(':checked')) {
+            if (datos_tutor()) {
+                return true;
+            } else {
+                alert("Complete los datos del tutor, ya que son necesarios para  su registro");
+                return false;
+            }
+        }
+    } else {
+        if ($("#padre_viveNo").is(':checked')) {
+            if ($("#madre_viveSi").is(':checked')) {
+                if (datos_tutor()) {
+                    return true;
+                } else {
+                    alert("Complete los datos del tutor, ya que son necesarios para  su registro");
+                    return false;
+                }
+            }
+            if ($("#madre_viveNo").is(':checked')) {
+                if (datos_tutor()) {
+                    return true;
+                } else {
+                    alert("Complete los datos del tutor, ya que son necesarios para  su registro");
+                    return false;
+                }
+            }
+        }
+    }
+}
 function datos_tutor() {
     var padre = ObtenerValor('#nom_padre');
     var madre = ObtenerValor('#nom_madre');
-    var padreActualmente = ObtenerValor('#padre_vive');
-    var madreActualmente = ObtenerValor('#madre_vive');
     var contacto_emergencia = ObtenerValor('#contacto_emergencia');
     var ciudad = ObtenerValor('#ciudad');
     var estado = ObtenerValor('#estado');
@@ -1061,10 +1098,12 @@ function datos_tutor() {
     var tel_cel = ObtenerValor('#tel_cel');
     var cent_trabajo = ObtenerValor('#cent_trabajo');
     var tel_trabajo = ObtenerValor('#tel_trabajo');
-    if (padre !== false && madre !== false && padreActualmente !== false && madreActualmente !== false
+    var numExt = ObtenerValor('#socionumext');
+
+    if (padre !== false && madre !== false
             && contacto_emergencia !== false && ciudad !== false && estado !== false && colonia !== false
             && calle !== false && tel_fijo !== false && tel_cel !== false && cent_trabajo !== false
-            && tel_trabajo !== false) {
+            && tel_trabajo !== false && numExt !== false) {
         return  true;
     } else {
         alert("Complete los datos del tutor, ya que son necesarios para  su registro");
@@ -1138,7 +1177,7 @@ function ValidaOtroVive() {
 }
 function nonulos_socioeconomicos() {
 
-    if (datos_tutor() !== false && datos_socioeconomicos() !== false) {
+    if (Datos_vive() !== false && datos_socioeconomicos() !== false && datos_tutor() !== false) {
 
         return true;
     } else {
