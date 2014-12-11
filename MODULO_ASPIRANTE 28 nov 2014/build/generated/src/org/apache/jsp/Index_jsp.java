@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import net.tanesha.recaptcha.ReCaptcha;
+import net.tanesha.recaptcha.ReCaptchaFactory;
 
 public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -35,7 +37,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -46,6 +48,11 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
@@ -61,16 +68,33 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link rel=\"stylesheet\" href=\"Estilos/css/bootstrap-theme.min.css.css\" type=\"text/css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"Estilos/css/bootstrap.min.css.css\" type=\"text/css\">     \r\n");
       out.write("        <script type=\"text/javascript\">\r\n");
-      out.write("            $(document).ready(function() {\r\n");
-      out.write("                $(\".tooltip-examples a\").tooltip({\r\n");
-      out.write("                    placement: 'top'\r\n");
-      out.write("                });\r\n");
-      out.write("            });\r\n");
+      out.write("            function periodo(per) {\r\n");
+      out.write("                if (per === true)\r\n");
+      out.write("                {\r\n");
+      out.write("                    closeDialog('popup');\r\n");
+      out.write("                }\r\n");
+      out.write("                if (per === false)\r\n");
+      out.write("                {\r\n");
+      out.write("                    $('#overlay').fadeIn(1000);\r\n");
+      out.write("                    $('#popup').fadeIn(1000);\r\n");
+      out.write("                    if (per === true) {\r\n");
+      out.write("                    }\r\n");
+      out.write("                    if (per === false) {\r\n");
+      out.write("                        $('#popup').animate({'left': '30%'}, 500);\r\n");
+      out.write("                    }\r\n");
+      out.write("                }\r\n");
+      out.write("            }\r\n");
+      out.write("            function closeDialog(id) {\r\n");
+      out.write("                $('#overlay').fadeOut(1000);\r\n");
+      out.write("                $('#popup').fadeOut(1000);\r\n");
+      out.write("            }\r\n");
       out.write("        </script>\r\n");
-      out.write("        <title>--MÓDULO ASPIRANTE--</title>\r\n");
+      out.write("        <title>--M&Oacute;DULO ASPIRANTE--</title>\r\n");
       out.write("    </head>\r\n");
-      out.write("\r\n");
-      out.write("    <body>\r\n");
+      out.write("    \r\n");
+      out.write("    <!--Valida si la fecha de consulta esta dentro del periodo habilitado-->\r\n");
+      out.write("    <body onload=\"periodo(true);\"> \r\n");
+      out.write("        \r\n");
       out.write("        <a name=\"InicioPag\"></a>\r\n");
       out.write("        <header>\r\n");
       out.write("            <div class=\"encabezado\">\r\n");
@@ -92,8 +116,8 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        </ul>\r\n");
       out.write("                        <label id=\"centrar_inf\"><h4>Para realizar su solicitud de registro como aspirante, asegurate de contar con los siguientes datos y documentos.</h4></label>\r\n");
       out.write("                        <ul id=\"sangria\">\r\n");
-      out.write("                            <li>Clave CURP<a href=\"http://consultas.curp.gob.mx/CurpSP/\"target=\"_blank\"><div id=\"aqui\">consultar aquí</div></a></li>\r\n");
-      out.write("                            <li>Clave de la escuela de procedencia<a href=\"http://www.snie.sep.gob.mx/SNIESC/\" target=\"_blank\"><div id=\"aqui_escuela\">consultar aquí</div></a></li>\r\n");
+      out.write("                            <li>Clave CURP<a href=\"http://consultas.curp.gob.mx/CurpSP/\"target=\"_blank\"><div id=\"aqui\">consultar aqu&iacute;</div></a></li>\r\n");
+      out.write("                            <li>Clave de la escuela de procedencia<a href=\"http://www.snie.sep.gob.mx/SNIESC/\" target=\"_blank\"><div id=\"aqui_escuela\">consultar aqu&iacute;</div></a></li>\r\n");
       out.write("                            <li><div id=\"link_toolt\"><a data-toggle=\"tooltip\" data-original-title=\"Federal, Estatal, Privada\"  >Tipo de la escuela de procedencia</a></div></li>\r\n");
       out.write("                            <li>Tipo de sangre</li>\r\n");
       out.write("                            <li>Acta de nacimiento</li>\r\n");
@@ -119,7 +143,17 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <h5><input id=\"comprobar\" type=\"checkbox\">He le&iacute;do esta informaci&oacute;n. <br></h5>\r\n");
       out.write("                        </label>\r\n");
       out.write("                        <br>\r\n");
-      out.write("                        <a href=\"#\"> <label><input id=\"heleido\" type=\"button\" class=\"btn btn-info\" value=\"Aceptar\" style=\"display: none\"></label></a>\r\n");
+      out.write("                        <a> <label><input id=\"heleido\" type=\"button\" class=\"btn btn-info\" value=\"Aceptar\" style=\"display: none\"></label></a>\r\n");
+      out.write("\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div id=\"cargando\">\r\n");
+      out.write("                        <div class=\"spinner-wave\">\r\n");
+      out.write("                            <div></div>\r\n");
+      out.write("                            <div></div>\r\n");
+      out.write("                            <div></div>\r\n");
+      out.write("                            <div></div>\r\n");
+      out.write("                            <div></div>\r\n");
+      out.write("                        </div>\r\n");
       out.write("\r\n");
       out.write("                    </div>\r\n");
       out.write("                </div>\r\n");
@@ -167,7 +201,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <label class=\"texto_inferior\">\r\n");
       out.write("                    Instituto Tecnol&oacute;gico de Toluca | www.ittoluca.edu.mx\r\n");
       out.write("                    <br>\r\n");
-      out.write("                    Instituto Tecnol&oacute;gico de Toluca - Algunos derechos reservados © 2014\r\n");
+      out.write("                    Instituto Tecnol&oacute;gico de Toluca - Algunos derechos reservados ? 2014\r\n");
       out.write("                    <br>\r\n");
       out.write("                </label>\r\n");
       out.write("                <br>\r\n");
@@ -182,6 +216,23 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </label>\r\n");
       out.write("            </div>\r\n");
       out.write("        </footer>\r\n");
+      out.write("\r\n");
+      out.write("        <div id=\"content\">\r\n");
+      out.write("            <div id=\"overlay\" class=\"overlay\">\r\n");
+      out.write("                \r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div id=\"popup\" class=\"popup\">\r\n");
+      out.write("                <div>\r\n");
+      out.write("                    <center><h2>Aviso al usuario</h2></center>\r\n");
+      out.write("                    <div id=\"msgPeriodo\">\r\n");
+      out.write("                        Por el momento la p&aacute;gina del preregistro de aspirantes se encuentra indispuesta debido a que no estamos en un periodo h&aacute;bil para expedir prefichas.\r\n");
+      out.write("                    Le recomendamos intentarlo en otra ocasi&oacute;n\r\n");
+      out.write("                    Gracias.\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
       out.write("\r\n");

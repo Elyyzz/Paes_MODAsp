@@ -43,7 +43,7 @@
     </head>
     
     <!--Valida si la fecha de consulta esta dentro del periodo habilitado-->
-    <body onload="periodo(false);"> 
+    <body onload="periodo(true);"> 
         
         <a name="InicioPag"></a>
         <header>
