@@ -56,7 +56,7 @@ public class CargaEstado extends HttpServlet {
                 municipio=cat.AgregaS(municipio);
                 String estados=c.ConvertirJson(municipio);
                 System.out.println(estados);
-                out.write("{" + estados + "]}");
+                out.println("{" + estados + "]}");
                 
             } catch (SQLException ex) {
                 Logger.getLogger(CargaEstado.class.getName()).log(Level.SEVERE, null, ex);

@@ -166,7 +166,7 @@
                                         </select>
                                         <label id="etiquetaedonacimiento" class="labels">Municipio de Nacimiento:</label>
                                         <select id="combompnacimiento" name="combo_edo_nac" class="Selects" disabled>
-                                            
+                                            <option value="--">--Seleccione--</option>
                                         </select>
                                         <label id="etiquetacdnacimiento" class="labels">Localidad de Nacimiento:</label>
                                         <select id="combocdnacimiento" name="combo_cdnac" class="Selects" disabled >
