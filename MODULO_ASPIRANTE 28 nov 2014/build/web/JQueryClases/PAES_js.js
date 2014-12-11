@@ -5,8 +5,8 @@
  */
 
 function Pais() {
-    
-    
+
+
 
 }
 
@@ -72,38 +72,84 @@ function ConfirmaDatos() {
     );
 }
 
+function Filtros(id,data) {
+    $(id).html("");
+    $.each(data, function(index, item) {
+        var txt = item.Clave;
+        var t = item.Nombre;
+        $(id).append("<option value='" + txt + "'>" + t + "</option>");
+    });
+}
+
 $(document).ready(function() {
     ValidaTipos();
     ValidaPeriodo();
-    
+    $('#selectedonacimiento').change(function() {
 
-$('#selectedonacimiento').change(function() {
-        alert("entra al chage");
         var pk = $('#selectedonacimiento option:selected').val();
-        
-        $.getJSON('/MODULO_ASPIRANTE/CargaEstado',
-                {pk: pk},
+        var opcion = "Mun";
+        $('#combompnacimiento').prop("disabled", false);
+
+        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
+                {pk: pk, opcion: opcion},
         function(data) {
-          $("#combompnacimiento").html("");
-            $.each(data.Carrera, function(i,item2){
-                $("#combompnacimiento").append("<option value='"+item2.id+"'>"+item2.TNAME+"</option>");
-            });
-        }
-        );
+            //limpiar el option value
+            Filtros("#combompnacimiento",data);
+        });
+    });
+    $('#input_estado').change(function() {
+        var pk = $('#input_estado option:selected').val();
+        var opcion = "Mun";
+        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
+                {pk: pk, opcion: opcion},
+        function(data) {
+            //limpiar el option value
+            Filtros("#dirmunicipio",data);
+        });
+    });
+    $('#inputestado').change(function() {
+        var pk = $('#inputestado option:selected').val();
+        var opcion = "Mun";
+        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
+                {pk: pk, opcion: opcion},
+        function(data) {
+            //limpiar el option value
+            Filtros("#input_municipioEsc",data);
+        });
+    });
+    $('#combompnacimiento').change(function() {
+        var pk = $('#combompnacimiento option:selected').val();
+        $('#combocdnacimiento').prop("disabled", false);
+        var opcion = "Loc";
+        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
+                {pk: pk, opcion: opcion},
+        function(data) {
+            //limpiar el option value
+            Filtros("#combocdnacimiento",data);
+
+        });
+    });
+    $('#dirmunicipio').change(function() {
+        var pk = $('#dirmunicipio option:selected').val();
+
+        var opcion = "Loc";
+        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
+                {pk: pk, opcion: opcion},
+        function(data) {
+            //limpiar el option value
+            Filtros("#dirciudad",data);
+
+        });
     });
 
 //llama servlet  
     $('#heleido').click(function() {
         var $valor = $("input #heleido").val();
-//        $('#Contenedor_Bienvenido').css("heigh7t", "96%");
-//        $('#grande').css("height", "800px");
-//        $("#cargando").show();
-//        LlamarServlet();
+
         $('#FondoEnvCorreo').show();
         $('#divmarcoEnvCorreo').show();
         $('#contenedor_inCorreo').show();
     });
-
     $('#CorreoCancel').click(function() {
         $('#RetornoServlet').text("  ");
         $('#InCorreoE').val("");
@@ -114,7 +160,6 @@ $('#selectedonacimiento').change(function() {
         $("#cargandoDivAnimacion").hide();
         $("#comprobar").removeAttr("checked");
     });
-
     $('#CorreoAcep').click(function() {
         $('#RespuestaServlet').hide();
         validaCorreoElectronico('#InCorreoE');
@@ -128,7 +173,6 @@ $('#selectedonacimiento').change(function() {
             EnviaCorreoInicio();
         }
     });
-
     $('#AceptarRspuesta').click(function() {
         $('#RetornoServlet').text("");
         $('#InCorreoE').val("");
@@ -139,9 +183,6 @@ $('#selectedonacimiento').change(function() {
         $('#heleido').hide();
         $("#comprobar").removeAttr("checked");
     });
-
-
-
 // MostrarManual();
     $('#subirfoto').change(function(e) {
         addImage(e);
@@ -211,7 +252,6 @@ $('#selectedonacimiento').change(function() {
                     $("#contenido").load("/MODULO_ASPIRANTE/vistas/Aspirante/Datos_Socioeconomicos.jsp");
                 }
         );
-
 //        $("#contenido").load("vistas/Aspirante/CargarFoto.jsp");
     });
     //carga correcta
@@ -232,7 +272,6 @@ $('#selectedonacimiento').change(function() {
     $('#buscar_clave').on('click', function() {
         $("#cargandoCCT").show();
         $("buscar_clave").prop("disabled", true);
-
         $.get('/MODULO_ASPIRANTE/Servlet_ClaveCCT',
                 {},
                 function(retorno) {
@@ -248,7 +287,6 @@ $('#selectedonacimiento').change(function() {
                     $("#cargandoCCT").hide();
                 });
     });
-
     $('#FondoSeleccionaClave').on('click', function() {
         $('#FondoSeleccionaClave').hide();
         $('#SelecionaClave').hide();
@@ -719,8 +757,8 @@ function Pais(id) {
         var pais = $(id).val();
         if (pais === 'MEX') {
             $('#selectedonacimiento').prop("disabled", false);
-            $('#combompnacimiento').prop("disabled", false);
-            $('#combocdnacimiento').prop("disabled", false);
+//            $('#combompnacimiento').prop("disabled", false);
+//            $('#combocdnacimiento').prop("disabled", false);
         } else {
             $('#selectedonacimiento').prop("disabled", true);
             $('#combompnacimiento').prop("disabled", true);
@@ -797,7 +835,7 @@ function personales() {
     var capacidad = ObtenerValor('#capacidad_dif');
     var sangre = ObtenerValor('#combo_tipo_sangre');
     var fecha = evaluar();
-    if (pais === 'MX') {
+    if (pais === 'MEX') {
         var municipio = ObtenerValor('#combompnacimiento');
         var ciudad = ObtenerValor('#combocdnacimiento');
         var estado = ObtenerValor('#selectedonacimiento');

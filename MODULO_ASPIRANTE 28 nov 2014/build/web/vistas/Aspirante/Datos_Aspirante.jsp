@@ -265,7 +265,7 @@
                                         </c:forEach>
                                     </select>
                                     <label name="etiqueta_minicipio" class="labels">Municipio:</label>
-                                    <select name="input_municipio" class="Selects" id="municipio">
+                                    <select name="input_municipioEsc" class="Selects" id="municipio">
                                         <c:forEach items="${municipio}" var="municipio">                                     
                                             <option value="${municipio.getClave()}"><c:out value="${municipio.getNombre()}"/></option>                                                                           
                                         </c:forEach>

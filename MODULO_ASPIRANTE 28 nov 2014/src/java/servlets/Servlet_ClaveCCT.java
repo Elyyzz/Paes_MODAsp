@@ -59,6 +59,7 @@ public class Servlet_ClaveCCT extends HttpServlet {
         String json = null;
 
         json = new Gson().toJson(ClaveCCT);
+        
         System.out.println("json" + json);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
