@@ -1,7 +1,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%--<%@ page language="java" import="CAPTCHA.Captcha" %>--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page import="net.tanesha.recaptcha.ReCaptcha" %>
+<%@ page import="net.tanesha.recaptcha.ReCaptchaFactory" %>
+
 <html>
+    <%
+                    ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LdlHOsSAAAAAM8ypy8W2KXvgMtY2dFsiQT3HVq-", "6LdlHOsSAAAAACe2WYaGCjU2sc95EZqCI9wLcLXY", false);
+                    out.print(c.createRecaptchaHtml(null, null));
+                %>
     <head>
         <script src="JQueryClases/PAES_js.js" type="text/javascript"></script>
         <script src="JQueryClases/Map.js" type="text/javascript"></script>
