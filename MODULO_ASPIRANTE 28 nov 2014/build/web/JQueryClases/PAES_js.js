@@ -85,7 +85,7 @@ $('#selectedonacimiento').change(function() {
                 {pk: pk},
         function(data) {
           $("#combompnacimiento").html("");
-            $.each(data.Ciuadades, function(i,item2){
+            $.each(data.muni, function(i,item2){
                 $("#combompnacimiento").append("<option value='"+item2.id+"'>"+item2.TNAME+"</option>");
             });
         }

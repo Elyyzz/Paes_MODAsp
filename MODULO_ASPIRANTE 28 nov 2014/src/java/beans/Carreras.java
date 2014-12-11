@@ -76,7 +76,7 @@ public class Carreras {
     }
 
     public String ConvertirJson(List<BaseDatos> carreras) {
-        String lista = "\"" + "Carrera"  + "\":" + "[";
+        String lista = "\"" + "muni"  + "\":" + "[";
         for (int i = 0; i < carreras.size(); i++) {
             lista += "{" + "\"" + "id" + "\"" + ":" + carreras.get(i).getClave() + ","
                     + "\"" + "TNAME" + "\"" + ":" + " \"" + carreras.get(i).getNombre() + "\"" + "}" + ",";;
