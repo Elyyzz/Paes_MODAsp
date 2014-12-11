@@ -36,13 +36,13 @@ public class Procedimientos {
         try {
 
             cs = con.getConnection().prepareCall("{call CATALOGOS_ASPIRANTES_PQ.GET_CATALOGO_SP(?,?,?,?,?)}");
-            cs.setInt(1, opc);
+            cs.setInt(1, opc);//pasar  atributos  para  where o insertar 
             cs.setInt(2, pk);
             cs.registerOutParameter(3, OracleTypes.CURSOR);//tomas  parametro de salida de  la  base de datos           
             cs.registerOutParameter(4, OracleTypes.NUMBER);
             cs.registerOutParameter(5, OracleTypes.VARCHAR);
             cs.execute();
-            result = cs.getString(4);
+            result = cs.getString(4);//#error
             ResultSet rs = (ResultSet) cs.getObject(3);
 
 //CONVERTIR EL  CURSOR  A  UN ARRAY LIST

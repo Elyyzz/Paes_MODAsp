@@ -84,11 +84,14 @@ function Filtros(id, data) {
 $(document).ready(function() {
     ValidaTipos();
     ValidaPeriodo();
+
+    periodo(true);
+
+
     $('#selectedonacimiento').change(function() {
 
         var pk = $('#selectedonacimiento option:selected').val();
         var opcion = "Mun";
-        $('#combompnacimiento').prop("disabled", false);
 
         $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
                 {pk: pk, opcion: opcion},
@@ -675,7 +678,7 @@ function validar_numeros(id) {
 function validar_letras(id) {
     $(id).change(function() {
         var letras = $(id).val();
-        patron_letra = /^([A-z ñáéíóú]{2,60})$/i;
+        patron_letra = /^[A-Za-z-ñäöüßÄÖÜáéíóúÁÉÍÓÚ ]+$/;
         if (!patron_letra.test(letras)) {
             $(id).css("border", "1px solid red");
             alert("solo texto");
@@ -768,8 +771,8 @@ function Pais(id) {
         var pais = $(id).val();
         if (pais === 'MEX') {
             $('#selectedonacimiento').prop("disabled", false);
-//            $('#combompnacimiento').prop("disabled", false);
-//            $('#combocdnacimiento').prop("disabled", false);
+            $('#combompnacimiento').prop("disabled", false);
+            $('#combocdnacimiento').prop("disabled", false);
         } else {
             $('#selectedonacimiento').prop("disabled", true);
             $('#combompnacimiento').prop("disabled", true);
@@ -1317,3 +1320,25 @@ function lightbox_close_adyuda() {
 //        mapTypeId: google.maps.MapTypeId.ROADMAP};
 //    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 //}
+
+
+function periodo(per) {
+    if (per === true)
+    {
+        closeDialog('popup');
+    }
+    if (per === false)
+    {
+        $('#overlay').fadeIn(1000);
+        $('#popup').fadeIn(1000);
+        if (per === true) {
+        }
+        if (per === false) {
+            $('#popup').animate({'left': '30%'}, 500);
+        }
+    }
+}
+function closeDialog(id) {
+    $('#overlay').fadeOut(1000);
+    $('#popup').fadeOut(1000);
+}

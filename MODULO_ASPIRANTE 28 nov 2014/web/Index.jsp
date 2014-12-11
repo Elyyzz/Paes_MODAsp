@@ -1,3 +1,4 @@
+
 <%--<%@page contentType="text/html" pageEncoding="UTF-8"%>--%>
 
 <%--<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>--%>
@@ -17,7 +18,7 @@
         <link rel="stylesheet" href="Estilos/lookandfeel_tec.css" type="text/css">
         <link rel="stylesheet" href="Estilos/css/bootstrap-theme.min.css.css" type="text/css">
         <link rel="stylesheet" href="Estilos/css/bootstrap.min.css.css" type="text/css">     
-        <script type="text/javascript">
+<!--        <script type="text/javascript">
             function periodo(per) {
                 if (per === true)
                 {
@@ -38,13 +39,12 @@
                 $('#overlay').fadeOut(1000);
                 $('#popup').fadeOut(1000);
             }
-        </script>
+        </script>-->
         <title>--M&Oacute;DULO ASPIRANTE--</title>
     </head>
     
     <!--Valida si la fecha de consulta esta dentro del periodo habilitado-->
-    <body onload="periodo(true);"> 
-        
+    <body>         
         <a name="InicioPag"></a>
         <header>
             <div class="encabezado">
@@ -93,10 +93,10 @@
                             <h5><input id="comprobar" type="checkbox">He le&iacute;do esta informaci&oacute;n. <br></h5>
                         </label>
                         <br>
-                        <a> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
+                        <a href="#"> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
 
                     </div>
-                    <div id="cargando">
+<!--                    <div id="cargando">
                         <div class="spinner-wave">
                             <div></div>
                             <div></div>
@@ -105,7 +105,7 @@
                             <div></div>
                         </div>
 
-                    </div>
+                    </div>-->
                 </div>
             </div>
 

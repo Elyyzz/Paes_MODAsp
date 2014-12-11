@@ -1,15 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%--<%@ page language="java" import="CAPTCHA.Captcha" %>--%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>--%>
 
 <%@ page import="net.tanesha.recaptcha.ReCaptcha" %>
 <%@ page import="net.tanesha.recaptcha.ReCaptchaFactory" %>
 
 <html>
-    <%
-                    ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LdlHOsSAAAAAM8ypy8W2KXvgMtY2dFsiQT3HVq-", "6LdlHOsSAAAAACe2WYaGCjU2sc95EZqCI9wLcLXY", false);
-                    out.print(c.createRecaptchaHtml(null, null));
-                %>
     <head>
         <script src="JQueryClases/PAES_js.js" type="text/javascript"></script>
         <script src="JQueryClases/Map.js" type="text/javascript"></script>
@@ -43,7 +39,7 @@
         </style>
 
         <script type="text/javascript">
-            $(document).ready(function () {
+            $(document).ready(function() {
                 $(".tooltip-examples a").tooltip({
                     placement: 'top'
                 });
@@ -113,21 +109,20 @@
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <!--Introduce el C&oacute;digo:--> 
+                            <div class="captchaSizeDivLarge">
+                                <img id="si_image_com" class="si-captcha" src="http://www.colordeu.es/BLOG/wp-content/plugins/si-captcha-for-wordpress/captcha/securimage_show.php?si_form_id=com&amp;prefix=vXbpWge13GNhnkNg" width="175" height="60" alt="Imagen CAPTCHA" title="Imagen CAPTCHA" />
 
-                            <!--<input type="text" id="recibe_captcha"name="recibe_captcha" /><br>-->
-                            <!--<button type="submit"class="btn btn-default" onclick='alert("Una alerta con el captcha "+document.getElementById("recibe_captcha").value)'>Enviar</button>-->
-
-                            <div class="captchaSizeDivLarge"><img id="si_image_com" class="si-captcha" src="http://www.colordeu.es/BLOG/wp-content/plugins/si-captcha-for-wordpress/captcha/securimage_show.php?si_form_id=com&amp;prefix=vXbpWge13GNhnkNg" width="175" height="60" alt="Imagen CAPTCHA" title="Imagen CAPTCHA" />
                                 <input id="si_code_com" name="si_code_com" type="hidden"  value="vXbpWge13GNhnkNg" />
+
                                 <div id="si_refresh_com">
                                     <a href="#" rel="nofollow" title="Refrescar imagen" onclick="si_captcha_refresh('si_image_com', 'com', '/BLOG/wp-content/plugins/si-captcha-for-wordpress/captcha', 'http://www.colordeu.es/BLOG/wp-content/plugins/si-captcha-for-wordpress/captcha/securimage_show.php?si_form_id=com&amp;prefix=');
                                             return false;">
                                         <img class="captchaImgRefresh" src="http://www.colordeu.es/BLOG/wp-content/plugins/si-captcha-for-wordpress/captcha/images/refresh.png" width="22" height="20" alt="Refrescar imagen" onclick="this.blur();" /></a>
                                 </div>
                             </div>
-                            <div id="captchaInputDiv"><input id="captcha_code" name="captcha_code" type="text" value="" tabindex="4"  />
-                                <label id="captcha_code_label" for="captcha_code">Código CAPTCHA</label><span class="required"> *</span>
+                            <div id="captchaInputDiv">
+                                <input id="captcha_code" name="captcha_code" type="text" value="" tabindex="4"  placeholder="Introduce el código"/>
+                                <!--<label id="captcha_code_label" for="captcha_code">Código CAPTCHA</label><span class="required"> *</span>-->
                             </div>
                             <button type="submit"class="btn btn-default">Enviar</button>
                             <button type="button" class="btn btn-default" onClick="lightbox_close_correo();">Cancelar</button>
