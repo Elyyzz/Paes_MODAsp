@@ -160,7 +160,7 @@
                                         </select>
                                         <label id="etiqueta_edonac_central" class="labels">Estado de Nacimiento:</label> 
                                         <select id="selectedonacimiento" class="Selects" disabled>
-                                          <c:forEach items="${estado}" var="estado">                                     
+                                            <c:forEach items="${estado}" var="estado">                                     
                                                 <option value="${estado.getClave()}"><c:out value="${estado.getNombre()}"/></option>                                                                           
                                             </c:forEach>
                                         </select>
@@ -170,7 +170,10 @@
                                         </select>
                                         <label id="etiquetacdnacimiento" class="labels">Localidad de Nacimiento:</label>
                                         <select id="combocdnacimiento" name="combo_cdnac" class="Selects" disabled >
-                                            
+                                            <option value="--">--Seleccione--</option>
+                                            <option value="1">Maxteleca</option>
+                                            <option value="2">San  Martín</option>
+                                            <option value="3">San Geronimo</option>
                                         </select>
                                         <label id="etiqueta_tiposangre_central" class="labels" >Tipo de Sangre:</label>
                                         <select id="combo_tipo_sangre" name="combo_tiposangre" class="Selects" >
@@ -216,9 +219,11 @@
                                             </c:forEach></select>
                                         <label name="etiqueta_ciudad" class="labels">Localidad:</label>
                                         <select  id="dirciudad"type="text"name="input_ciudad" class="tamano_cajas_texto" maxlength="20">
-                                            <c:forEach items="${estado}" var="estado">                                     
-                                                <option value="${estado.getClave()}"><c:out value="${estado.getNombre()}"/></option>                                                                           
-                                            </c:forEach>
+                                            <option value="--">--Seleccione--</option>
+                                            <option value="1">Maxteleca</option>
+                                            <option value="2">San  Martín</option>
+                                            <option value="3">San Geronimo</option>
+
                                         </select>
 
                                         <label name="etiqueta_colonia" class="labels">Colonia:</label>
@@ -266,7 +271,7 @@
                                     </select>
                                     <label name="etiqueta_minicipio" class="labels">Municipio:</label>
                                     <select name="input_municipioEsc" class="Selects" id="municipio">
-                                      
+
                                     </select>
                                     <label name="etiqueta_tipoescuela" class="labels">Tipo Escuela:</label>
                                     <select name="input_tipoescuela" id="combo_tipoescuela" class="Selects" >

@@ -127,30 +127,30 @@ $(document).ready(function() {
             Filtros("#ciudad", data);
         });
     });
-    $('#combompnacimiento').change(function() {
-        var pk = $('#combompnacimiento option:selected').val();
-        $('#combocdnacimiento').prop("disabled", false);
-        var opcion = "Loc";
-        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
-                {pk: pk, opcion: opcion},
-        function(data) {
-            //limpiar el option value
-            Filtros("#combocdnacimiento", data);
-
-        });
-    });
-    $('#dirmunicipio').change(function() {
-        var pk = $('#dirmunicipio option:selected').val();
-
-        var opcion = "Loc";
-        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
-                {pk: pk, opcion: opcion},
-        function(data) {
-            //limpiar el option value
-            Filtros("#dirciudad", data);
-
-        });
-    });
+//    $('#combompnacimiento').change(function() {
+//        var pk = $('#combompnacimiento option:selected').val();
+//        $('#combocdnacimiento').prop("disabled", false);
+//        var opcion = "Loc";
+//        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
+//                {pk: pk, opcion: opcion},
+//        function(data) {
+//            //limpiar el option value
+//            Filtros("#combocdnacimiento", data);
+//
+//        });
+//    });
+//    $('#dirmunicipio').change(function() {
+//        var pk = $('#dirmunicipio option:selected').val();
+//
+//        var opcion = "Loc";
+//        $.getJSON("/MODULO_ASPIRANTE/CargaEstado",
+//                {pk: pk, opcion: opcion},
+//        function(data) {
+//            //limpiar el option value
+//            Filtros("#dirciudad", data);
+//
+//        });
+//    });
 
 //llama servlet  
     $('#heleido').click(function() {
