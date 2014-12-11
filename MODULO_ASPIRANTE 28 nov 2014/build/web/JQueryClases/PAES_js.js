@@ -79,11 +79,15 @@ $(document).ready(function() {
 
 $('#selectedonacimiento').change(function() {
         alert("entra al chage");
-        var pk = $('#combopaisnacimiento option:selected').html();
-        $.get('/MODULO_ASPIRANTE/CargaEstado',
+        var pk = $('#selectedonacimiento option:selected').val();
+        
+        $.getJSON('/MODULO_ASPIRANTE/CargaEstado',
                 {pk: pk},
         function(data) {
-            alert("ret");
+          $("#combompnacimiento").html("");
+            $.each(data.Ciuadades, function(i,item2){
+                $("#combompnacimiento").append("<option value='"+item2.id+"'>"+item2.TNAME+"</option>");
+            });
         }
         );
     });

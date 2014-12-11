@@ -10,6 +10,7 @@ import ConexionBD.Procedimientos;
 import beans.BaseDatos;
 import beans.Carrera;
 import beans.Carreras;
+import beans.Catalogos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -40,7 +41,9 @@ public class CargaEstado extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            try {
+            try 
+            {
+                Catalogos cat= new  Catalogos();
                 response.setContentType("text/html;charset=UTF-8");
                 PrintWriter out = response.getWriter();
                 String pk = request.getParameter("pk");
@@ -50,8 +53,11 @@ public class CargaEstado extends HttpServlet {
                 String  pass="d3s4rr0ll0";
                 Procedimientos p= new  Procedimientos();
                 municipio=p.getCatalogos(usuario, pass, 3, foranea);
+                municipio=cat.AgregaS(municipio);
                 String estados=c.ConvertirJson(municipio);
                 System.out.println(estados);
+                out.write("{" + estados + "]}");
+                
             } catch (SQLException ex) {
                 Logger.getLogger(CargaEstado.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
