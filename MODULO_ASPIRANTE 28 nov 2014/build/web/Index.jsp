@@ -1,4 +1,9 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%--<%@page contentType="text/html" pageEncoding="UTF-8"%>--%>
+
+<%--<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>--%>
+<%@ page import="net.tanesha.recaptcha.ReCaptcha" %>
+<%@ page import="net.tanesha.recaptcha.ReCaptchaFactory" %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,16 +18,33 @@
         <link rel="stylesheet" href="Estilos/css/bootstrap-theme.min.css.css" type="text/css">
         <link rel="stylesheet" href="Estilos/css/bootstrap.min.css.css" type="text/css">     
         <script type="text/javascript">
-            $(document).ready(function() {
-                $(".tooltip-examples a").tooltip({
-                    placement: 'top'
-                });
-            });
+            function periodo(per) {
+                if (per === true)
+                {
+                    closeDialog('popup');
+                }
+                if (per === false)
+                {
+                    $('#overlay').fadeIn(1000);
+                    $('#popup').fadeIn(1000);
+                    if (per === true) {
+                    }
+                    if (per === false) {
+                        $('#popup').animate({'left': '30%'}, 500);
+                    }
+                }
+            }
+            function closeDialog(id) {
+                $('#overlay').fadeOut(1000);
+                $('#popup').fadeOut(1000);
+            }
         </script>
-        <title>--MÓDULO ASPIRANTE--</title>
+        <title>--M&Oacute;DULO ASPIRANTE--</title>
     </head>
-
-    <body>
+    
+    <!--Valida si la fecha de consulta esta dentro del periodo habilitado-->
+    <body onload="periodo(false);"> 
+        
         <a name="InicioPag"></a>
         <header>
             <div class="encabezado">
@@ -44,8 +66,8 @@
                         </ul>
                         <label id="centrar_inf"><h4>Para realizar su solicitud de registro como aspirante, asegurate de contar con los siguientes datos y documentos.</h4></label>
                         <ul id="sangria">
-                            <li>Clave CURP<a href="http://consultas.curp.gob.mx/CurpSP/"target="_blank"><div id="aqui">consultar aquí</div></a></li>
-                            <li>Clave de la escuela de procedencia<a href="http://www.snie.sep.gob.mx/SNIESC/" target="_blank"><div id="aqui_escuela">consultar aquí</div></a></li>
+                            <li>Clave CURP<a href="http://consultas.curp.gob.mx/CurpSP/"target="_blank"><div id="aqui">consultar aqu&iacute;</div></a></li>
+                            <li>Clave de la escuela de procedencia<a href="http://www.snie.sep.gob.mx/SNIESC/" target="_blank"><div id="aqui_escuela">consultar aqu&iacute;</div></a></li>
                             <li><div id="link_toolt"><a data-toggle="tooltip" data-original-title="Federal, Estatal, Privada"  >Tipo de la escuela de procedencia</a></div></li>
                             <li>Tipo de sangre</li>
                             <li>Acta de nacimiento</li>
@@ -71,7 +93,17 @@
                             <h5><input id="comprobar" type="checkbox">He le&iacute;do esta informaci&oacute;n. <br></h5>
                         </label>
                         <br>
-                        <a href="#"> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
+                        <a> <label><input id="heleido" type="button" class="btn btn-info" value="Aceptar" style="display: none"></label></a>
+
+                    </div>
+                    <div id="cargando">
+                        <div class="spinner-wave">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
 
                     </div>
                 </div>
@@ -119,7 +151,7 @@
                 <label class="texto_inferior">
                     Instituto Tecnol&oacute;gico de Toluca | www.ittoluca.edu.mx
                     <br>
-                    Instituto Tecnol&oacute;gico de Toluca - Algunos derechos reservados © 2014
+                    Instituto Tecnol&oacute;gico de Toluca - Algunos derechos reservados ? 2014
                     <br>
                 </label>
                 <br>
@@ -134,6 +166,23 @@
                 </label>
             </div>
         </footer>
+
+        <div id="content">
+            <div id="overlay" class="overlay">
+                
+            </div>
+            <div id="popup" class="popup">
+                <div>
+                    <center><h2>Aviso al usuario</h2></center>
+                    <div id="msgPeriodo">
+                        Por el momento la p&aacute;gina del preregistro de aspirantes se encuentra indispuesta debido a que no estamos en un periodo h&aacute;bil para expedir prefichas.
+                    Le recomendamos intentarlo en otra ocasi&oacute;n
+                    Gracias.
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
 
